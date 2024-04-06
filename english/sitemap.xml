@@ -2,32 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://pesvi.xyz/categories/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="https://pesvi.xyz/catal%C3%A0/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="https://pesvi.xyz/categories/"
-                />
-  </url><url>
-    <loc>https://pesvi.xyz/categories/lightning/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="https://pesvi.xyz/catal%C3%A0/categories/lightning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="https://pesvi.xyz/categories/lightning/"
-                />
-  </url><url>
     <loc>https://pesvi.xyz/</loc>
     <lastmod>2024-04-06T16:37:37+02:00</lastmod>
     <xhtml:link
@@ -52,58 +26,6 @@
                 rel="alternate"
                 hreflang="english"
                 href="https://pesvi.xyz/posts/"
-                />
-  </url><url>
-    <loc>https://pesvi.xyz/tags/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="https://pesvi.xyz/catal%C3%A0/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="https://pesvi.xyz/tags/"
-                />
-  </url><url>
-    <loc>https://pesvi.xyz/posts/test/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="https://pesvi.xyz/catal%C3%A0/posts/test/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="https://pesvi.xyz/posts/test/"
-                />
-  </url><url>
-    <loc>https://pesvi.xyz/tags/test1/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="https://pesvi.xyz/catal%C3%A0/tags/test1/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="https://pesvi.xyz/tags/test1/"
-                />
-  </url><url>
-    <loc>https://pesvi.xyz/tags/test2/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="https://pesvi.xyz/catal%C3%A0/tags/test2/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="https://pesvi.xyz/tags/test2/"
                 />
   </url><url>
     <loc>https://pesvi.xyz/about/</loc>
@@ -132,6 +54,18 @@
   </url><url>
     <loc>https://pesvi.xyz/archives/</loc>
   </url><url>
+    <loc>https://pesvi.xyz/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/categories/"
+                />
+  </url><url>
     <loc>https://pesvi.xyz/search/</loc>
     <xhtml:link
                 rel="alternate"
@@ -142,6 +76,18 @@
                 rel="alternate"
                 hreflang="english"
                 href="https://pesvi.xyz/search/"
+                />
+  </url><url>
+    <loc>https://pesvi.xyz/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/tags/"
                 />
   </url>
 </urlset>
