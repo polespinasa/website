@@ -1,0 +1,12 @@
+
+# About me
+
+I am doing research at the Department of Information and Communication Engineering ([DEiC](https://deic.uab.cat/)) at the Universitat Autònoma de Barcelona ([UAB](https://www.uab.cat/)). I am also studying a degree in cybersecurity and privacy at the Universitat Oberta de Catalunya ([UOC](https://www.uoc.edu)).
+
+My current interests are Bitcoin, the Lightning Network and Bitcoin protocols. In fact, these are the topics on which I do research 😉. Apart from Bitcoin related topics, I am also passionate about cryptography, privacy, cybersecurity and programming.
+
+\
+\
+\
+\
+Pd. You can report errors in the posts to [github](https://github.com/polespinasa/website), I will correct them as soon as possible. Thanks!!

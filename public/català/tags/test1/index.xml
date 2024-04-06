@@ -6,14 +6,6 @@
     <description>Recent content in Test1 on Pol Espinasa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>català</language>
-    <lastBuildDate>Sat, 06 Apr 2024 16:37:37 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/catal%C3%A0/tags/test1/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Test</title>
-      <link>http://localhost:1313/catal%C3%A0/posts/test/</link>
-      <pubDate>Sat, 06 Apr 2024 16:37:37 +0200</pubDate>
-      <guid>http://localhost:1313/catal%C3%A0/posts/test/</guid>
-      <description>Això és un test Hola mon!</description>
-    </item>
   </channel>
 </rss>

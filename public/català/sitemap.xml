@@ -2,110 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/catal%C3%A0/categories/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/categories/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/catal%C3%A0/categories/lightning/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/categories/lightning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/categories/lightning/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/catal%C3%A0/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/catal%C3%A0/posts/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/posts/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/catal%C3%A0/tags/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/tags/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/catal%C3%A0/posts/test/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/posts/test/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/posts/test/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/catal%C3%A0/tags/test1/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/tags/test1/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/tags/test1/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/catal%C3%A0/tags/test2/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/tags/test2/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/tags/test2/"
-                />
-  </url><url>
     <loc>http://localhost:1313/catal%C3%A0/about/</loc>
     <xhtml:link
                 rel="alternate"
@@ -130,6 +26,42 @@
                 href="http://localhost:1313/catal%C3%A0/publications/"
                 />
   </url><url>
+    <loc>http://localhost:1313/catal%C3%A0/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="http://localhost:1313/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="http://localhost:1313/catal%C3%A0/categories/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/catal%C3%A0/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="http://localhost:1313/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="http://localhost:1313/catal%C3%A0/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/catal%C3%A0/posts/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="http://localhost:1313/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="http://localhost:1313/catal%C3%A0/posts/"
+                />
+  </url><url>
     <loc>http://localhost:1313/catal%C3%A0/search/</loc>
     <xhtml:link
                 rel="alternate"
@@ -140,6 +72,18 @@
                 rel="alternate"
                 hreflang="català"
                 href="http://localhost:1313/catal%C3%A0/search/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/catal%C3%A0/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="http://localhost:1313/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="http://localhost:1313/catal%C3%A0/tags/"
                 />
   </url>
 </urlset>
