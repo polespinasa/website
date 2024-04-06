@@ -1,0 +1,4 @@
+baseURL: "https://polespinasa.github.io/website/"
+languageCode: en-us
+title: My New Hugo Site
+theme: PaperMod
