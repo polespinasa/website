@@ -38,6 +38,8 @@ params:
       url: "https://twitter.com/sliv3r__"
     - name: linkedin
       url: "https://www.linkedin.com/in/polespinasa/"
+    - name: email
+      url: "mailto://bitcoin@pesvi.com"
 
 
 menu:
