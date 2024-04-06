@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://pesvi.xyz/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-  </url><url>
-    <loc>https://pesvi.xyz/posts/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-  </url><url>
-    <loc>https://pesvi.xyz/posts/test/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-  </url><url>
-    <loc>https://pesvi.xyz/categories/</loc>
-  </url><url>
-    <loc>https://pesvi.xyz/tags/</loc>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>https://pesvi.xyz/english/sitemap.xml</loc>
+    
+      <lastmod>2024-04-06T16:37:37+02:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://pesvi.xyz/catal%C3%A0/sitemap.xml</loc>
+    
+      <lastmod>2024-04-06T16:37:37+02:00</lastmod>
+    
+  </sitemap>
+  
+</sitemapindex>

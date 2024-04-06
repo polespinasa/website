@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>Pol Espinasa</title>
     <link>https://pesvi.xyz/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on Pol Espinasa</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>english</language>
     <lastBuildDate>Sat, 06 Apr 2024 16:37:37 +0200</lastBuildDate>
     <atom:link href="https://pesvi.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -14,6 +14,20 @@
       <pubDate>Sat, 06 Apr 2024 16:37:37 +0200</pubDate>
       <guid>https://pesvi.xyz/posts/test/</guid>
       <description>This is a test Hello world!</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://pesvi.xyz/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://pesvi.xyz/about/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://pesvi.xyz/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://pesvi.xyz/publications/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
