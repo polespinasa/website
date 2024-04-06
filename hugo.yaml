@@ -1,4 +1,68 @@
 baseURL: "https://pesvi.xyz"
 languageCode: en-us
-title: My New Hugo Site
+title: Pol Espinasa
 theme: PaperMod
+enableEmoji: true
+
+
+DefaultContentLanguage: English
+
+languages:
+  English:
+    contentDir: content/english
+    title: Pol Espinasa
+    languageName: English
+    weight: 1
+  Català:
+    contentDir: content/català
+    title: Pol Espinasa
+    languageName: Català
+    weight: 2
+
+
+
+params:
+  ShowReadingTime: true
+  ShowShareButtons: true
+  math: true
+  comments: true
+
+  homeInfoParams:
+    Title: "Hi there! Bitcoin and LN stuff"
+    Content: "4F682C20736F20796F7527726520616C736F206F62736573736564207769746820426974636F696E3F"
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/polespinasa"
+    - name: twitter
+      url: "https://twitter.com/sliv3r__"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/polespinasa/"
+
+
+menu:
+  main:
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 30
+    - identifier: publications
+      name: Publications
+      url: /publications/
+      weight: 40
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 50
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 60
