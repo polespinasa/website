@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>My New Hugo Site</title>
-    <link>https://polespinasa.github.io/website/</link>
+    <link>https://pesvi.xyz/</link>
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 06 Apr 2024 16:37:37 +0200</lastBuildDate>
-    <atom:link href="https://polespinasa.github.io/website/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://pesvi.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test</title>
-      <link>https://polespinasa.github.io/website/posts/test/</link>
+      <link>https://pesvi.xyz/posts/test/</link>
       <pubDate>Sat, 06 Apr 2024 16:37:37 +0200</pubDate>
-      <guid>https://polespinasa.github.io/website/posts/test/</guid>
+      <guid>https://pesvi.xyz/posts/test/</guid>
       <description>This is a test Hello world!</description>
     </item>
   </channel>
