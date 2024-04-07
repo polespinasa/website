@@ -25,18 +25,18 @@ Les dades per la sortida són l'adreça de destí i la quantitat de bitcoins que
 Adreça destí: `tb1qjdntspzahv748vasmnfl62etfz9y9hjgmvg6gw`\
 Quantitat de bitcoins: `1 btc`
 
-Com que utilitzen [Sparrow](https://sparrowwallet.com/) com a wallet i aquesta no permet la creació de PSBTs han d'utilitzar una altra eina. Per fer-ho faran servir el seu propi node de Bitcoin i la seva interfície de comandes ([bitcoin-cli](https://developer.bitcoin.org/reference/rpc/index.html)).
+Com que utilitzen [Sparrow](https://sparrowwallet.com/) com a wallet i aquesta no permet la creació de PSBTs d'aquest tipus han d'utilitzar una altra eina. Per fer-ho fan servir el seu propi node de Bitcoin i la seva interfície de comandes ([bitcoin-cli](https://developer.bitcoin.org/reference/rpc/index.html)).
 
 Per crear la PSBT fan servir bitcoin-cli i la comanda ["*createpsbt*"](https://developer.bitcoin.org/reference/rpc/createpsbt.html).\
-Aquesta pren dos arguments obligatoris els inputs i els outputs. Per l'input s'ha d'especificar l'id de la transacció i el número de l'output dins de la transacció. Per l'output s'ha d'especificar l'adreça de destí i la quantitat de bitcoins que es vol enviar.
+Aquesta pren dos arguments obligatoris, els inputs i els outputs. Per l'input s'ha d'especificar l'id de la transacció i el número de l'output. Per l'output s'ha d'especificar l'adreça de destí i la quantitat de bitcoins que es vol enviar.
 ```bash
 bitcoin-cli createpsbt '[{"txid": "txId", "vout": nOut}]' '["adreça de destí": "núm btc"]'
 ```
 > :warning: **ALERTA!**\
-> *La diferència entre el valor de les entrades i el valor de la sortida es paga en forma de comissió. Si es vol retornar els diners restants, s'ha d'afegir una adreça de canvi i donar-li un valor!*
+> *La diferència entre el valor de les entrades i el valor de la sortida es paga en forma de comissió. Si es vol retornar els diners restants, s'ha d'afegir una sortida amb una adreça de canvi i donar-li un valor!*
 
 
-La comanda que executen l'Alice i en Bob queda tal que així:
+La comanda que executen l'Alice i en Bob és la següent:
 ```bash
 bitcoin-cli createpsbt '[{"txid": "73c13b277a1b176fd2b20324027fff9244949fc5dc913aa98c68bddf246260e5", "vout": 0}, {"txid": "7797817c9b879c3333e1c7d5eedc70e6aa0ba1a2c6d098c94ce5e2671f4c9d5e", "vout": 1}]' '[{"tb1qjdntspzahv748vasmnfl62etfz9y9hjgmvg6gw": 2}]'
 ```
@@ -44,12 +44,12 @@ Output:
 ```
 cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAAAA
 ```
-L'output que obtenen és la transacció en raw i codificada en base64. Però aquesta transacció encara no està llesta per ser firmada. Necessita que se li actualitzi la informació dels inputs i els outputs segwitt. Per tal d'acabar de muntar correctament la transacció en Bob i l'Alice utilitzen la comanda ["*utxoupdatepsbt*"](https://developer.bitcoin.org/reference/rpc/utxoupdatepsbt.html).
-Aquesta comanda pren per com a únic argument una transacció en raw codificada en base64, exactament com la que ens genera la comanda "*createpsbt*".
+L'output que obtenen és la transacció en raw i codificada en base64. Aquesta transacció encara no està llesta per ser firmada, necessita que se li actualitzi la informació dels inputs i els outputs segwitt. Per tal d'acabar de muntar correctament la transacció en Bob i l'Alice utilitzen la comanda ["*utxoupdatepsbt*"](https://developer.bitcoin.org/reference/rpc/utxoupdatepsbt.html).
+Aquesta comanda pren com a únic argument una transacció en raw codificada en base64, exactament com la que ens genera la comanda "*createpsbt*".
 ```bash
 bitcoin-cli utxoupdatepsbt "transacció en raw i base64"
 ```
-Per tant, la comanda que executen l'Alice i en Bob queda de la següent manera:
+La comanda que executen l'Alice i en Bob queda de la següent manera:
 ```bash
 bitcoin-cli utxoupdatepsbt "cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAAAA"
 ```
@@ -57,13 +57,13 @@ Output:
 ```
 cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocwABAR/04vUFAAAAABYAFKnH89dqqyObFvPlDONKPDSRm78cAAA=
 ```
-L'output que obtenen és la mateixa transacció en raw i codificada en base64 però aquest cop ja llesta per ser firmada.
-Es pot comprovar l'estat de la PSBT amb la comanda ["*analyzepsbt*"](https://developer.bitcoin.org/reference/rpc/analyzepsbt.html). Aquesta analitza la PSBT i dona informació sobre l'estat d'aquesta.
-La comanda només pren com a argument una PSBT en raw i base64:
+L'output és la mateixa transacció en raw i codificada en base64 però aquest cop ja llesta per ser firmada.
+Es pot comprovar l'estat de la PSBT amb la comanda ["*analyzepsbt*"](https://developer.bitcoin.org/reference/rpc/analyzepsbt.html). Aquesta comanda analitza la PSBT i dona informació sobre l'estat d'aquesta.
+Pren com a argument una PSBT en raw i base64:
 ```bash
 bitcoin-cli analyzepsbt "transacció en raw i base64"
 ```
-En Bob i l'Alice poden comprovar l'estat de la seva PSBT amb la següent comanda:
+En Bob i l'Alice comproven l'estat de la seva PSBT amb la següent comanda:
 ```bash
 bitcoin-cli analyzepsbt "cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocwABAR/04vUFAAAAABYAFKnH89dqqyObFvPlDONKPDSRm78cAAA="
 ```
@@ -103,18 +103,18 @@ En el JSON que ens proporciona la sortida podem veure com falten les dues firmes
 
 ### Firmar la PSBT
 
-La primera a firmar la transacció serà l'Alice. Per fer-ho obre la seva wallet a Sparrow i carrega la transacció obtinguda de la comanda "*utxoupdatepsbt*" des de text:
+La primera a firmar la transacció serà l'Alice. Per fer-ho obre la seva wallet a Sparrow i carrega la transacció obtinguda de la comanda "*utxoupdatepsbt*" en forma de text:
 
 ![](/psbt_multi_utxo_sparrow/openTx.png#center)
 ![](/psbt_multi_utxo_sparrow/open_from_text.png#center)
 
-Un cop carregada la transacció es pot veure com el propi Sparrow detecta que la primera entrada pertany a l'Alice:
+Amb la transacció carregada es pot veure com el propi Sparrow detecta que la primera entrada pertany a l'Alice:
 ![](/psbt_multi_utxo_sparrow/tx_pre_sign_alice.png#center)
 
 Per tal de firmar-la l'Alice prem "*Finalize Transaction for Signing*" i a continuació "*Sign*".
 Un cop firmada l'Alice es guarda la transacció prement l'opció de "Save Transaction". Això li genera un fitxer "*.psbt*".
 
-Com que té curiositat per saber si s'ha fet correctament torna a executar la comanda "analyzepsbt". Aquesta pren com a argument una transacció en RAW i codificada en Base64, per tal de mostrar la transacció del fitxer .psbt en el format necessari l'Alice utilitza la comanda:
+Com que té curiositat per saber si s'ha fet correctament torna a executar la comanda "*analyzepsbt*". Aquesta pren com a argument una transacció en raw i codificada en base64, per tal de mostrar la transacció del fitxer "*.psbt*" en el format necessari l'Alice utilitza la comanda:
 
 ```bash
 cat alice.psbt | base64 -w 0
@@ -124,7 +124,7 @@ Output:
 cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocyICAqMy+J7K6eLwFZ82KfZ8NEOYP/fT2XJBP7fZKzgTHebMRzBEAiAfOG5ztzUxczR0VOE/RyEHFzE+7WzxURU2M3uaMneq2wIgdNMkWI40nt+IB+LFq8vJ+/s3JqDCk/0IB51Bj/vdtFcBAAEBH/Ti9QUAAAAAFgAUqcfz12qrI5sW8+UM40o8NJGbvxwAAA==
 ```
 
-Ara ja sí que pot executar la comanda "*analyzepsbt*" amb la transacció codificada correctament:
+Ja pot executar la comanda "*analyzepsbt*" amb la transacció codificada correctament:
 ```bash
 bitcoin-cli analyzepsbt "cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocyICAqMy+J7K6eLwFZ82KfZ8NEOYP/fT2XJBP7fZKzgTHebMRzBEAiAfOG5ztzUxczR0VOE/RyEHFzE+7WzxURU2M3uaMneq2wIgdNMkWI40nt+IB+LFq8vJ+/s3JqDCk/0IB51Bj/vdtFcBAAEBH/Ti9QUAAAAAFgAUqcfz12qrI5sW8+UM40o8NJGbvxwAAA=="
 ```
@@ -206,7 +206,7 @@ Output:
 cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocyICAqMy+J7K6eLwFZ82KfZ8NEOYP/fT2XJBP7fZKzgTHebMRzBEAiAfOG5ztzUxczR0VOE/RyEHFzE+7WzxURU2M3uaMneq2wIgdNMkWI40nt+IB+LFq8vJ+/s3JqDCk/0IB51Bj/vdtFcBAAEBH/Ti9QUAAAAAFgAUqcfz12qrI5sW8+UM40o8NJGbvxwiAgMMeRIpFVIotVPAEzzNyUtt/OhTRrHjfUw55M7uOE2BAkcwRAIge7tAnbbsyc4KhYiCR8qQWmIGVQR+b9POzrr7BK2LkucCIHvrsLQG59xe55lH+a4f4N4VVIZMT4duO3yyC+XJQMZkAQAA
 ```
 
-La sortida de la comanda és la PSBT agregada dels dos. Poden fer una última comprovació amb la comanda "*analyzepsbt*". La sortida de la comanda que obtenen és la següent:
+La sortida de la comanda és la PSBT agregada dels dos. Poden fer una última comprovació amb la comanda "*analyzepsbt*":
 ```bash
 bitcoin-cli analyzepsbt "cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocyICAqMy+J7K6eLwFZ82KfZ8NEOYP/fT2XJBP7fZKzgTHebMRzBEAiAfOG5ztzUxczR0VOE/RyEHFzE+7WzxURU2M3uaMneq2wIgdNMkWI40nt+IB+LFq8vJ+/s3JqDCk/0IB51Bj/vdtFcBAAEBH/Ti9QUAAAAAFgAUqcfz12qrI5sW8+UM40o8NJGbvxwiAgMMeRIpFVIotVPAEzzNyUtt/OhTRrHjfUw55M7uOE2BAkcwRAIge7tAnbbsyc4KhYiCR8qQWmIGVQR+b9POzrr7BK2LkucCIHvrsLQG59xe55lH+a4f4N4VVIZMT4duO3yyC+XJQMZkAQAA"
 ```
