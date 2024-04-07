@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Test2 on Pol Espinasa</title>
-    <link>https://pesvi.xyz/catal%C3%A0/tags/test2/</link>
+    <link>http://localhost:1313/catal%C3%A0/tags/test2/</link>
     <description>Recent content in Test2 on Pol Espinasa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>català</language>
     <lastBuildDate>Sat, 06 Apr 2024 16:37:37 +0200</lastBuildDate>
-    <atom:link href="https://pesvi.xyz/catal%C3%A0/tags/test2/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/catal%C3%A0/tags/test2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test</title>
-      <link>https://pesvi.xyz/catal%C3%A0/posts/test/</link>
+      <link>http://localhost:1313/catal%C3%A0/posts/test/</link>
       <pubDate>Sat, 06 Apr 2024 16:37:37 +0200</pubDate>
-      <guid>https://pesvi.xyz/catal%C3%A0/posts/test/</guid>
+      <guid>http://localhost:1313/catal%C3%A0/posts/test/</guid>
       <description>Això és un test Hola mon!</description>
     </item>
   </channel>
