@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Layer 1 on Pol Espinasa</title>
+    <link>https://pesvi.xyz/catal%C3%A0/tags/layer-1/</link>
+    <description>Recent content in Layer 1 on Pol Espinasa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>català</language>
+    <lastBuildDate>Sun, 07 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://pesvi.xyz/catal%C3%A0/tags/layer-1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Com fer una transacció amb UTXOs de wallets diferents amb Sparrow</title>
+      <link>https://pesvi.xyz/catal%C3%A0/posts/psbt_multi_wallet_utxo_sparrow/</link>
+      <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://pesvi.xyz/catal%C3%A0/posts/psbt_multi_wallet_utxo_sparrow/</guid>
+      <description>Suposem que en Bob i la Alice comparteixen pis i volen comprar un televisor que val 2 bitcoins pagant la meitat cada un. Per fer-ho en Bob podria enviar 1 bitcoin a la Alice perquè ella fes el pagament del televisor, però com que les comissions de xarxa són bastant elevades, decideixen crear una transacció conjunta on hi hagi dos inputs, un de l&amp;rsquo;Alice i un del Bob.
+&amp;#x1f4a1; Els exemples pràctics del post estan fets en testnet.</description>
+    </item>
+  </channel>
+</rss>
