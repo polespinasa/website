@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/catal%C3%A0/categories/guies/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Com fer una transacció amb UTXOs de wallets diferents amb Sparrow</title>
-      <link>http://localhost:1313/catal%C3%A0/posts/psbt_multi_wallet_utxo_sparrow/</link>
+      <link>http://localhost:1313/catal%C3%A0/posts/psbt_sparrow/</link>
       <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/catal%C3%A0/posts/psbt_multi_wallet_utxo_sparrow/</guid>
+      <guid>http://localhost:1313/catal%C3%A0/posts/psbt_sparrow/</guid>
       <description>Suposem que en Bob i la Alice comparteixen pis i volen comprar un televisor que val 2 bitcoins pagant la meitat cada un. Per fer-ho en Bob podria enviar 1 bitcoin a la Alice perquè ella fes el pagament del televisor, però com que les comissions de xarxa són bastant elevades, decideixen crear una transacció conjunta on hi hagi dos inputs, un de l&amp;rsquo;Alice i un del Bob.
 &amp;#x1f4a1; Els exemples pràctics del post estan fets en testnet.</description>
     </item>

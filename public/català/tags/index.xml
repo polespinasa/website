@@ -50,5 +50,19 @@
       <guid>http://localhost:1313/catal%C3%A0/tags/wallets/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Test1</title>
+      <link>http://localhost:1313/catal%C3%A0/tags/test1/</link>
+      <pubDate>Sat, 06 Apr 2024 16:37:37 +0200</pubDate>
+      <guid>http://localhost:1313/catal%C3%A0/tags/test1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Test2</title>
+      <link>http://localhost:1313/catal%C3%A0/tags/test2/</link>
+      <pubDate>Sat, 06 Apr 2024 16:37:37 +0200</pubDate>
+      <guid>http://localhost:1313/catal%C3%A0/tags/test2/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

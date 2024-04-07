@@ -15,5 +15,12 @@
       <guid>http://localhost:1313/catal%C3%A0/categories/guies/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Lightning</title>
+      <link>http://localhost:1313/catal%C3%A0/categories/lightning/</link>
+      <pubDate>Sat, 06 Apr 2024 16:37:37 +0200</pubDate>
+      <guid>http://localhost:1313/catal%C3%A0/categories/lightning/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

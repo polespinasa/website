@@ -6,7 +6,21 @@
     <description>Recent content in Posts on Pol Espinasa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>english</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Sun, 07 Apr 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to make a transaction with UTXOs of different wallets with Sparrow</title>
+      <link>http://localhost:1313/posts/psbt_sparrow/</link>
+      <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/psbt_sparrow/</guid>
+      <description>&amp;#x26a0;&amp;#xfe0f; Post not available Sorry this post is not yet available in English. For the moment you can read the Catalan version here.</description>
+    </item>
+    <item>
+      <title>Test</title>
+      <link>http://localhost:1313/posts/test/</link>
+      <pubDate>Sat, 06 Apr 2024 16:37:37 +0200</pubDate>
+      <guid>http://localhost:1313/posts/test/</guid>
+      <description>This is a test Hello world!</description>
+    </item>
   </channel>
 </rss>

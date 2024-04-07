@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Wallets on Pol Espinasa</title>
+    <link>http://localhost:1313/tags/wallets/</link>
+    <description>Recent content in Wallets on Pol Espinasa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>english</language>
+    <lastBuildDate>Sun, 07 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/wallets/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to make a transaction with UTXOs of different wallets with Sparrow</title>
+      <link>http://localhost:1313/posts/psbt_sparrow/</link>
+      <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/psbt_sparrow/</guid>
+      <description>&amp;#x26a0;&amp;#xfe0f; Post not available Sorry this post is not yet available in English. For the moment you can read the Catalan version here.</description>
+    </item>
+  </channel>
+</rss>
