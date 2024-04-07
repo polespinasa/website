@@ -8,4 +8,4 @@ categories = ["Guides"]
 
 ### :warning: Post not available
 
-Sorry this post is not yet available in English. For the moment you can read the Catalan version [here](/catal%C3%A0/posts/psbt_multi_wallet_utxo_sparrow/).
+Sorry, this post is not yet available in English. For now you can read the Catalan version by changing the language.
