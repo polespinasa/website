@@ -103,7 +103,7 @@ En el JSON que ens proporciona la sortida podem veure com falten les dues firmes
 
 ### Firmar la PSBT
 
-La primera a firmar la transacció serà l'Alice. Per fer-ho obra la seva wallet a Sparrow i carrega la transacció obtinguda de la comanda "*utxoupdatepsbt*" des de text:
+La primera a firmar la transacció serà l'Alice. Per fer-ho obre la seva wallet a Sparrow i carrega la transacció obtinguda de la comanda "*utxoupdatepsbt*" des de text:
 
 ![](/psbt_multi_utxo_sparrow/openTx.png#center)
 ![](/psbt_multi_utxo_sparrow/open_from_text.png#center)
@@ -231,7 +231,7 @@ bitcoin-cli analyzepsbt "cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3o
 }
 ```
 Comproven així que no falta cap de les dues firmes.
-A partir d'aquest punt qualsevol dels dos pot retransmetre la transacció carregant-la a l'Sparrow des de text com s'ha fet en els passos anteriors i prenent l'opció de "*Broadcast*"
+A partir d'aquest punt qualsevol dels dos pot retransmetre la transacció carregant-la a l'Sparrow des de text com s'ha fet en els passos anteriors i prenent l'opció de "*Broadcast Transaction*"
 ![](/psbt_multi_utxo_sparrow/broadcast.png#center)
 
 Podem comprovar a qualsevol explorador de blocs que la [transacció](https://mempool.space/testnet/tx/c659c7cb31733f153f04c1fbffeec91b99a96f2e289f47852374d0101e303e50) s'ha enviat correctament i paga els 2 bitcoins pel televisor:
