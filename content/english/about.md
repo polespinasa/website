@@ -9,4 +9,4 @@ My current interests are Bitcoin, the Lightning Network and protocols on top of 
 \
 \
 \
-Pd. You can report errors in the posts to [github](https://github.com/polespinasa/website), I will correct them as soon as possible. Thanks!!
+Pd. You can report errors in the posts to [Github](https://github.com/polespinasa/website), I will correct them as soon as possible. Thanks!!

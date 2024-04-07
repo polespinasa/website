@@ -9,4 +9,4 @@ Els meus interessos actualment són Bitcoin, la Lightning Network i els protocol
 \
 \
 \
-Pd. Pots reportar errors dels posts al [github](https://github.com/polespinasa/website), ho corregiré el més ràpid possible. Gràcies!! 
+Pd. Pots reportar errors dels posts al [Github](https://github.com/polespinasa/website), ho corregiré el més ràpid possible. Gràcies!! 
