@@ -44,7 +44,7 @@ Output:
 ```
 cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAAAA
 ```
-L'output que obtenen és la transacció en raw i codificada en base64. Aquesta transacció encara no està llesta per ser firmada, necessita que se li actualitzi la informació dels inputs i els outputs segwitt. Per tal d'acabar de muntar correctament la transacció en Bob i l'Alice utilitzen la comanda ["*utxoupdatepsbt*"](https://developer.bitcoin.org/reference/rpc/utxoupdatepsbt.html).
+L'output que obtenen és la transacció en raw i codificada en base64. Aquesta transacció encara no està llesta per ser firmada, necessita que se li actualitzi la informació dels inputs i els outputs segwit. Per tal d'acabar de muntar correctament la transacció en Bob i l'Alice utilitzen la comanda ["*utxoupdatepsbt*"](https://developer.bitcoin.org/reference/rpc/utxoupdatepsbt.html).
 Aquesta comanda pren com a únic argument una transacció en raw codificada en base64, exactament com la que ens genera la comanda "*createpsbt*".
 ```bash
 bitcoin-cli utxoupdatepsbt "transacció en raw i base64"
