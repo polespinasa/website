@@ -114,7 +114,7 @@ Amb la transacció carregada es pot veure com el propi Sparrow detecta que la pr
 Per tal de firmar-la l'Alice prem "*Finalize Transaction for Signing*" i a continuació "*Sign*".
 Un cop firmada l'Alice es guarda la transacció prement l'opció de "Save Transaction". Això li genera un fitxer "*.psbt*".
 
-Com que té curiositat per saber si s'ha fet correctament torna a executar la comanda "*analyzepsbt*". Aquesta pren com a argument una transacció en raw i codificada en base64, per tal de mostrar la transacció del fitxer "*.psbt*" en el format necessari l'Alice utilitza la comanda:
+Com que té curiositat per saber si s'ha fet correctament torna a executar la comanda "*analyzepsbt*". Aquesta pren com a argument una transacció en raw i codificada en base64. Per tal de mostrar la transacció del fitxer "*.psbt*" en el format necessari l'Alice utilitza la comanda:
 
 ```bash
 cat alice.psbt | base64 -w 0
@@ -231,7 +231,7 @@ bitcoin-cli analyzepsbt "cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3o
 }
 ```
 Comproven així que no falta cap de les dues firmes.
-A partir d'aquest punt qualsevol dels dos pot retransmetre la transacció carregant-la a l'Sparrow des de text com s'ha fet en els passos anteriors i prenent l'opció de "*Broadcast Transaction*"
+A partir d'aquest punt qualsevol dels dos pot retransmetre la transacció carregant-la a l'Sparrow des de text, com s'ha fet en els passos anteriors, i prenent l'opció de "*Broadcast Transaction*"
 ![](/psbt_multi_utxo_sparrow/broadcast.png#center)
 
 Podem comprovar a qualsevol explorador de blocs que la [transacció](https://mempool.space/testnet/tx/c659c7cb31733f153f04c1fbffeec91b99a96f2e289f47852374d0101e303e50) s'ha enviat correctament i paga els 2 bitcoins pel televisor:
