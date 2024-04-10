@@ -13,7 +13,8 @@
       <link>http://localhost:1313/posts/psbt_sparrow/</link>
       <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/psbt_sparrow/</guid>
-      <description>&amp;#x26a0;&amp;#xfe0f; Post not available Sorry this post is not yet available in English. For the moment you can read the Catalan version here.</description>
+      <description>Let&amp;rsquo;s suppose that Bob and Alice share a flat and want to buy a television worth 2 bitcoins, paying half each. To do so, Bob could send 1 bitcoin to Alice so that she pays for the TV, but since the network fees are quite high, they decide to create a joint transaction with two inputs, one from Alice and one from Bob.
+&amp;#x1f4a1; The practical examples in the post are made in testnet.</description>
     </item>
   </channel>
 </rss>

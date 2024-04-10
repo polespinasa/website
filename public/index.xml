@@ -13,21 +13,15 @@
       <link>http://localhost:1313/posts/psbt_sparrow/</link>
       <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/psbt_sparrow/</guid>
-      <description>&amp;#x26a0;&amp;#xfe0f; Post not available Sorry this post is not yet available in English. For the moment you can read the Catalan version here.</description>
-    </item>
-    <item>
-      <title>Test</title>
-      <link>http://localhost:1313/posts/test/</link>
-      <pubDate>Sat, 06 Apr 2024 16:37:37 +0200</pubDate>
-      <guid>http://localhost:1313/posts/test/</guid>
-      <description>This is a test Hello world!</description>
+      <description>Let&amp;rsquo;s suppose that Bob and Alice share a flat and want to buy a television worth 2 bitcoins, paying half each. To do so, Bob could send 1 bitcoin to Alice so that she pays for the TV, but since the network fees are quite high, they decide to create a joint transaction with two inputs, one from Alice and one from Bob.
+&amp;#x1f4a1; The practical examples in the post are made in testnet.</description>
     </item>
     <item>
       <title></title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>About me I am doing research at the Department of Information and Communication Engineering (DEiC) at the Universitat Autònoma de Barcelona (UAB). I am also studying a degree in cybersecurity and privacy at the Universitat Oberta de Catalunya (UOC).
+      <description>About me I am doing research at the Department of Information and Communication Engineering (DEiC) at the Universitat Autònoma de Barcelona (UAB). I am also studying a master in cybersecurity and privacy at the Universitat Oberta de Catalunya (UOC).
 My current interests are Bitcoin, the Lightning Network and protocols on top of Bitcoin. In fact, these are the topics on which I do research 😉. Apart from Bitcoin related topics, I am also passionate about cryptography, privacy, cybersecurity and programming.</description>
     </item>
     <item>

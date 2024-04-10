@@ -148,58 +148,6 @@
                 href="http://localhost:1313/tags/wallets/"
                 />
   </url><url>
-    <loc>http://localhost:1313/categories/lightning/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/categories/lightning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/categories/lightning/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/posts/test/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/posts/test/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/posts/test/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/tags/test1/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/tags/test1/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/tags/test1/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/tags/test2/</loc>
-    <lastmod>2024-04-06T16:37:37+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/tags/test2/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/tags/test2/"
-                />
-  </url><url>
     <loc>http://localhost:1313/about/</loc>
     <xhtml:link
                 rel="alternate"
@@ -225,18 +173,6 @@
                 />
   </url><url>
     <loc>http://localhost:1313/archives/</loc>
-  </url><url>
-    <loc>http://localhost:1313/categories/guies/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/categories/guies/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/categories/guies/"
-                />
   </url><url>
     <loc>http://localhost:1313/search/</loc>
     <xhtml:link
