@@ -23,7 +23,7 @@ Bob's UTXO: `7797817c9b879c3333e1c7d5eedc70e6aa0ba1a2c6d098c94ce5e2671f4c9d5e:1`
 The data for the output are the destination address and the amount of bitcoins they want to send:
 
 Destination address: `tb1qjdntspzahv748vasmnfl62etfz9y9hjgmvg6gw`\
-Amount of bitcoins: `1 btc`
+Amount of bitcoins: `2 btc`
 
 Since they use [Sparrow](https://sparrowwallet.com/) as a wallet and it does not allow the creation of PSBTs of this type, they have to use another tool. To do this they use their own Bitcoin node and their command interface ([bitcoin-cli](https://developer.bitcoin.org/reference/rpc/index.html)).
 

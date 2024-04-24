@@ -23,7 +23,7 @@ UTXO del Bob: `7797817c9b879c3333e1c7d5eedc70e6aa0ba1a2c6d098c94ce5e2671f4c9d5e:
 Les dades per la sortida són l'adreça de destí i la quantitat de bitcoins que hi volen enviar:
 
 Adreça destí: `tb1qjdntspzahv748vasmnfl62etfz9y9hjgmvg6gw`\
-Quantitat de bitcoins: `1 btc`
+Quantitat de bitcoins: `2 btc`
 
 Com que utilitzen [Sparrow](https://sparrowwallet.com/) com a wallet i aquesta no permet la creació de PSBTs d'aquest tipus han d'utilitzar una altra eina. Per fer-ho fan servir el seu propi node de Bitcoin i la seva interfície de comandes ([bitcoin-cli](https://developer.bitcoin.org/reference/rpc/index.html)).
 
