@@ -30,7 +30,7 @@ Com que utilitzen [Sparrow](https://sparrowwallet.com/) com a wallet i aquesta n
 Per crear la PSBT fan servir bitcoin-cli i la comanda ["*createpsbt*"](https://developer.bitcoin.org/reference/rpc/createpsbt.html).\
 Aquesta pren dos arguments obligatoris, els inputs i els outputs. Per l'input s'ha d'especificar l'id de la transacció i el número de l'output. Per l'output s'ha d'especificar l'adreça de destí i la quantitat de bitcoins que es vol enviar.
 ```bash
-bitcoin-cli createpsbt '[{"txid": "txId", "vout": nOut}]' '["adreça de destí": "núm btc"]'
+bitcoin-cli createpsbt '[{"txid": "txId", "vout": nOut}]' '[{"adreça de destí": "núm btc"}]'
 ```
 > :warning: **ALERTA!**\
 > *La diferència entre el valor de les entrades i el valor de la sortida es paga en forma de comissió. Si es vol retornar els diners restants, s'ha d'afegir una sortida amb una adreça de canvi i donar-li un valor!*

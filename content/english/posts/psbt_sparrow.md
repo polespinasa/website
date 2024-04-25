@@ -30,7 +30,7 @@ Since they use [Sparrow](https://sparrowwallet.com/) as a wallet and it does not
 To create the PSBT they use bitcoin-cli and the command ["*createpsbt*"](https://developer.bitcoin.org/reference/rpc/createpsbt.html).\
 This command takes two mandatory arguments, the inputs and the outputs. For the input, specify the transaction id and the output number. For the output, the destination address and the amount of bitcoins to be sent must be stated.
 ```bash
-bitcoin-cli createpsbt '[{"txid": "txId", "vout": nOut}]' '["destination address": "num btc"]'
+bitcoin-cli createpsbt '[{"txid": "txId", "vout": nOut}]' '[{"destination address": "num btc"}]'
 ```
 > :warning: **WARNING!**\
 > *The difference between the input value and the output value is paid as mining commission. If you want to be refunded with the remaining money, you have to add an output with a refund address and give it a value!*
