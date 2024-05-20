@@ -163,11 +163,11 @@ To do so, Bob could send 1 bitcoin to Alice so that she pays for the TV, but sin
 Bob&rsquo;s UTXO: <code>7797817c9b879c3333e1c7d5eedc70e6aa0ba1a2c6d098c94ce5e2671f4c9d5e:1</code></p>
 <p>The data for the output are the destination address and the amount of bitcoins they want to send:</p>
 <p>Destination address: <code>tb1qjdntspzahv748vasmnfl62etfz9y9hjgmvg6gw</code><br>
-Amount of bitcoins: <code>1 btc</code></p>
+Amount of bitcoins: <code>2 btc</code></p>
 <p>Since they use <a href="https://sparrowwallet.com/">Sparrow</a> as a wallet and it does not allow the creation of PSBTs of this type, they have to use another tool. To do this they use their own Bitcoin node and their command interface (<a href="https://developer.bitcoin.org/reference/rpc/index.html">bitcoin-cli</a>).</p>
 <p>To create the PSBT they use bitcoin-cli and the command <a href="https://developer.bitcoin.org/reference/rpc/createpsbt.html">&quot;<em>createpsbt</em>&quot;</a>.<br>
 This command takes two mandatory arguments, the inputs and the outputs. For the input, specify the transaction id and the output number. For the output, the destination address and the amount of bitcoins to be sent must be stated.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli createpsbt <span style="color:#e6db74">&#39;[{&#34;txid&#34;: &#34;txId&#34;, &#34;vout&#34;: nOut}]&#39;</span> <span style="color:#e6db74">&#39;[&#34;destination address&#34;: &#34;num btc&#34;]&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli createpsbt <span style="color:#e6db74">&#39;[{&#34;txid&#34;: &#34;txId&#34;, &#34;vout&#34;: nOut}]&#39;</span> <span style="color:#e6db74">&#39;[{&#34;destination address&#34;: &#34;num btc&#34;}]&#39;</span>
 </span></span></code></pre></div><blockquote>
 <p>&#x26a0;&#xfe0f; <strong>WARNING!</strong><br>
 <em>The difference between the input value and the output value is paid as mining commission. If you want to be refunded with the remaining money, you have to add an output with a refund address and give it a value!</em></p>

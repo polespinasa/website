@@ -163,11 +163,11 @@ Per fer-ho en Bob podria enviar 1 bitcoin a la Alice perquè ella fes el pagamen
 UTXO del Bob: <code>7797817c9b879c3333e1c7d5eedc70e6aa0ba1a2c6d098c94ce5e2671f4c9d5e:1</code></p>
 <p>Les dades per la sortida són l&rsquo;adreça de destí i la quantitat de bitcoins que hi volen enviar:</p>
 <p>Adreça destí: <code>tb1qjdntspzahv748vasmnfl62etfz9y9hjgmvg6gw</code><br>
-Quantitat de bitcoins: <code>1 btc</code></p>
+Quantitat de bitcoins: <code>2 btc</code></p>
 <p>Com que utilitzen <a href="https://sparrowwallet.com/">Sparrow</a> com a wallet i aquesta no permet la creació de PSBTs d&rsquo;aquest tipus han d&rsquo;utilitzar una altra eina. Per fer-ho fan servir el seu propi node de Bitcoin i la seva interfície de comandes (<a href="https://developer.bitcoin.org/reference/rpc/index.html">bitcoin-cli</a>).</p>
 <p>Per crear la PSBT fan servir bitcoin-cli i la comanda <a href="https://developer.bitcoin.org/reference/rpc/createpsbt.html">&quot;<em>createpsbt</em>&quot;</a>.<br>
 Aquesta pren dos arguments obligatoris, els inputs i els outputs. Per l&rsquo;input s&rsquo;ha d&rsquo;especificar l&rsquo;id de la transacció i el número de l&rsquo;output. Per l&rsquo;output s&rsquo;ha d&rsquo;especificar l&rsquo;adreça de destí i la quantitat de bitcoins que es vol enviar.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli createpsbt <span style="color:#e6db74">&#39;[{&#34;txid&#34;: &#34;txId&#34;, &#34;vout&#34;: nOut}]&#39;</span> <span style="color:#e6db74">&#39;[&#34;adreça de destí&#34;: &#34;núm btc&#34;]&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli createpsbt <span style="color:#e6db74">&#39;[{&#34;txid&#34;: &#34;txId&#34;, &#34;vout&#34;: nOut}]&#39;</span> <span style="color:#e6db74">&#39;[{&#34;adreça de destí&#34;: &#34;núm btc&#34;}]&#39;</span>
 </span></span></code></pre></div><blockquote>
 <p>&#x26a0;&#xfe0f; <strong>ALERTA!</strong><br>
 <em>La diferència entre el valor de les entrades i el valor de la sortida es paga en forma de comissió. Si es vol retornar els diners restants, s&rsquo;ha d&rsquo;afegir una sortida amb una adreça de canvi i donar-li un valor!</em></p>
