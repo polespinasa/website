@@ -2,6 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/catal%C3%A0/categories/</loc>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="http://localhost:1313/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="http://localhost:1313/catal%C3%A0/categories/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/catal%C3%A0/tags/coinjoin/</loc>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="http://localhost:1313/tags/coinjoin/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="http://localhost:1313/catal%C3%A0/tags/coinjoin/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/catal%C3%A0/posts/grouphug/</loc>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="http://localhost:1313/posts/grouphug/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="http://localhost:1313/catal%C3%A0/posts/grouphug/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/catal%C3%A0/tags/layer-1/</loc>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="http://localhost:1313/tags/layer-1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="http://localhost:1313/catal%C3%A0/tags/layer-1/"
+                />
+  </url><url>
     <loc>http://localhost:1313/catal%C3%A0/</loc>
     <lastmod>2024-04-16T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -28,6 +80,71 @@
                 href="http://localhost:1313/catal%C3%A0/posts/"
                 />
   </url><url>
+    <loc>http://localhost:1313/catal%C3%A0/tags/psbt/</loc>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="http://localhost:1313/tags/psbt/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="http://localhost:1313/catal%C3%A0/tags/psbt/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/catal%C3%A0/tags/sighash/</loc>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="http://localhost:1313/tags/sighash/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="http://localhost:1313/catal%C3%A0/tags/sighash/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/catal%C3%A0/tags/</loc>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="http://localhost:1313/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="http://localhost:1313/catal%C3%A0/tags/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/catal%C3%A0/categories/teoria/</loc>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="http://localhost:1313/categories/teoria/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="http://localhost:1313/catal%C3%A0/categories/teoria/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/catal%C3%A0/tags/utxo-management/</loc>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="http://localhost:1313/tags/utxo-management/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="http://localhost:1313/catal%C3%A0/tags/utxo-management/"
+                />
+  </url><url>
     <loc>http://localhost:1313/catal%C3%A0/tags/bitcoin-cli/</loc>
     <lastmod>2024-04-07T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -39,19 +156,6 @@
                 rel="alternate"
                 hreflang="català"
                 href="http://localhost:1313/catal%C3%A0/tags/bitcoin-cli/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/catal%C3%A0/categories/</loc>
-    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/categories/"
                 />
   </url><url>
     <loc>http://localhost:1313/catal%C3%A0/posts/psbt_sparrow/</loc>
@@ -70,32 +174,6 @@
     <loc>http://localhost:1313/catal%C3%A0/categories/guies/</loc>
     <lastmod>2024-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/catal%C3%A0/tags/layer-1/</loc>
-    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/tags/layer-1/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/tags/layer-1/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/catal%C3%A0/tags/psbt/</loc>
-    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/tags/psbt/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/tags/psbt/"
-                />
-  </url><url>
     <loc>http://localhost:1313/catal%C3%A0/tags/sparrow/</loc>
     <lastmod>2024-04-07T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -107,32 +185,6 @@
                 rel="alternate"
                 hreflang="català"
                 href="http://localhost:1313/catal%C3%A0/tags/sparrow/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/catal%C3%A0/tags/</loc>
-    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/tags/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/catal%C3%A0/tags/utxo-management/</loc>
-    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="http://localhost:1313/tags/utxo-management/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="http://localhost:1313/catal%C3%A0/tags/utxo-management/"
                 />
   </url><url>
     <loc>http://localhost:1313/catal%C3%A0/tags/wallets/</loc>
