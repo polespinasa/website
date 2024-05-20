@@ -119,18 +119,8 @@
                 href="https://pesvi.xyz/tags/"
                 />
   </url><url>
-    <loc>https://pesvi.xyz/categories/teoria/</loc>
+    <loc>https://pesvi.xyz/categories/theory/</loc>
     <lastmod>2024-04-16T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="https://pesvi.xyz/catal%C3%A0/categories/teoria/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="https://pesvi.xyz/categories/teoria/"
-                />
   </url><url>
     <loc>https://pesvi.xyz/tags/utxo-management/</loc>
     <lastmod>2024-04-16T00:00:00+00:00</lastmod>
