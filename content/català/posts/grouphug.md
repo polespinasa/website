@@ -1,6 +1,6 @@
 +++
 title = 'Grouphug - Agrupació de transaccions sense interacció entre usuaris'
-date = 2024-04-16
+date = 2024-05-21
 draft = false
 tags = ["Sighash", "UTXO management", "PSBT", "Coinjoin", "Layer 1"]
 categories = ["Teoria"]
