@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on Pol Espinasa</title>
-    <link>http://localhost:1313/english/categories/</link>
+    <link>http://pesvi.xyz/english/categories/</link>
     <description>Recent content in Categories on Pol Espinasa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>english</language>
     <lastBuildDate>Sat, 06 Apr 2024 16:37:37 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/english/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://pesvi.xyz/english/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lightning</title>
-      <link>http://localhost:1313/english/categories/lightning/</link>
+      <link>http://pesvi.xyz/english/categories/lightning/</link>
       <pubDate>Sat, 06 Apr 2024 16:37:37 +0200</pubDate>
-      <guid>http://localhost:1313/english/categories/lightning/</guid>
+      <guid>http://pesvi.xyz/english/categories/lightning/</guid>
       <description></description>
     </item>
   </channel>

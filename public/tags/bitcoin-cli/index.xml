@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Bitcoin-Cli on Pol Espinasa</title>
-    <link>http://localhost:1313/tags/bitcoin-cli/</link>
+    <link>http://pesvi.xyz/tags/bitcoin-cli/</link>
     <description>Recent content in Bitcoin-Cli on Pol Espinasa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>english</language>
     <lastBuildDate>Sun, 07 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/bitcoin-cli/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://pesvi.xyz/tags/bitcoin-cli/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to make a transaction with UTXOs of different wallets with Sparrow</title>
-      <link>http://localhost:1313/posts/psbt_sparrow/</link>
+      <link>http://pesvi.xyz/posts/psbt_sparrow/</link>
       <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/psbt_sparrow/</guid>
+      <guid>http://pesvi.xyz/posts/psbt_sparrow/</guid>
       <description>Let&amp;rsquo;s suppose that Bob and Alice share a flat and want to buy a television worth 2 bitcoins, paying half each. To do so, Bob could send 1 bitcoin to Alice so that she pays for the TV, but since the network fees are quite high, they decide to create a joint transaction with two inputs, one from Alice and one from Bob.
 &amp;#x1f4a1; The practical examples in the post are made in testnet.</description>
     </item>

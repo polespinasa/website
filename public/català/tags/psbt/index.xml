@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>PSBT on Pol Espinasa</title>
-    <link>http://localhost:1313/catal%C3%A0/tags/psbt/</link>
+    <link>http://pesvi.xyz/catal%C3%A0/tags/psbt/</link>
     <description>Recent content in PSBT on Pol Espinasa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>català</language>
     <lastBuildDate>Tue, 16 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/catal%C3%A0/tags/psbt/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://pesvi.xyz/catal%C3%A0/tags/psbt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Grouphug - Agrupació de transaccions sense interacció entre usuaris</title>
-      <link>http://localhost:1313/catal%C3%A0/posts/grouphug/</link>
+      <link>http://pesvi.xyz/catal%C3%A0/posts/grouphug/</link>
       <pubDate>Tue, 16 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/catal%C3%A0/posts/grouphug/</guid>
+      <guid>http://pesvi.xyz/catal%C3%A0/posts/grouphug/</guid>
       <description>Amb la intenció d&amp;rsquo;intentar ajudar a fer transaccions de Bitcoin més econòmiques i inspirat en la implementació de Peach feta per en Czino neix el GroupHug. Un sistema de transaction batching que permet compartir entre usuaris les tarifes d&amp;rsquo;una transacció sense necesitat de coordinació entre usuaris.
 En aquest post s&amp;rsquo;explica què és el GroupHug, com funciona tècnicament i quins avantatges i inconvenients té.
 The Bitcoin Grouphug El GroupHug és una solució de transaction batching que permet crear transaccions conjuntes entre usuaris similars a un coinjoin sense interacció ni coordinació entre els usuaris a canvi d&amp;rsquo;algunes limitacions.</description>
     </item>
     <item>
       <title>Com fer una transacció amb UTXOs de wallets diferents amb Sparrow</title>
-      <link>http://localhost:1313/catal%C3%A0/posts/psbt_sparrow/</link>
+      <link>http://pesvi.xyz/catal%C3%A0/posts/psbt_sparrow/</link>
       <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/catal%C3%A0/posts/psbt_sparrow/</guid>
+      <guid>http://pesvi.xyz/catal%C3%A0/posts/psbt_sparrow/</guid>
       <description>Suposem que en Bob i la Alice comparteixen pis i volen comprar un televisor que val 2 bitcoins pagant la meitat cada un. Per fer-ho en Bob podria enviar 1 bitcoin a la Alice perquè ella fes el pagament del televisor, però com que les comissions de xarxa són bastant elevades, decideixen crear una transacció conjunta on hi hagi dos inputs, un de l&amp;rsquo;Alice i un del Bob.
 &amp;#x1f4a1; Els exemples pràctics del post estan fets en testnet.</description>
     </item>
