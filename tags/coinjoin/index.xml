@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>UTXO Management on Pol Espinasa</title>
-    <link>https://pesvi.xyz/tags/utxo-management/</link>
-    <description>Recent content in UTXO Management on Pol Espinasa</description>
+    <title>Coinjoin on Pol Espinasa</title>
+    <link>https://pesvi.xyz/tags/coinjoin/</link>
+    <description>Recent content in Coinjoin on Pol Espinasa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>english</language>
     <lastBuildDate>Tue, 16 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://pesvi.xyz/tags/utxo-management/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://pesvi.xyz/tags/coinjoin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Grouphug - Batching transactions without interaction between users</title>
       <link>https://pesvi.xyz/posts/grouphug/</link>
@@ -16,14 +16,6 @@
       <description>With the intention of trying to help make Bitcoin transactions more economical and inspired by the implementation of Peach made by Czino GroupHug has been born. A transaction batching system that allows to share between users the fees of a transaction without the need of coordination between users.
 This post explains what GroupHug is, how it works technically and what advantages and disadvantages it has.
 The Bitcoin Grouphug GroupHug is a transaction batching solution that allows to create joint transactions between users similar to a coinjoin without interaction or coordination between users, but with some limitations.</description>
-    </item>
-    <item>
-      <title>How to make a transaction with UTXOs of different wallets with Sparrow</title>
-      <link>https://pesvi.xyz/posts/psbt_sparrow/</link>
-      <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://pesvi.xyz/posts/psbt_sparrow/</guid>
-      <description>Let&amp;rsquo;s suppose that Bob and Alice share a flat and want to buy a television worth 2 bitcoins, paying half each. To do so, Bob could send 1 bitcoin to Alice so that she pays for the TV, but since the network fees are quite high, they decide to create a joint transaction with two inputs, one from Alice and one from Bob.
-&amp;#x1f4a1; The practical examples in the post are made in testnet.</description>
     </item>
   </channel>
 </rss>
