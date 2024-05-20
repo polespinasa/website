@@ -69,12 +69,12 @@ Els avantatges són fàcils d'identificar, estalviar comissions a l'hora de fer 
 
 Cal destacar que seria un error entendre el GroupHug com un coinjoin (de l'estil Whirlpool o Wasasbi) o un mixer. Tot i que s'ajuntin entrades i sortides de diferents usuaris aquestes no són barrejades i coincideixen 1 a 1 en l'ordre. A més a més, estan enllaçades per la firma. Cada input d'un usuari està firmant l'output d'aquell mateix usuari. Per tant, el GroupHug **NO ÉS UNA EINA DE PRIVACITAT**.
 
-Com a inconvenients tenim que les transaccions que els usuaris introdueixen al GroupHug han de tenir el mateix nombre d'entrades que de sortides. A més, les transaccions han de complir uns requisits com ara especificar el mateix `Tx version` i mateix `LockTime` per tal de poder agrupar-les sense invalidar les firmes. I s'han de firmar amb el sighash `SINGLE | ANYONECANPAY` tots aquests requisits són un problema d'UX.
+Com a inconvenients tenim que les transaccions que els usuaris introdueixen al GroupHug han de tenir el mateix nombre d'entrades que de sortides. A més, les transaccions han de complir uns requisits com ara especificar el mateix `Tx version` i mateix `LockTime` per tal de poder agrupar-les sense invalidar les firmes. I s'han de firmar amb el sighash `SINGLE | ANYONECANPAY`, tots aquests requisits són un problema d'UX.
 
 Aquests problemes d'UX es podrien solucionar si el wallet en detectar que la transacció conté el mateix nombre d'inputs que d'outputs, donés l'opció a l'usuari d'enviar-la a un GroupHug i en fer-ho el propi wallet muntes la transacció complint tots els requisits mencionats prèviament.
 
 > :warning: **ALERTA DEV!**\
-> *Si algun desenvolupador de wallets llegeix això, ja sap... 😉 Podeu escriure'm al correu que hi ha en aquesta mateixa pàgina per tal d'implementar-ho o em podeu trobar per twitter*
+> *Si algun desenvolupador de wallets llegeix això, ja sap... 😉 Podeu escriure'm al correu que hi ha en aquesta mateixa pàgina, per tal d'implementar-ho, o em podeu trobar per twitter*
 
 ### Comunitat
 
