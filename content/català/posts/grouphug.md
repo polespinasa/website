@@ -49,6 +49,7 @@ El SigHash és bàsicament un _flag_ que s'utilitza per indicar què està firma
 > :bulb: Per a més informació sobre els diferents tipus de SigHash es poden consultar els següents enllaços: [MasteringBitcoin](https://github.com/bitcoinbook/bitcoinbook/blob/6c472dd00b649b18b6ca6bbcc8ba23775619ce08/ch06.asciidoc#signature-hash-types-sighash). Les imatges utilitzades a continuació també són del llibre Mastering Bitcoin.
 
 El SigHash que utilitza el GroupHug és: `SINGLE | ANYONECANPAY`. Aquest està format per dues parts. `SINGLE` significa que la firma aplica a totes les entrades però només a una sortida, concretament a la sortida del seu mateix nivell.
+
 ![](/grouphug/sighash_guia.png#center)
 ![](/grouphug/single.png#center)
 
