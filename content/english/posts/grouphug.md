@@ -3,7 +3,7 @@ title = 'Grouphug - Batching transactions without interaction between users'
 date = 2024-04-16
 draft = false
 tags = ["Sighash", "UTXO management", "PSBT", "Coinjoin", "Layer 1"]
-categories = ["Teoria"]
+categories = ["Theory"]
 +++
 
 With the intention of trying to help make Bitcoin transactions more economical and inspired by the implementation of [Peach](https://peachbitcoin.com/) made by [Czino](https://x.com/capoczino) GroupHug has been born. A _transaction batching_ system that allows to share between users the fees of a transaction without the need of coordination between users.
