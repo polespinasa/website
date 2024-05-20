@@ -7,8 +7,8 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Grouphug - Agrupació de transaccions sense interacció entre usuaris | Pol Espinasa</title>
 <meta name="keywords" content="Sighash, UTXO management, PSBT, Coinjoin, Layer 1">
-<meta name="description" content="Amb l&rsquo;intenció d&rsquo;intentar ajudar a fer transaccions de Bitcoin més econòmiques i inspirat en l&rsquo;implementació de Peach feta per en Czino neix el GroupHug. Un sistema de transaction batching que permet compartir entre usuaris les tarifes d&rsquo;una transacció sense necesitat de coordinació entre usuaris.
-En aquest post s&rsquo;explica què és el GroupHug, com funciona a nivell tècnic i quines avantatge i inconvenients té.
+<meta name="description" content="Amb la intenció d&rsquo;intentar ajudar a fer transaccions de Bitcoin més econòmiques i inspirat en la implementació de Peach feta per en Czino neix el GroupHug. Un sistema de transaction batching que permet compartir entre usuaris les tarifes d&rsquo;una transacció sense necesitat de coordinació entre usuaris.
+En aquest post s&rsquo;explica què és el GroupHug, com funciona tècnicament i quins avantatges i inconvenients té.
 The Bitcoin Grouphug El GroupHug és una solució de transaction batching que permet realitzar crear transaccions conjuntes entre usuaris similars a un coinjoin sense interacció ni coordinació entre els usuaris a canvi d&rsquo;algunes limitacions.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/catal%C3%A0/posts/grouphug/">
@@ -142,17 +142,17 @@ The Bitcoin Grouphug El GroupHug és una solució de transaction batching que pe
     <h1 class="post-title entry-hint-parent">
       Grouphug - Agrupació de transaccions sense interacció entre usuaris
     </h1>
-    <div class="post-meta"><span title='2024-04-16 00:00:00 +0000 UTC'>April 16, 2024</span>&nbsp;·&nbsp;2 min
+    <div class="post-meta"><span title='2024-04-16 00:00:00 +0000 UTC'>April 16, 2024</span>&nbsp;·&nbsp;5 min
 
 </div>
   </header> 
-  <div class="post-content"><p>Amb l&rsquo;intenció d&rsquo;intentar ajudar a fer transaccions de Bitcoin més econòmiques i inspirat en l&rsquo;implementació de <a href="https://peachbitcoin.com/">Peach</a> feta per en <a href="https://x.com/capoczino">Czino</a> neix el GroupHug. Un sistema de <em>transaction batching</em> que permet compartir entre usuaris les tarifes d&rsquo;una transacció sense necesitat de coordinació entre usuaris.</p>
-<p>En aquest post s&rsquo;explica què és el GroupHug, com funciona a nivell tècnic i quines avantatge i inconvenients té.</p>
+  <div class="post-content"><p>Amb la intenció d&rsquo;intentar ajudar a fer transaccions de Bitcoin més econòmiques i inspirat en la implementació de <a href="https://peachbitcoin.com/">Peach</a> feta per en <a href="https://x.com/capoczino">Czino</a> neix el GroupHug. Un sistema de <em>transaction batching</em> que permet compartir entre usuaris les tarifes d&rsquo;una transacció sense necesitat de coordinació entre usuaris.</p>
+<p>En aquest post s&rsquo;explica què és el GroupHug, com funciona tècnicament i quins avantatges i inconvenients té.</p>
 <!-- raw HTML omitted -->
 <h3 id="the-bitcoin-grouphug">The Bitcoin Grouphug<a hidden class="anchor" aria-hidden="true" href="#the-bitcoin-grouphug">#</a></h3>
 <p>El GroupHug és una solució de <em>transaction batching</em> que permet realitzar crear transaccions conjuntes entre usuaris similars a un coinjoin sense interacció ni coordinació entre els usuaris a canvi d&rsquo;algunes limitacions.</p>
-<p>El principal benefici que aporta aquest model és l&rsquo;estalvi de comissions. Aquest estalvi pot arribar a ser del 10% aproximadament. En un primer moment pot no semblar un estalvi gaire elevat però en un entorn amb comissions molt altes pot arribar a ser bastant significatiu.</p>
-<p>Per tal de cal·lcular l&rsquo;estalvi que pot donar-nos el GroupHug el que hem de fer és calcular el pès en <em>virtual bytes</em> que te cada camp d&rsquo;una transacció, l&rsquo;estalvi sera la relació entre el nombre d&rsquo;usuaris i el pès, dins d&rsquo;una transacció, dels camps comuns, és a dir, tot el que no siguin els inputs i els outputs.</p>
+<p>El principal benefici que aporta aquest model és l&rsquo;estalvi de comissions. Aquest estalvi pot arribar a ser del 10% aproximadament. En un primer moment pot no semblar un estalvi gaire elevat, però en un entorn amb comissions molt altes pot arribar a ser bastant significatiu.</p>
+<p>Per tal de calcular l&rsquo;estalvi que pot donar-nos el GroupHug el que hem de fer és calcular el pes en <em>virtual bytes</em> que té cada camp d&rsquo;una transacció, l&rsquo;estalvi serà la relació entre el nombre d&rsquo;usuaris i el pes, dins d&rsquo;una transacció, dels camps comuns, és a dir, tot el que no siguin els inputs i els outputs.</p>
 <p>Sabem que una transacció segwit P2WPKH amb 1 input i 1 output pesa 109.25 virtual bytes.
 Si ens quedem només amb els camps comuns tenim:</p>
 <table>
@@ -196,13 +196,43 @@ Si ens quedem només amb els camps comuns tenim:</p>
 </tr>
 </tbody>
 </table>
-<p>Tenim que els camps comuns pesen 12 bytes. Els passem a <em>Weight Units</em> múltiplicant per 4 els camps que no son segwit (Tx Version, Input Count, Output Counti i nLockTime) i obtenim que la mida en WU és de 42 WU. Per passar de WU a virtual bytes dividim per 4 i obtenim que els camps comuns ocupen 10.5 vb.</p>
-<p>Saben que els cams comuns representen 10.5/109.25 = ~9.6%.
-Per tant amb el GroupHug podem repartir el cost d&rsquo;aproximadament el 10% de la transacció entre els usuaris.</p>
+<p>Tenim que els camps comuns pesen 12 bytes. Els passem a <em>Weight Units</em> multiplicant per 4 els camps que no són segwit (Tx Version, Input Count, Output Counti i nLockTime) i obtenim que la mida en WU és de 42 WU. Per passar de WU a <em>virtual bytes</em> dividim per 4 i obtenim que els camps comuns ocupen 10.5 vb.</p>
+<p>Saben que els camps comuns representen 10.5/109.25 = ~9.6%.
+Per tant, amb el GroupHug podem repartir el cost d&rsquo;aproximadament el 10% de la transacció entre els usuaris.</p>
 <blockquote>
-<p>&#x1f4a1; Per més informació sobre com calcular la mida de les transaccions i perquè s&rsquo;afirma que una transacció P2WPKH 1in-1out pesa 109.25vb es poden consultar els següents enllaços: <a href="https://bitcoin.stackexchange.com/questions/92689/how-is-the-size-of-a-bitcoin-transaction-calculated">BitcoinStackExchange</a> i <a href="https://bitcoinops.org/en/tools/calc-size/">BitcoinOptech</a>.</p>
+<p>&#x1f4a1; Per a més informació sobre com calcular la mida de les transaccions i perquè s&rsquo;afirma que una transacció P2WPKH 1in-1out pesa 109.25vb es poden consultar els següents enllaços: <a href="https://bitcoin.stackexchange.com/questions/92689/how-is-the-size-of-a-bitcoin-transaction-calculated">BitcoinStackExchange</a> i <a href="https://bitcoinops.org/en/tools/calc-size/">BitcoinOptech</a>.</p>
 </blockquote>
 <h3 id="funcionament-a-baix-nivell">Funcionament a baix nivell<a hidden class="anchor" aria-hidden="true" href="#funcionament-a-baix-nivell">#</a></h3>
+<p>La principal eina que utilitza el GroupHug per funcionar és el que es coneix com a SigHash. Tot i que no és un terme gaire conegut per l&rsquo;usuari habitual de Bitcoin el fet és que s&rsquo;utilitza en cada input i en cada firma d&rsquo;una transacció.</p>
+<p>El SigHash és bàsicament una <em>flag</em> que s&rsquo;utilitza per indicar què està firmant. La idea que per poder gastar una UTXO s&rsquo;ha de proporcionar una firma vàlida és ben coneguda, però què es firma exactament? El SigHash ve a indicar això. N&rsquo;hi ha diferents, però el més habitual és el SigHash ALL on en cada firma es firmen TOTS els inputs i TOTS els outputs.</p>
+<blockquote>
+<p>&#x1f4a1; Per a més informació sobre els diferents tipus de SigHash es poden consultar els següents enllaços: <a href="https://github.com/bitcoinbook/bitcoinbook/blob/6c472dd00b649b18b6ca6bbcc8ba23775619ce08/ch06.asciidoc#signature-hash-types-sighash">MasteringBitcoin</a>. Les imatges utilitzades a continuació també són del llibre Mastering Bitcoin.</p>
+</blockquote>
+<p>El SigHash que utilitza el GroupHug és: &lsquo;SINGLE | ANYONECANPAY&rsquo;. Aquest està format per dues parts. SINGLE significa que la firma aplica a totes les entrades però només a una sortida, concretament a la sortida del seu mateix nivell.
+<img loading="lazy" src="/grouphug/sighash_guia.png#center" alt=""  />
+
+<img loading="lazy" src="/grouphug/single.png#center" alt=""  />
+</p>
+<p>Tal com es veu a la figura anterior, amb això aconseguim afegir sortides sense invalidar les firmes prèvies, però no entrades, ja que aquestes van totes firmades i, per tant, la transacció és rígida.</p>
+<p>Per tal de poder afegir entrades s&rsquo;afegeix el &lsquo;ANYONECANPAY&rsquo;. Tal com es veu a la figura amb la combinació d&rsquo;aquests indiquem que les firmes van 1 a 1 inputs amb outputs i, com a resultat, es pot afegir entrades i sortides indiscriminadament sense invalidar les firmes ja fetes.</p>
+<p><img loading="lazy" src="/grouphug/single_anyonecanpay.png#center" alt=""  />
+</p>
+<p>Aquesta doncs és la base de la no-interacció entre usuaris del GroupHug. Com que les firmes van 1 a 1 entre inputs i outputs es poden agrupar transaccions de diferents usuaris <strong>ja firmades</strong> sense invalidar les seves firmes.</p>
+<p>Hi ha algun detall més que s&rsquo;ha de tenir en compte i és que les firmes a part de firmar inputs i outputs firmen alguns camps comuns de la transacció com el &lsquo;Tx version&rsquo; i el &lsquo;LockTime&rsquo;.</p>
+<h3 id="avantatges-i-inconvenients">Avantatges i inconvenients<a hidden class="anchor" aria-hidden="true" href="#avantatges-i-inconvenients">#</a></h3>
+<p>Els avantatges són fàcils d&rsquo;identificar, estalviar comissions a l&rsquo;hora de fer una transacció pagant entre diferents usuaris el cost dels bytes dels camps comuns d&rsquo;una transacció.</p>
+<p>Cal destacar que seria un error entendre el GroupHug com un coinjoin (de l&rsquo;estil Whirlpool o Wasasbi) o un mixer. Tot i que s&rsquo;ajuntin entrades i sortides de diferents usuaris aquestes no són barrejades i coincideixen 1 a 1 en l&rsquo;ordre. A més a més, estan enllaçades per la firma. Cada input d&rsquo;un usuari està firmant l&rsquo;output d&rsquo;aquell mateix usuari. Per tant, el GroupHug <strong>NO ÉS UNA EINA DE PRIVACITAT</strong>.</p>
+<p>Com a inconvenients tenim que les transaccions que els usuaris introdueixen al GroupHug han de tenir el mateix nombre d&rsquo;entrades que de sortides. A més, les transaccions han de complir uns requisits com ara especificar el mateix &lsquo;Tx version&rsquo; i mateix &lsquo;LockTime&rsquo; per tal de poder agrupar-les sense invalidar les firmes. I s&rsquo;han de firmar amb el sighash &lsquo;SINGLE | ANYONECANPAY&rsquo; tots aquests requisits són un problema d&rsquo;UX.</p>
+<p>Podeu consultar el codi sobre la meva implementació de GroupHug al repositori de <a href="https://github.com/polespinasa/bitcoin-grouphug">GitHub</a>.
+També podeu trobar-lo en funcionament en el servidor de la comunitat de <a href="https://x.com/bcnbitcoinonly">Barcelona Bitcoin Only</a>:</p>
+<ul>
+<li>Mainnet: <a href="https://grouphug.bitcoinbarcelona.xyz/">https://grouphug.bitcoinbarcelona.xyz/</a></li>
+<li>Testnet3: <a href="https://grouphug.testnet.bitcoinbarcelona.xyz/">https://grouphug.testnet.bitcoinbarcelona.xyz/</a></li>
+<li>Signet: <a href="https://grouphug.signet.bitcoinbarcelona.xyz/">https://grouphug.signet.bitcoinbarcelona.xyz/</a> (és la <a href="https://x.com/oomahq/status/1785685345536806986">signet de BBO</a> no l&rsquo;&ldquo;oficial&rdquo;)</li>
+</ul>
+<blockquote>
+<p>&#x1f4a1; Aquests problemes d&rsquo;UX es podrien solucionar si el wallet en detectar que la transacció conté el mateix nombre d&rsquo;inputs que d&rsquo;outputs, donés l&rsquo;opció a l&rsquo;usuari d&rsquo;enviar-la a un GroupHug i en fer-ho el propi wallet muntes la transacció complint tots els requisits mencionats prèviament. Si algun desenvolupador de wallets llegeix això, ja sap&hellip; 😉</p>
+</blockquote>
 
 
   </div>
