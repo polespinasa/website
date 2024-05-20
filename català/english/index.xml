@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Englishes on Pol Espinasa</title>
-    <link>http://localhost:1313/catal%C3%A0/english/</link>
+    <link>http://pesvi.xyz/catal%C3%A0/english/</link>
     <description>Recent content in Englishes on Pol Espinasa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>català</language>
-    <atom:link href="http://localhost:1313/catal%C3%A0/english/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://pesvi.xyz/catal%C3%A0/english/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

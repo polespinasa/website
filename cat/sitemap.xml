@@ -2,40 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/cat/categories/</loc>
+    <loc>http://pesvi.xyz/cat/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/categories/"
+                href="http://pesvi.xyz/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cat"
-                href="http://localhost:1313/cat/categories/"
+                href="http://pesvi.xyz/cat/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/cat/</loc>
+    <loc>http://pesvi.xyz/cat/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/"
+                href="http://pesvi.xyz/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cat"
-                href="http://localhost:1313/cat/"
+                href="http://pesvi.xyz/cat/"
                 />
   </url><url>
-    <loc>http://localhost:1313/cat/tags/</loc>
+    <loc>http://pesvi.xyz/cat/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/tags/"
+                href="http://pesvi.xyz/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cat"
-                href="http://localhost:1313/cat/tags/"
+                href="http://pesvi.xyz/cat/tags/"
                 />
   </url>
 </urlset>

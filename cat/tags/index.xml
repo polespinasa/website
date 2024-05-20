@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Pol Espinasa</title>
-    <link>http://localhost:1313/cat/tags/</link>
+    <link>http://pesvi.xyz/cat/tags/</link>
     <description>Recent content in Tags on Pol Espinasa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cat</language>
-    <atom:link href="http://localhost:1313/cat/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://pesvi.xyz/cat/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
