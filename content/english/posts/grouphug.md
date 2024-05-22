@@ -44,7 +44,7 @@ The main functionality that GroupHug uses is what is known as SigHash. Although 
 
 The SigHash is basically a _flag_ that is used to indicate what is being signed. The idea that in order to spend an UTXO a valid signature must be provided is well known, but what exactly is signing? The SigHash comes to indicate that. There are different ones, but the most common is the `ALL` SigHash where in each signature ALL the inputs and ALL the outputs are signed.
 
-> bulb: For more information about the different SigHash types, please refer to the following links: [MasteringBitcoin](https://github.com/bitcoinbook/bitcoinbook/blob/6c472dd00b649b18b6ca6bbcc8ba23775619ce08/ch06.asciidoc#signature-hash-types-sighash). The images used below are also from the Mastering Bitcoin book.
+> :bulb: For more information about the different SigHash types, please refer to the following links: [MasteringBitcoin](https://github.com/bitcoinbook/bitcoinbook/blob/6c472dd00b649b18b6ca6bbcc8ba23775619ce08/ch06.asciidoc#signature-hash-types-sighash). The images used below are also from the Mastering Bitcoin book.
 
 The SigHash used by GroupHug is: `SINGLE | ANYONECANPAY`. This is made up of two parts. `SINGLE` means that the signature applies to all inputs but only to one output, specifically to the same level output.
 
