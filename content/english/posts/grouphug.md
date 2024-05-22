@@ -19,7 +19,7 @@ The main benefit of this model is the reduction of fees. The savings can be up t
 
 In order to calculate the savings that GroupHug can give us, what we have to do is to calculate the weight in _virtual bytes_ that each field of a transaction has, the savings will be the relation between the number of users and the weight, within a transaction, of the common fields, that is to say, everything that is not the inputs and the outputs.
 
-We know that a P2WPKH-secured transaction with 1 input and 1 output weighs 109.25 virtual bytes.
+We know that a P2WPKH transaction with 1 input and 1 output weighs 109.25 virtual bytes.
 If we stay only with the common fields we have:
 
 | Field | Size (Bytes) | Size (WU)
