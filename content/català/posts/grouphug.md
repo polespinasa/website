@@ -42,7 +42,7 @@ Per tant, amb el GroupHug podem repartir el cost d'aproximadament el 10% de la t
 
 ### Funcionament a baix nivell
 
-La principal eina que utilitza el GroupHug per funcionar és el que es coneix com a SigHash. Tot i que no és un terme gaire conegut per l'usuari habitual de Bitcoin el fet és que s'utilitza en cada input i en cada firma d'una transacció.
+La principal eina que utilitza el GroupHug per funcionar és el que es coneix com a SigHash. Tot i que no és un terme gaire conegut per l'usuari habitual de Bitcoin el fet és que s'utilitza en cada firma d'una transacció.
 
 El SigHash és bàsicament un _flag_ que s'utilitza per indicar què està firmant. La idea que per poder gastar una UTXO s'ha de proporcionar una firma vàlida és ben coneguda, però què es firma exactament? El SigHash ve a indicar això. N'hi ha diferents, però el més habitual és el SigHash `ALL` on en cada firma es firmen TOTS els inputs i TOTS els outputs.
 

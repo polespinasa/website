@@ -40,7 +40,7 @@ Therefore, with GroupHug we can spread the cost of about 10% of the transaction 
 
 ### Low-level operation
 
-The main functionality that GroupHug uses is what is known as SigHash. Although it is not a term that is well known to regular Bitcoin users, the fact is that it is used in every input and every signature of a transaction.
+The main functionality that GroupHug uses is what is known as SigHash. Although it is not a term that is well known to regular Bitcoin users, the fact is that it is used in every signature of a transaction.
 
 The SigHash is basically a _flag_ that is used to indicate what is being signed. The idea that in order to spend an UTXO a valid signature must be provided is well known, but what exactly is signing? The SigHash comes to indicate that. There are different ones, but the most common is the `ALL` SigHash where in each signature ALL the inputs and ALL the outputs are signed.
 
