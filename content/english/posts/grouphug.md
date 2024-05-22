@@ -42,7 +42,7 @@ Therefore, with GroupHug we can spread the cost of about 10% of the transaction 
 
 The main functionality that GroupHug uses is what is known as SigHash. Although it is not a term that is well known to regular Bitcoin users, the fact is that it is used in every signature of a transaction.
 
-The SigHash is basically a _flag_ that is used to indicate what is being signed. The idea that in order to spend an UTXO a valid signature must be provided is well known, but what exactly is signing? The SigHash comes to indicate that. There are different ones, but the most common is the `ALL` SigHash where in each signature ALL the inputs and ALL the outputs are signed.
+The SigHash is basically a _flag_ that is used to indicate what is being signed. The idea that in order to spend an UTXO a valid signature must be provided is well known, but what exactly is it signing? The SigHash comes to indicate that. There are different ones, but the most common is the SigHash `ALL` where in each signature ALL the inputs and ALL the outputs are signed.
 
 > :bulb: For more information about the different SigHash types, please refer to the following links: [MasteringBitcoin](https://github.com/bitcoinbook/bitcoinbook/blob/6c472dd00b649b18b6ca6bbcc8ba23775619ce08/ch06.asciidoc#signature-hash-types-sighash). The images used below are also from the Mastering Bitcoin book.
 
@@ -51,7 +51,7 @@ The SigHash used by GroupHug is: `SINGLE | ANYONECANPAY`. This is made up of two
 ![](/grouphug/sighash_guia.png#center)
 ![](/grouphug/single.png#center)
 
-As it is seen in the previous figure, with this we manage to add outputs without invalidating the previous signatures, but not inputs, since these are all signed and, therefore, the transaction is rigid.
+As it is seen in the previous figure, with this we manage to add outputs without invalidating the previous signatures, but not inputs, since these are all signed and, therefore, the inputs of a transaction are rigid.
 
 In order to be able to add inputs the `ANYONECANPAY` is added. As shown in the figure with the combination of these we indicate that the signatures go 1 to 1 inputs with outputs and, as a result, it is possible to add inputs and outputs indiscriminately without invalidating the signatures already made.
 
