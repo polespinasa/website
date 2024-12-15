@@ -61,6 +61,10 @@ menu:
     #  name: Archives
     #  url: /archives/
     #  weight: 30
+    - identifier: PRs
+      name: PRs
+      url: /pullrequests/
+      weight: 30
     - identifier: publications
       name: Publications
       url: /publications/
