@@ -1,5 +1,7 @@
 # Recommended Lectures
 
+We love books right? :)
+
 ## Bitcoin (Technical)
 
 - [Mastering Bitcoin 2n Edition (preferable)](https://www.amazon.es/Mastering-Bitcoin-2e-Andreas-Antonopoulos/dp/1491954388?dib=eyJ2IjoiMSJ9.YUALTah_-FB3GhUbBZEuQzGU4ms4tLC9gqvxToIF58-1nhqt4KdFGDmdUv25swhhbP7T0qREpZ3-zR8BzkKZ8HW0hzz-CjEdwBsod3m0nJFwFCpKHpluUJ7U2AHJMorj9-_QuMxm3bIMIE4Mztvy51etZ8niAvnhkN5HHkHp2N-wmk-s_WvpDn2P33t1GDzkygCc5mHGJ4xIVVj03t8_U7OzdEWaVQjtUdcwLmNGenabBTv0aKHHAP7rwm7DSWJr2yycvXfXDC0GwgvK4DsFZN1eMwy4dZ6y_BhC5dLIBxTD8kbjOdwKq4H-gvcFxHF5kTffylCwCkJjoLDBc4l87KhtDeS-zlYZpsNwtQnMzSE4OcGDjXf5-O-wSxL_d5B2dhX5FSnJq11v1y_Lgprr-v2RfCDsrNRa8FiDwEAYz_aO8Fc56UQycJBDhaGEhZ9M.9ikyydJmbB9N0P12UtiAdkkY7oQxmmWU8yKUGl6T2JQ&dib_tag=se&keywords=mastering+bitcoin&nsdOptOutParam=true&qid=1734282949&sr=8-3&linkCode=ll1&tag=pesvi-21&linkId=43810e38d4235d51dfd1bcaacac94b76&language=es_ES&ref_=as_li_ss_tl)
