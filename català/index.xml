@@ -50,7 +50,12 @@ Papers Pol Espinasa-Vilarrasa, Sílvia Sanvicente, Cristina Pérez-Solà, and Jo
       <guid>https://pesvi.xyz/catal%C3%A0/pullrequests/</guid>
       <description>Troba aquí una llista dels meus PRs i contribucions a diferents projectes de codi obert relacionats amb Bitcoin.
 Bitcoin Core My Bitcoin Core Workspace
-#31278 - wallet, rpc: Settxfeerate Status -&amp;gt; Open #31252 - rpc: print P2WSH witScript in getrawtransaction Status -&amp;gt; Open #31177 - rpc, logging: return &amp;ldquo;verificationprogress&amp;rdquo; of 1 when up to date Status -&amp;gt; Open </description>
+#31278 - wallet, rpc: Settxfeerate
+Status → Open
+#31252 - rpc: print P2WSH witScript in getrawtransaction
+Status → Open
+#31177 - rpc, logging: return &amp;ldquo;verificationprogress&amp;rdquo; of 1 when up to date
+Status → Open</description>
     </item>
   </channel>
 </rss>
