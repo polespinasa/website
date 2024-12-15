@@ -4,6 +4,7 @@ date = 2024-05-20
 draft = false
 tags = ["Sighash", "UTXO management", "PSBT", "Coinjoin", "Layer 1"]
 categories = ["Theory"]
+description = "How GroupHug works, a server programmed in Rust that allows grouping or batching of transactions without interaction between users using SigHash Single | AnyoneCanPay"
 +++
 
 With the intention of trying to help make Bitcoin transactions more economical and inspired by the implementation of [Peach](https://peachbitcoin.com/) made by [Czino](https://x.com/capoczino) GroupHug has been born. A _transaction batching_ system that allows to share between users the fees of a transaction without the need of coordination between users.

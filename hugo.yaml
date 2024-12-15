@@ -1,24 +1,24 @@
 baseURL: "https://pesvi.xyz"
 languageCode: en-us
-title: Pol Espinasa
+title: "Explore Bitcoin and the Lightning Network: From Theory to Practice"
+author: "Pol Espinasa"
 theme: PaperMod
 enableEmoji: true
-
+enableRobotsTXT: true
 
 DefaultContentLanguage: English
 
 languages:
   English:
     contentDir: content/english
-    title: Pol Espinasa
+    title: "Explore Bitcoin and the Lightning Network: From Theory to Practice"
     languageName: English
     weight: 1
   Català:
     contentDir: content/català
-    title: Pol Espinasa
+    title: "Explora Bitcoin i la Lightning Network: de la Teoria a la Pràctica"
     languageName: Català
     weight: 2
-
 
 
 params:
@@ -26,7 +26,12 @@ params:
   ShowShareButtons: true
   math: true
   comments: true
-
+  author: "Pol Espinasa"
+  favicon: true
+  faviconVersion: 2
+  msColor: "#ffffff"
+  iOSColor: "#ffffff"
+  Description: "Blog about Bitcoin and the Lightning Network, focusing on technical topics, both at a theoretical level and through practical tutorials."
   homeInfoParams:
     Title: "Hi there! Bitcoin and LN stuff"
     Content: "4F682C20736F20796F7527726520616C736F206F62736573736564207769746820426974636F696E3F"

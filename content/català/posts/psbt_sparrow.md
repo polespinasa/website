@@ -4,6 +4,7 @@ draft = false
 date = 2024-04-07
 tags = ["Wallets", "UTXO management", "PSBT", "Sparrow", "Layer 1", "Bitcoin-cli"]
 categories = ["Guies"]
+about = "How to make a Coinjoin or a grouping of transactions without interaction between users using Sparrow Wallet and Bitcoin Core"
 +++
 
 Suposem que en Bob i la Alice comparteixen pis i volen comprar un televisor que val 2 bitcoins pagant la meitat cada un.
