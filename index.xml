@@ -40,5 +40,14 @@ Pd. You can report errors in the posts to Github, I will correct them as soon as
 Papers Pol Espinasa-Vilarrasa, Sílvia Sanvicente, Cristina Pérez-Solà, and Jordi Herrera-Joancomartí. &amp;ldquo;Decision Tree Based Inference of Lightning Network Client Implementations.&amp;rdquo; In International Conference on Modeling Decisions for Artificial Intelligence, pp. 103-114. Cham: Springer Nature Switzerland, 2024.
 [ GoogleSchoolar | Cite BibTeX ]</description>
     </item>
+    <item>
+      <title></title>
+      <link>https://pesvi.xyz/pullrequests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://pesvi.xyz/pullrequests/</guid>
+      <description>Find here a list of my PRs and contributions to different Bitcoin related open source projects.
+Bitcoin Core My Bitcoin Core Workspace
+#31278 - wallet, rpc: Settxfeerate Status -&amp;gt; Open #31252 - rpc: print P2WSH witScript in getrawtransaction Status -&amp;gt; Open #31177 - rpc, logging: return &amp;ldquo;verificationprogress&amp;rdquo; of 1 when up to date Status -&amp;gt; Open </description>
+    </item>
   </channel>
 </rss>
