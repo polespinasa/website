@@ -226,6 +226,18 @@
                 href="https://pesvi.xyz/catal%C3%A0/pullrequests/"
                 />
   </url><url>
+    <loc>https://pesvi.xyz/catal%C3%A0/resources/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/resources/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/resources/"
+                />
+  </url><url>
     <loc>https://pesvi.xyz/catal%C3%A0/search/</loc>
     <xhtml:link
                 rel="alternate"
