@@ -10,7 +10,7 @@
 <meta name="description" content="How to make a Coinjoin or a grouping of transactions without interaction between users using Sparrow Wallet and Bitcoin Core">
 <meta name="author" content="Pol Espinasa">
 <link rel="canonical" href="https://pesvi.xyz/posts/psbt_sparrow/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://pesvi.xyz/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://pesvi.xyz/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://pesvi.xyz/favicon-32x32.png">
@@ -57,26 +57,37 @@
 
     </style>
 </noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KXYVPZQE88"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-KXYVPZQE88', { 'anonymize_ip': false });
-}
-</script>
-<meta property="og:title" content="How to make a transaction with UTXOs of different wallets with Sparrow" />
-<meta property="og:description" content="How to make a Coinjoin or a grouping of transactions without interaction between users using Sparrow Wallet and Bitcoin Core" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://pesvi.xyz/posts/psbt_sparrow/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-04-07T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-04-07T00:00:00+00:00" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="How to make a transaction with UTXOs of different wallets with Sparrow"/>
-<meta name="twitter:description" content="How to make a Coinjoin or a grouping of transactions without interaction between users using Sparrow Wallet and Bitcoin Core"/>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXYVPZQE88"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-KXYVPZQE88');
+        }
+      </script><meta property="og:url" content="https://pesvi.xyz/posts/psbt_sparrow/">
+  <meta property="og:site_name" content="Explore Bitcoin and the Lightning Network: From Theory to Practice">
+  <meta property="og:title" content="How to make a transaction with UTXOs of different wallets with Sparrow">
+  <meta property="og:description" content="How to make a Coinjoin or a grouping of transactions without interaction between users using Sparrow Wallet and Bitcoin Core">
+  <meta property="og:locale" content="english">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-04-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-04-07T00:00:00+00:00">
+    <meta property="article:tag" content="Wallets">
+    <meta property="article:tag" content="UTXO Management">
+    <meta property="article:tag" content="PSBT">
+    <meta property="article:tag" content="Sparrow">
+    <meta property="article:tag" content="Layer 1">
+    <meta property="article:tag" content="Bitcoin-Cli">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to make a transaction with UTXOs of different wallets with Sparrow">
+<meta name="twitter:description" content="How to make a Coinjoin or a grouping of transactions without interaction between users using Sparrow Wallet and Bitcoin Core">
 
 
 <script type="application/ld+json">
@@ -305,13 +316,10 @@ It takes as argument a raw PSBT encoded in base64:</p>
 </blockquote>
 <h3 id="signing-the-psbt">Signing the PSBT<a hidden class="anchor" aria-hidden="true" href="#signing-the-psbt">#</a></h3>
 <p>The first to sign the transaction will be Alice. To do so, she opens her Sparrow wallet and uploads the transaction obtained from the command &ldquo;<em>utxoupdatepsbt</em>&rdquo; in the form of a text:</p>
-<p><img loading="lazy" src="/psbt_multi_utxo_sparrow/openTx.png#center" alt=""  />
-
-<img loading="lazy" src="/psbt_multi_utxo_sparrow/open_from_text.png#center" alt=""  />
-</p>
+<p><img loading="lazy" src="/psbt_multi_utxo_sparrow/openTx.png#center">
+<img loading="lazy" src="/psbt_multi_utxo_sparrow/open_from_text.png#center"></p>
 <p>With the transaction loaded it can be seen how Sparrow itself detects that the first entry belongs to Alice:
-<img loading="lazy" src="/psbt_multi_utxo_sparrow/tx_pre_sign_alice.png#center" alt=""  />
-</p>
+<img loading="lazy" src="/psbt_multi_utxo_sparrow/tx_pre_sign_alice.png#center"></p>
 <p>In order to sign it Alice presses &ldquo;<em>Finalize Transaction for Signing</em>&rdquo; and then &ldquo;<em>Sign</em>&rdquo;.
 Once signed Alice saves the transaction by pressing the &ldquo;Save Transaction&rdquo; option. This generates a &ldquo;<em>.psbt</em>&rdquo; file.</p>
 <p>As she is curious to know if it has been done correctly she executes the command &ldquo;<em>analyzepsbt</em>&rdquo;. This takes as argument a raw transaction encoded in base64. In order to show the transaction of the &ldquo;<em>.psbt</em>&rdquo; file in the required format Alice uses the command:</p>
@@ -404,15 +412,12 @@ This takes for arguments the PSBTs in a list as follows:</p>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>They thus check that neither of the two signatures is missing.
 At this point either of the two can broadcast the transaction by loading it to the Sparrow from text, as in the previous steps, and selecting the &ldquo;<em>Broadcast Transaction</em>&rdquo; option.
-<img loading="lazy" src="/psbt_multi_utxo_sparrow/broadcast.png#center" alt=""  />
-</p>
+<img loading="lazy" src="/psbt_multi_utxo_sparrow/broadcast.png#center"></p>
 <p>We can check in any web browser that the <a href="https://mempool.space/testnet/tx/c659c7cb31733f153f04c1fbffeec91b99a96f2e289f47852374d0101e303e50">transaction</a> has been sent correctly and pay the 2 bitcoins for the TV:</p>
 <p>transaction id: <code>c659c7cb31733f153f04c1fbffeec91b99a96f2e289f47852374d0101e303e50</code>
-<img loading="lazy" src="/psbt_multi_utxo_sparrow/mempool_space.png#center" alt=""  />
-</p>
+<img loading="lazy" src="/psbt_multi_utxo_sparrow/mempool_space.png#center"></p>
 <p>The transaction has been sent correctly and Bob and Alice have been able to pay for the TV with a joint transaction!!!!
-<img loading="lazy" src="/psbt_multi_utxo_sparrow/tv.jpeg#center" alt=""  />
-</p>
+<img loading="lazy" src="/psbt_multi_utxo_sparrow/tv.jpeg#center"></p>
 
 
   </div>
@@ -499,7 +504,8 @@ At this point either of the two can broadcast the transaction by loading it to t
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://pesvi.xyz/">Explore Bitcoin and the Lightning Network: From Theory to Practice</a></span>
+        <span>&copy; 2024 <a href="https://pesvi.xyz/">Explore Bitcoin and the Lightning Network: From Theory to Practice</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

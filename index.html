@@ -2,7 +2,7 @@
 <html lang="english" dir="auto">
 
 <head>
-	<meta name="generator" content="Hugo 0.124.1"><meta charset="utf-8">
+	<meta name="generator" content="Hugo 0.139.4"><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -11,7 +11,7 @@
 <meta name="description" content="Blog about Bitcoin and the Lightning Network, focusing on technical topics, both at a theoretical level and through practical tutorials.">
 <meta name="author" content="Pol Espinasa">
 <link rel="canonical" href="https://pesvi.xyz/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://pesvi.xyz/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://pesvi.xyz/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://pesvi.xyz/favicon-32x32.png">
@@ -59,24 +59,28 @@
 
     </style>
 </noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KXYVPZQE88"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-KXYVPZQE88', { 'anonymize_ip': false });
-}
-</script>
-<meta property="og:title" content="Explore Bitcoin and the Lightning Network: From Theory to Practice" />
-<meta property="og:description" content="Blog about Bitcoin and the Lightning Network, focusing on technical topics, both at a theoretical level and through practical tutorials." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://pesvi.xyz/" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Explore Bitcoin and the Lightning Network: From Theory to Practice"/>
-<meta name="twitter:description" content="Blog about Bitcoin and the Lightning Network, focusing on technical topics, both at a theoretical level and through practical tutorials."/>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXYVPZQE88"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-KXYVPZQE88');
+        }
+      </script><meta property="og:url" content="https://pesvi.xyz/">
+  <meta property="og:site_name" content="Explore Bitcoin and the Lightning Network: From Theory to Practice">
+  <meta property="og:title" content="Explore Bitcoin and the Lightning Network: From Theory to Practice">
+  <meta property="og:description" content="Blog about Bitcoin and the Lightning Network, focusing on technical topics, both at a theoretical level and through practical tutorials.">
+  <meta property="og:locale" content="english">
+  <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Explore Bitcoin and the Lightning Network: From Theory to Practice">
+<meta name="twitter:description" content="Blog about Bitcoin and the Lightning Network, focusing on technical topics, both at a theoretical level and through practical tutorials.">
 
 <script type="application/ld+json">
 {
@@ -85,7 +89,7 @@ if (!doNotTrack) {
   "name": "Explore Bitcoin and the Lightning Network: From Theory to Practice",
   "url": "https://pesvi.xyz/",
   "description": "Blog about Bitcoin and the Lightning Network, focusing on technical topics, both at a theoretical level and through practical tutorials.",
-  "thumbnailUrl": "https://pesvi.xyz/favicon.ico",
+  "logo": "https://pesvi.xyz/favicon.ico",
   "sameAs": [
       "https://github.com/polespinasa", "https://twitter.com/sliv3r__", "https://www.linkedin.com/in/polespinasa/", "mailto://bitcoin@pesvi.com"
   ]
@@ -230,7 +234,8 @@ if (!doNotTrack) {
   <div class="entry-content">
     <p>With the intention of trying to help make Bitcoin transactions more economical and inspired by the implementation of Peach made by Czino GroupHug has been born. A transaction batching system that allows to share between users the fees of a transaction without the need of coordination between users.
 This post explains what GroupHug is, how it works technically and what advantages and disadvantages it has.
-The Bitcoin Grouphug GroupHug is a transaction batching solution that allows to create joint transactions between users similar to a coinjoin without interaction or coordination between users, but with some limitations....</p>
+The Bitcoin Grouphug GroupHug is a transaction batching solution that allows to create joint transactions between users similar to a coinjoin without interaction or coordination between users, but with some limitations.
+...</p>
   </div>
   <footer class="entry-footer"><span title='2024-05-20 00:00:00 +0000 UTC'>May 20, 2024</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Pol Espinasa</footer>
   <a class="entry-link" aria-label="post link to Grouphug - Batching transactions without interaction between users" href="https://pesvi.xyz/posts/grouphug/"></a>
@@ -243,7 +248,8 @@ The Bitcoin Grouphug GroupHug is a transaction batching solution that allows to 
   </header>
   <div class="entry-content">
     <p>Let’s suppose that Bob and Alice share a flat and want to buy a television worth 2 bitcoins, paying half each. To do so, Bob could send 1 bitcoin to Alice so that she pays for the TV, but since the network fees are quite high, they decide to create a joint transaction with two inputs, one from Alice and one from Bob.
-💡 The practical examples in the post are made in testnet....</p>
+💡 The practical examples in the post are made in testnet. Therefore, if you want to execute the Bob and Alice commands with the same values or look up the transactions in a explorer, you have to do it from the corresponding testnet versions.
+...</p>
   </div>
   <footer class="entry-footer"><span title='2024-04-07 00:00:00 +0000 UTC'>April 7, 2024</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Pol Espinasa</footer>
   <a class="entry-link" aria-label="post link to How to make a transaction with UTXOs of different wallets with Sparrow" href="https://pesvi.xyz/posts/psbt_sparrow/"></a>
@@ -251,7 +257,8 @@ The Bitcoin Grouphug GroupHug is a transaction batching solution that allows to 
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://pesvi.xyz/">Explore Bitcoin and the Lightning Network: From Theory to Practice</a></span>
+        <span>&copy; 2024 <a href="https://pesvi.xyz/">Explore Bitcoin and the Lightning Network: From Theory to Practice</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

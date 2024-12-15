@@ -4,7 +4,7 @@
     <title>UTXO Management on Explora Bitcoin i la Lightning Network: de la Teoria a la Pràctica</title>
     <link>https://pesvi.xyz/catal%C3%A0/tags/utxo-management/</link>
     <description>Recent content in UTXO Management on Explora Bitcoin i la Lightning Network: de la Teoria a la Pràctica</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.139.4</generator>
     <language>català</language>
     <lastBuildDate>Mon, 20 May 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://pesvi.xyz/catal%C3%A0/tags/utxo-management/index.xml" rel="self" type="application/rss+xml" />
@@ -13,17 +13,21 @@
       <link>https://pesvi.xyz/catal%C3%A0/posts/grouphug/</link>
       <pubDate>Mon, 20 May 2024 00:00:00 +0000</pubDate>
       <guid>https://pesvi.xyz/catal%C3%A0/posts/grouphug/</guid>
-      <description>Amb la intenció d&amp;rsquo;intentar ajudar a fer transaccions de Bitcoin més econòmiques i inspirat en la implementació de Peach feta per en Czino neix el GroupHug. Un sistema de transaction batching que permet compartir entre usuaris les tarifes d&amp;rsquo;una transacció sense necesitat de coordinació entre usuaris.
-En aquest post s&amp;rsquo;explica què és el GroupHug, com funciona tècnicament i quins avantatges i inconvenients té.
-The Bitcoin Grouphug El GroupHug és una solució de transaction batching que permet crear transaccions conjuntes entre usuaris similars a un coinjoin sense interacció ni coordinació entre els usuaris a canvi d&amp;rsquo;algunes limitacions.</description>
+      <description>&lt;p&gt;Amb la intenció d&amp;rsquo;intentar ajudar a fer transaccions de Bitcoin més econòmiques i inspirat en la implementació de &lt;a href=&#34;https://peachbitcoin.com/&#34;&gt;Peach&lt;/a&gt; feta per en &lt;a href=&#34;https://x.com/capoczino&#34;&gt;Czino&lt;/a&gt; neix el GroupHug. Un sistema de &lt;em&gt;transaction batching&lt;/em&gt; que permet compartir entre usuaris les tarifes d&amp;rsquo;una transacció sense necesitat de coordinació entre usuaris.&lt;/p&gt;
+&lt;p&gt;En aquest post s&amp;rsquo;explica què és el GroupHug, com funciona tècnicament i quins avantatges i inconvenients té.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;the-bitcoin-grouphug&#34;&gt;The Bitcoin Grouphug&lt;/h3&gt;
+&lt;p&gt;El GroupHug és una solució de &lt;em&gt;transaction batching&lt;/em&gt; que permet crear transaccions conjuntes entre usuaris similars a un coinjoin sense interacció ni coordinació entre els usuaris a canvi d&amp;rsquo;algunes limitacions.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Com fer una transacció amb UTXOs de wallets diferents amb Sparrow</title>
       <link>https://pesvi.xyz/catal%C3%A0/posts/psbt_sparrow/</link>
       <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
       <guid>https://pesvi.xyz/catal%C3%A0/posts/psbt_sparrow/</guid>
-      <description>Suposem que en Bob i la Alice comparteixen pis i volen comprar un televisor que val 2 bitcoins pagant la meitat cada un. Per fer-ho en Bob podria enviar 1 bitcoin a la Alice perquè ella fes el pagament del televisor, però com que les comissions de xarxa són bastant elevades, decideixen crear una transacció conjunta on hi hagi dos inputs, un de l&amp;rsquo;Alice i un del Bob.
-&amp;#x1f4a1; Els exemples pràctics del post estan fets en testnet.</description>
+      <description>&lt;p&gt;Suposem que en Bob i la Alice comparteixen pis i volen comprar un televisor que val 2 bitcoins pagant la meitat cada un.
+Per fer-ho en Bob podria enviar 1 bitcoin a la Alice perquè ella fes el pagament del televisor, però com que les comissions de xarxa són bastant elevades, decideixen crear una transacció conjunta on hi hagi dos inputs, un de l&amp;rsquo;Alice i un del Bob.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;#x1f4a1; &lt;em&gt;Els exemples pràctics del post estan fets en testnet. Per tant, si es vol executar les comandes del Bob i l&amp;rsquo;Alice amb els mateixos valors o buscar les transaccions a un explorador s&amp;rsquo;ha de fer des de les versions de testnet corresponents.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

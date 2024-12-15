@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - Explora Bitcoin i la Lightning Network: de la Teoria a la Pràctica">
 <meta name="author" content="Pol Espinasa">
 <link rel="canonical" href="https://pesvi.xyz/catal%C3%A0/posts/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://pesvi.xyz/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://pesvi.xyz/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://pesvi.xyz/favicon-32x32.png">
@@ -58,24 +58,28 @@
 
     </style>
 </noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KXYVPZQE88"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-KXYVPZQE88', { 'anonymize_ip': false });
-}
-</script>
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="Blog about Bitcoin and the Lightning Network, focusing on technical topics, both at a theoretical level and through practical tutorials." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://pesvi.xyz/catal%C3%A0/posts/" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Blog about Bitcoin and the Lightning Network, focusing on technical topics, both at a theoretical level and through practical tutorials."/>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXYVPZQE88"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-KXYVPZQE88');
+        }
+      </script><meta property="og:url" content="https://pesvi.xyz/catal%C3%A0/posts/">
+  <meta property="og:site_name" content="Explora Bitcoin i la Lightning Network: de la Teoria a la Pràctica">
+  <meta property="og:title" content="Posts">
+  <meta property="og:description" content="Blog about Bitcoin and the Lightning Network, focusing on technical topics, both at a theoretical level and through practical tutorials.">
+  <meta property="og:locale" content="català">
+  <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Posts">
+<meta name="twitter:description" content="Blog about Bitcoin and the Lightning Network, focusing on technical topics, both at a theoretical level and through practical tutorials.">
 
 
 <script type="application/ld+json">
@@ -188,7 +192,8 @@ if (!doNotTrack) {
   <div class="entry-content">
     <p>Amb la intenció d’intentar ajudar a fer transaccions de Bitcoin més econòmiques i inspirat en la implementació de Peach feta per en Czino neix el GroupHug. Un sistema de transaction batching que permet compartir entre usuaris les tarifes d’una transacció sense necesitat de coordinació entre usuaris.
 En aquest post s’explica què és el GroupHug, com funciona tècnicament i quins avantatges i inconvenients té.
-The Bitcoin Grouphug El GroupHug és una solució de transaction batching que permet crear transaccions conjuntes entre usuaris similars a un coinjoin sense interacció ni coordinació entre els usuaris a canvi d’algunes limitacions....</p>
+The Bitcoin Grouphug El GroupHug és una solució de transaction batching que permet crear transaccions conjuntes entre usuaris similars a un coinjoin sense interacció ni coordinació entre els usuaris a canvi d’algunes limitacions.
+...</p>
   </div>
   <footer class="entry-footer"><span title='2024-05-20 00:00:00 +0000 UTC'>May 20, 2024</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Pol Espinasa</footer>
   <a class="entry-link" aria-label="post link to Grouphug - Agrupació de transaccions sense interacció entre usuaris" href="https://pesvi.xyz/catal%C3%A0/posts/grouphug/"></a>
@@ -201,7 +206,8 @@ The Bitcoin Grouphug El GroupHug és una solució de transaction batching que pe
   </header>
   <div class="entry-content">
     <p>Suposem que en Bob i la Alice comparteixen pis i volen comprar un televisor que val 2 bitcoins pagant la meitat cada un. Per fer-ho en Bob podria enviar 1 bitcoin a la Alice perquè ella fes el pagament del televisor, però com que les comissions de xarxa són bastant elevades, decideixen crear una transacció conjunta on hi hagi dos inputs, un de l’Alice i un del Bob.
-💡 Els exemples pràctics del post estan fets en testnet....</p>
+💡 Els exemples pràctics del post estan fets en testnet. Per tant, si es vol executar les comandes del Bob i l’Alice amb els mateixos valors o buscar les transaccions a un explorador s’ha de fer des de les versions de testnet corresponents.
+...</p>
   </div>
   <footer class="entry-footer"><span title='2024-04-07 00:00:00 +0000 UTC'>April 7, 2024</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Pol Espinasa</footer>
   <a class="entry-link" aria-label="post link to Com fer una transacció amb UTXOs de wallets diferents amb Sparrow" href="https://pesvi.xyz/catal%C3%A0/posts/psbt_sparrow/"></a>
@@ -209,7 +215,8 @@ The Bitcoin Grouphug El GroupHug és una solució de transaction batching que pe
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://pesvi.xyz/catal%C3%A0/">Explora Bitcoin i la Lightning Network: de la Teoria a la Pràctica</a></span>
+        <span>&copy; 2024 <a href="https://pesvi.xyz/catal%C3%A0/">Explora Bitcoin i la Lightning Network: de la Teoria a la Pràctica</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

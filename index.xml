@@ -4,7 +4,7 @@
     <title>Explore Bitcoin and the Lightning Network: From Theory to Practice</title>
     <link>https://pesvi.xyz/</link>
     <description>Recent content on Explore Bitcoin and the Lightning Network: From Theory to Practice</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.139.4</generator>
     <language>english</language>
     <lastBuildDate>Mon, 20 May 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://pesvi.xyz/index.xml" rel="self" type="application/rss+xml" />
@@ -27,32 +27,51 @@
       <link>https://pesvi.xyz/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://pesvi.xyz/about/</guid>
-      <description>About me I am a PhD student doing research at the Department of Information and Communication Engineering (DEiC) at the Universitat Autònoma de Barcelona (UAB).
-My current interests are Bitcoin, the Lightning Network and protocols on top of Bitcoin. In fact, these are the topics on which I do research 😉. Apart from Bitcoin related topics, I am also passionate about cryptography, privacy, cybersecurity and programming.
-Pd. You can report errors in the posts to Github, I will correct them as soon as possible.</description>
+      <description>&lt;h1 id=&#34;about-me&#34;&gt;About me&lt;/h1&gt;
+&lt;p&gt;I am a PhD student doing research at the Department of Information and Communication Engineering (&lt;a href=&#34;https://deic.uab.cat/&#34;&gt;DEiC&lt;/a&gt;) at the Universitat Autònoma de Barcelona (&lt;a href=&#34;https://www.uab.cat/&#34;&gt;UAB&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;My current interests are Bitcoin, the Lightning Network and protocols on top of Bitcoin. In fact, these are the topics on which I do research 😉. Apart from Bitcoin related topics, I am also passionate about cryptography, privacy, cybersecurity and programming.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+Pd. You can report errors in the posts to &lt;a href=&#34;https://github.com/polespinasa/website&#34;&gt;Github&lt;/a&gt;, I will correct them as soon as possible. Thanks!!&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
       <link>https://pesvi.xyz/publications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://pesvi.xyz/publications/</guid>
-      <description>Google Schoolar Profile
-Papers Pol Espinasa-Vilarrasa, Sílvia Sanvicente, Cristina Pérez-Solà, and Jordi Herrera-Joancomartí. &amp;ldquo;Decision Tree Based Inference of Lightning Network Client Implementations.&amp;rdquo; In International Conference on Modeling Decisions for Artificial Intelligence, pp. 103-114. Cham: Springer Nature Switzerland, 2024.
-[ GoogleSchoolar | Cite BibTeX ]</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://scholar.google.co.uk/citations?user=usLeRS0AAAAJ&amp;amp;hl=en&amp;amp;oi=ao&#34;&gt;Google Schoolar Profile&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;papers&#34;&gt;Papers&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pol Espinasa-Vilarrasa, Sílvia Sanvicente, Cristina Pérez-Solà, and Jordi Herrera-Joancomartí. &amp;ldquo;Decision Tree Based Inference of Lightning Network Client Implementations.&amp;rdquo; In International Conference on Modeling Decisions for Artificial Intelligence, pp. 103-114. Cham: Springer Nature Switzerland, 2024.&lt;/p&gt;
+&lt;p&gt;[ &lt;a href=&#34;https://scholar.google.co.uk/citations?view_op=view_citation&amp;amp;hl=en&amp;amp;user=usLeRS0AAAAJ&amp;amp;citation_for_view=usLeRS0AAAAJ:u5HHmVD_uO8C&#34;&gt;GoogleSchoolar&lt;/a&gt; | &lt;a href=&#34;https://scholar.googleusercontent.com/scholar.bib?q=info:GN2C-gePbMUJ:scholar.google.com/&amp;amp;output=citation&amp;amp;scisdr=ClH_95H_EIGJnkOj5n0:AFWwaeYAAAAAZvWl_n0_aGJUoTXmPpWDuA3D6-Q&amp;amp;scisig=AFWwaeYAAAAAZvWl_nu-YDwnkhEcX4kfsS_HFPg&amp;amp;scisf=4&amp;amp;ct=citation&amp;amp;cd=-1&amp;amp;hl=en&amp;amp;scfhb=1&#34;&gt;Cite BibTeX&lt;/a&gt; ]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title></title>
       <link>https://pesvi.xyz/pullrequests/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://pesvi.xyz/pullrequests/</guid>
-      <description>Find here a list of my PRs and contributions to different Bitcoin related open source projects.
-Bitcoin Core My Bitcoin Core Workspace
-#31278 - wallet, rpc: Settxfeerate
-Status → Open
-#31252 - rpc: print P2WSH witScript in getrawtransaction
-Status → Open
-#31177 - rpc, logging: return &amp;ldquo;verificationprogress&amp;rdquo; of 1 when up to date
-Status → Open</description>
+      <description>&lt;p&gt;Find here a list of my PRs and contributions to different Bitcoin related open source projects.&lt;/p&gt;
+&lt;h2 id=&#34;bitcoin-core&#34;&gt;Bitcoin Core&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/polespinasa/bitcoin&#34;&gt;My Bitcoin Core Workspace&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/bitcoin/bitcoin/pull/31278&#34;&gt;#31278 - wallet, rpc: Settxfeerate&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Status → Open&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/bitcoin/bitcoin/pull/31252&#34;&gt;#31252 - rpc: print P2WSH witScript in getrawtransaction&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Status → Open&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/bitcoin/bitcoin/pull/31177&#34;&gt;#31177 - rpc, logging: return &amp;ldquo;verificationprogress&amp;rdquo; of 1 when up to date&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Status → Open&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

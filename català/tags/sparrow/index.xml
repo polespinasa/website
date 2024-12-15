@@ -4,7 +4,7 @@
     <title>Sparrow on Explora Bitcoin i la Lightning Network: de la Teoria a la Pràctica</title>
     <link>https://pesvi.xyz/catal%C3%A0/tags/sparrow/</link>
     <description>Recent content in Sparrow on Explora Bitcoin i la Lightning Network: de la Teoria a la Pràctica</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.139.4</generator>
     <language>català</language>
     <lastBuildDate>Sun, 07 Apr 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://pesvi.xyz/catal%C3%A0/tags/sparrow/index.xml" rel="self" type="application/rss+xml" />
@@ -13,8 +13,10 @@
       <link>https://pesvi.xyz/catal%C3%A0/posts/psbt_sparrow/</link>
       <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
       <guid>https://pesvi.xyz/catal%C3%A0/posts/psbt_sparrow/</guid>
-      <description>Suposem que en Bob i la Alice comparteixen pis i volen comprar un televisor que val 2 bitcoins pagant la meitat cada un. Per fer-ho en Bob podria enviar 1 bitcoin a la Alice perquè ella fes el pagament del televisor, però com que les comissions de xarxa són bastant elevades, decideixen crear una transacció conjunta on hi hagi dos inputs, un de l&amp;rsquo;Alice i un del Bob.
-&amp;#x1f4a1; Els exemples pràctics del post estan fets en testnet.</description>
+      <description>&lt;p&gt;Suposem que en Bob i la Alice comparteixen pis i volen comprar un televisor que val 2 bitcoins pagant la meitat cada un.
+Per fer-ho en Bob podria enviar 1 bitcoin a la Alice perquè ella fes el pagament del televisor, però com que les comissions de xarxa són bastant elevades, decideixen crear una transacció conjunta on hi hagi dos inputs, un de l&amp;rsquo;Alice i un del Bob.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;#x1f4a1; &lt;em&gt;Els exemples pràctics del post estan fets en testnet. Per tant, si es vol executar les comandes del Bob i l&amp;rsquo;Alice amb els mateixos valors o buscar les transaccions a un explorador s&amp;rsquo;ha de fer des de les versions de testnet corresponents.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
