@@ -1,27 +1,29 @@
 baseURL: "https://pesvi.xyz"
 languageCode: en-us
-title: "Explore Bitcoin and the Lightning Network: From Theory to Practice"
+title: "Explore Bitcoin and the Lightning Network"
 author: "Pol Espinasa"
 theme: PaperMod
 enableEmoji: true
 enableRobotsTXT: true
+googleAnalytics: "G-KXYVPZQE88"
 
 DefaultContentLanguage: English
 
 languages:
   English:
     contentDir: content/english
-    title: "Explore Bitcoin and the Lightning Network: From Theory to Practice"
+    title: "Explore Bitcoin and the Lightning Network"
     languageName: English
     weight: 1
   Català:
     contentDir: content/català
-    title: "Explora Bitcoin i la Lightning Network: de la Teoria a la Pràctica"
+    title: "Descobreix Bitcoin i la Lightning Network"
     languageName: Català
     weight: 2
 
 
 params:
+  env: production
   ShowReadingTime: true
   ShowShareButtons: true
   math: true
