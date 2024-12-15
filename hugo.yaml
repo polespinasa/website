@@ -51,10 +51,10 @@ params:
 
 menu:
   main:
-    - identifier: categories
-      name: Categories
-      url: /categories/
-      weight: 10
+    #- identifier: categories
+    #  name: Categories
+    #  url: /categories/
+    #  weight: 10
     - identifier: tags
       name: Tags
       url: /tags/
@@ -79,7 +79,7 @@ menu:
       name: Resources
       url: /resources/
       weight: 60
-    - identifier: search
-      name: Search
-      url: /search/
-      weight: 70
+    #- identifier: search
+    #  name: Search
+    #  url: /search/
+    #  weight: 70
