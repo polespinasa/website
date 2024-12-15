@@ -75,7 +75,11 @@ menu:
       name: About
       url: /about/
       weight: 50
+    - identifier: resources
+      name: Resources
+      url: /resources/
+      weight: 60
     - identifier: search
       name: Search
       url: /search/
-      weight: 60
+      weight: 70
