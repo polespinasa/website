@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>BitcoinCore on Descobreix Bitcoin i la Lightning Network</title>
+    <link>https://pesvi.xyz/catal%C3%A0/tags/bitcoincore/</link>
+    <description>Recent content in BitcoinCore on Descobreix Bitcoin i la Lightning Network</description>
+    <generator>Hugo -- 0.139.4</generator>
+    <language>català</language>
+    <lastBuildDate>Thu, 13 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://pesvi.xyz/catal%C3%A0/tags/bitcoincore/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Com l&#39;UTXO set ens pot ajudar a sincronitzar un node de Bitcoin</title>
+      <link>https://pesvi.xyz/catal%C3%A0/posts/utxo_set_backup/</link>
+      <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://pesvi.xyz/catal%C3%A0/posts/utxo_set_backup/</guid>
+      <description>&lt;p&gt;Tots ens hem trobat algún cop que el nostre node de Bitcoin deixa de funcionar. La respberry falla, el disc mor, o simplement necesitem el disc per altres propòsits i acabem quedant-nos sense node de Bitcoin. En el futur quan volem tornar a muntar un node ens trobem que hem de tornar a passar pel procés de IBD (&lt;em&gt;initial block download&lt;/em&gt;) per sincronitzar la cadena de blocs. Un procés pessat, que pot durar en molts casos dies i que ens impedeix utilitzar el node i connectar-hi les billeteres fins que el node estigui sincronitzat del tot.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
