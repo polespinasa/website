@@ -5,6 +5,9 @@ Soc un estudiant de doctorat fent recerca al Departament d'Enginyeria de la Info
 
 
 Els meus interessos actualment són Bitcoin, la Lightning Network i els protocols sobre Bitcoin. De fet, són els temes sobre els quals faig recerca 😉. A part del món Bitcoin també m'apassiona la criptografia, la privacitat, la ciberseguretat i la programació.
+
+
+Si necessiteu contactar em podeu trobar a [twitter](https://x.com/sliv3r__) o a IRC a la xarxa de [Librera](https://web.libera.chat/) sota el pseudònim de sliv3r__.
 \
 \
 Si t'agrada la meva feina i vols donar-me suport pots fer una donació a la següent adreça de Bitcoin:

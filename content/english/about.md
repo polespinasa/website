@@ -5,6 +5,8 @@ I am a PhD student doing research at the Department of Information and Communica
 
 
 My current interests are Bitcoin, the Lightning Network and protocols on top of Bitcoin. In fact, these are the topics on which I do research 😉. Apart from Bitcoin related topics, I am also passionate about cryptography, privacy, cybersecurity and programming.
+
+If you need to contact me, you can find me on [Twitter](https://x.com/sliv3r__) or on IRC on the [Libera](https://web.libera.chat/) network under the username sliv3r__. 
 \
 \
 If you like your work and you want to support my work you can make a donation to the following Bitcoin address:
