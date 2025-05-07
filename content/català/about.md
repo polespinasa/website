@@ -10,22 +10,11 @@ Els meus interessos actualment són Bitcoin, la Lightning Network i els protocol
 Si necessiteu contactar em podeu trobar a [twitter](https://x.com/sliv3r__) o a IRC a la xarxa de [Librera](https://web.libera.chat/) sota el pseudònim de sliv3r__.
 \
 \
-Si t'agrada la meva feina i vols donar-me suport pots fer una donació a la següent adreça de Bitcoin:
-\
-bc1prj5r39yejckagskaguwtt9g7gz733tlfnck3a8xwfuywcx7p4u0sa2qprr
-\
-\
-O si ho prefereixes pots usar Lightning!
+Si t'agrada la meva feina i vols donar-me suport pots fer-ho:
+
+- OnChain: bc1prj5r39yejckagskaguwtt9g7gz733tlfnck3a8xwfuywcx7p4u0sa2qprr
 - Lightning Address: garishliquor04@walletofsatoshi.com
 - Bolt12: [₿casualsale28@phoenixwallet.me](mailto:₿casualsale28@phoenixwallet.me)
 \
 \
-Una manera gratuïta de donar suport a la meva feina és utilitzant els meus enllaços si has de comprar algun dels llibres que he recomanat!
-\
-\
 Pd. Pots reportar errors dels posts al [Github](https://github.com/polespinasa/website), ho corregiré el més ràpid possible. Gràcies!! 
-\
-\
-El QR de l'adreça de Bitcoin:
-\
-![](/donations/bolt12.jpeg#center)
