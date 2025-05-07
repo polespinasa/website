@@ -7,4 +7,5 @@ categories = ["Guies"]
 about = "Què és l'UTXO set i perquè serveix?"
 +++
 
+Soon! (I hope 🙄 )
 ![](/utxo_set/still_cooking.jpg#center)
