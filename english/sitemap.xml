@@ -2,8 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://pesvi.xyz/tags/bitcoin-cli/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/tags/bitcoin-cli/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/tags/bitcoin-cli/"
+                />
+  </url><url>
+    <loc>https://pesvi.xyz/tags/bitcoincore/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/tags/bitcoincore/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/tags/bitcoincore/"
+                />
+  </url><url>
     <loc>https://pesvi.xyz/categories/</loc>
-    <lastmod>2024-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="català"
@@ -13,6 +39,87 @@
                 rel="alternate"
                 hreflang="english"
                 href="https://pesvi.xyz/categories/"
+                />
+  </url><url>
+    <loc>https://pesvi.xyz/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/"
+                />
+  </url><url>
+    <loc>https://pesvi.xyz/categories/guides/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://pesvi.xyz/posts/utxo_set_backup/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/posts/utxo_set_backup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/posts/utxo_set_backup/"
+                />
+  </url><url>
+    <loc>https://pesvi.xyz/tags/layer-1/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/tags/layer-1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/tags/layer-1/"
+                />
+  </url><url>
+    <loc>https://pesvi.xyz/tags/nodes/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/tags/nodes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/tags/nodes/"
+                />
+  </url><url>
+    <loc>https://pesvi.xyz/posts/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/posts/"
+                />
+  </url><url>
+    <loc>https://pesvi.xyz/tags/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/tags/"
                 />
   </url><url>
     <loc>https://pesvi.xyz/tags/coinjoin/</loc>
@@ -28,19 +135,6 @@
                 href="https://pesvi.xyz/tags/coinjoin/"
                 />
   </url><url>
-    <loc>https://pesvi.xyz/</loc>
-    <lastmod>2024-05-20T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="https://pesvi.xyz/catal%C3%A0/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="https://pesvi.xyz/"
-                />
-  </url><url>
     <loc>https://pesvi.xyz/posts/grouphug/</loc>
     <lastmod>2024-05-20T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -52,32 +146,6 @@
                 rel="alternate"
                 hreflang="english"
                 href="https://pesvi.xyz/posts/grouphug/"
-                />
-  </url><url>
-    <loc>https://pesvi.xyz/tags/layer-1/</loc>
-    <lastmod>2024-05-20T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="https://pesvi.xyz/catal%C3%A0/tags/layer-1/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="https://pesvi.xyz/tags/layer-1/"
-                />
-  </url><url>
-    <loc>https://pesvi.xyz/posts/</loc>
-    <lastmod>2024-05-20T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="https://pesvi.xyz/catal%C3%A0/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="https://pesvi.xyz/posts/"
                 />
   </url><url>
     <loc>https://pesvi.xyz/tags/psbt/</loc>
@@ -106,19 +174,6 @@
                 href="https://pesvi.xyz/tags/sighash/"
                 />
   </url><url>
-    <loc>https://pesvi.xyz/tags/</loc>
-    <lastmod>2024-05-20T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="https://pesvi.xyz/catal%C3%A0/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="https://pesvi.xyz/tags/"
-                />
-  </url><url>
     <loc>https://pesvi.xyz/categories/theory/</loc>
     <lastmod>2024-05-20T00:00:00+00:00</lastmod>
   </url><url>
@@ -134,22 +189,6 @@
                 hreflang="english"
                 href="https://pesvi.xyz/tags/utxo-management/"
                 />
-  </url><url>
-    <loc>https://pesvi.xyz/tags/bitcoin-cli/</loc>
-    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="https://pesvi.xyz/catal%C3%A0/tags/bitcoin-cli/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="https://pesvi.xyz/tags/bitcoin-cli/"
-                />
-  </url><url>
-    <loc>https://pesvi.xyz/categories/guides/</loc>
-    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://pesvi.xyz/posts/psbt_sparrow/</loc>
     <lastmod>2024-04-07T00:00:00+00:00</lastmod>
