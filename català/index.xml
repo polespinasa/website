@@ -74,18 +74,20 @@ Si t&amp;rsquo;agrada la meva feina i vols donar-me suport pots fer-ho:&lt;/p&gt
 &lt;p&gt;&lt;a href=&#34;https://github.com/polespinasa/bitcoin&#34;&gt;My Bitcoin Core Workspace&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/bitcoin/bitcoin/pull/31278&#34;&gt;#31278 - wallet, rpc: Settxfeerate&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Status → Obert&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/bitcoin/bitcoin/pull/31278&#34;&gt;#31278 - wallet, rpc: deprecate settxfee and paytxfee&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Status → Merged&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/bitcoin/bitcoin/pull/31252&#34;&gt;#31252 - rpc: print P2WSH witScript in getrawtransaction&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Status → Obert&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/bitcoin/bitcoin/pull/32139&#34;&gt;#32139 - test: remove strict restrictions on rpc_deprecated test&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Status → Merged&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/bitcoin/bitcoin/pull/31177&#34;&gt;#31177 - rpc, logging: return &amp;ldquo;verificationprogress&amp;rdquo; of 1 when up to date&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Status → Obert&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/bitcoin/bitcoin/pull/31252&#34;&gt;#31252 - rpc: print P2WSH and P2SH redem Script in getrawtransaction&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Status → Draft&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/bitcoin/bitcoin/pull/32138&#34;&gt;#32138 - wallet, rpc: remove settxfee and paytxfee&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Status → Draft&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
