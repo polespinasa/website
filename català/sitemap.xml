@@ -34,19 +34,6 @@
     <loc>https://pesvi.xyz/catal%C3%A0/posts/utxo_set_backup/</loc>
     <lastmod>2025-02-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://pesvi.xyz/catal%C3%A0/</loc>
-    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="english"
-                href="https://pesvi.xyz/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="català"
-                href="https://pesvi.xyz/catal%C3%A0/"
-                />
-  </url><url>
     <loc>https://pesvi.xyz/catal%C3%A0/categories/guies/</loc>
     <lastmod>2025-02-13T00:00:00+00:00</lastmod>
   </url><url>
@@ -65,6 +52,19 @@
   </url><url>
     <loc>https://pesvi.xyz/catal%C3%A0/tags/nodes/</loc>
     <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://pesvi.xyz/catal%C3%A0/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/"
+                />
   </url><url>
     <loc>https://pesvi.xyz/catal%C3%A0/posts/</loc>
     <lastmod>2025-02-13T00:00:00+00:00</lastmod>
