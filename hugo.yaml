@@ -1,6 +1,6 @@
 baseURL: "https://pesvi.xyz"
 languageCode: en-us
-title: "Explore Bitcoin and the Lightning Network"
+title: "Pol Espinasa"
 author: "Pol Espinasa"
 theme: PaperMod
 enableEmoji: true
@@ -12,12 +12,12 @@ DefaultContentLanguage: English
 languages:
   English:
     contentDir: content/english
-    title: "Explore Bitcoin and the Lightning Network"
+    title: "Pol Espinasa"
     languageName: English
     weight: 1
   Català:
     contentDir: content/català
-    title: "Descobreix Bitcoin i la Lightning Network"
+    title: "Pol Espinasa"
     languageName: Català
     weight: 2
 
