@@ -1,6 +1,6 @@
 +++
 title = "Com l'UTXO set ens pot ajudar a sincronitzar un node de Bitcoin"
-draft = false
+draft = true
 date = 2025-02-13
 tags = ["Nodes", "BitcoinCore", "Layer 1", "Bitcoin-cli"]
 categories = ["Guies"]
@@ -35,28 +35,22 @@ Aquest procediment pot tenir alguns problemes. Per començar, descarregar els fi
 
 Descartem aquesta opció perquè mantenir còpies redundants de la cadena de blocs sencera no és la manera òptima de fer-ho.
 
-## Com ho fem doncs? 🤔
+## Com ho fem doncs?
 
-Imaginem que poguéssim guardar un *checkpoint* que representés l'estat de la cadena a certa altura de bloc. Quina informació hauria de tenir aquest *checkpoint*? Per verificar transaccions i gastar bitcoins el que necessitem és conèixer les transaccions no gastades en el present. Qui manté un registre d'aquestes transaccions no gastades? L'**UTXO set**!
+Imaginem que poguéssim guardar un *checkpoint* que representés l'estat de la cadena a certa altura de bloc. Quina informació hauria de tenir aquest *checkpoint*? Per verificar transaccions i gastar bitcoins el que necessitem és conèixer les transaccions no gastades en el present. Com podem representar aquestes transaccions no gastades? Amb l'**UTXO set**!
 
-L'**UTXO set** és una base de dades que representa l'estat actual de les sortides de transacció no gastades (UTXO). Amb l'**UTXO set** podem verificar que una transacció és vàlida sense mirar la cadena, ja que les entrades d'aquestes han de gastar *unspent transaction outputs* (UTXOs) i crear-ne de nous. Amb paraules més simples, és un registre que diu a on són els bitcoins en aquest precís instant.
+L'**UTXO set** és una base de dades que representa l'estat actual de les sortides de transacció no gastades. Amb l'**UTXO set** podem verificar que una transacció és vàlida sense mirar la cadena, ja que les entrades d'aquestes han de gastar *unspent transaction outputs* (UTXOs) i crear-ne de nous.
+
+Aquest altre post explica què és i perquè serveix l'[**UTXO set**]({{< relref "utxo_set.md" >}})
 
 ### Com utilitzem l'UTXO set per sincronitzar el node
 
-Si tenim l'estat actual de la cadena, és a dir, les monedes (UTXOs) que es poden gastar, podem fer i verificar transaccions sense problemes. Això funciona ja que **TOTS** els bitcoins que tenim disponibles per gastar estàn representats a l'**UTXO set**.
+Si tenim l'estat actual de la cadena, és a dir, les monedes (UTXOs) que es poden gastar i tenim el hash del bloc a aquella altura podem connectar la nostra bitlletera. Això funciona ja que tots els bitcoins que tenim disponibles per gastar són representats a l'**UTXO set** i, mentrestant, els blocs previs es podran anar descarregant en segon pla sense influir en la capacitat de les wallets per mostrar el balanç i gastar fons.
 
-Si només necesitem l'**UTXO set** per fer i verificar transaccions, podem simplement carregar-lo en un punt molt recent, començar a utilitzar Bitcoin i, mentrestant, decarregar els blocs previs?
+### Carregar còpia de l'UTXO set
 
-Si!! Els blocs previs es podran anar descarregant en segon pla sense influir en la capacitat de les wallets per mostrar el balanç i gastar fons.
-
-> :bulb: **Informació!**\
-> _Aquest és el motiu pel qual els nodes "pruned" també poden verificar tota la informació, només necesiten l'**UTXO set**!_
-
-
-### Pas 1. Carregar còpia de l'UTXO set
-
-Suposem que tenim un backup de l'**UTXO set** en un fitxer: `utxo.dat`. Aquest backup de l'**UTXO set** està fet en el bloc 840.000, per tant, quan l'importem, el nostre node s'haurà d'actualitzar a l'altura 840.000 a l'instant.
-Per fer-ho podem utilitzar la [comanda que introdueix Bitcoin Core a la versió 26.0 "loadtxoutset"](https://bitcoincore.org/en/doc/28.0.0/rpc/blockchain/loadtxoutset/).
+Suposem que tenim un backup de l'**UTXO set** en un fitxer: `utxo.dat`. Aquest backup de l'**UTXO set** està fet en el bloc 840.000, per tant, quan l'importem el nostre node s'haurà d'actualitzar a l'altura 840.000 a l'instant.
+Per fer-ho podem utilitzar la [comanda que introdueix Bitcoin Core a la versió 26.0 loadtxoutset](https://bitcoincore.org/en/doc/28.0.0/rpc/blockchain/loadtxoutset/).
 
 Comencem des del principi. Iniciem el node de Bitcoin executant, com és habitual, el binari `bitcoind`. Veurem que al principi realitza una presincronització dels *headers* i després els sincronitza. Hem d'esperar que la sincronització dels *headers* finalitzi.
 
@@ -110,8 +104,6 @@ $ bitcoin-cli getblockchaininfo
 ```
 
 Un cop tenim el node ja corrent i sincronitzant podem importar l'**UTXO set** amb la instrucció `bitcoin-cli -rpcclienttimout=0 loadtxoutset utxo.dat`. On `utxo.dat` és el nostre backup de l'**UTXO set**. (Recomano col·locar el fitxer `utxo.dat` a dins el directori on estiguis guardant les dades del node, per defecte és `~\.bitcoin`).
-
-Abans de fer-ho és recomanable utilitzar `bitcoin-cli setnetworkactive false`. Aquesta instrucció millora el rendiment, ja que para les comunicacions de la xarxa p2p. S'ha de tornar a habilitar en acabar la càrrega. (Això és opcional, si no es fa, funcionarà igualment però amb pitjor rendiment)
 
 > :warning: **Alerta**\
 > *És important especificar `-rpcclienttimout=0` per evitar que ens tanqui la comunicació per timeout, ja que el procés pot trigar uns minuts*
@@ -178,8 +170,8 @@ bitcoin-cli getblockchaininfo
 
 ```
 
-En cas d'haver desactivat la xarxa p2p torna a habilitar-la amb `bitcoin-cli setnetworkactive true`.
 Tornem a mirar els logs de `bitcoind` i veiem que ara està sincronitzant els blocs que hi ha entre el 840.000 i el tip de la cadena:
+> :bulb: S'anomena tip al bloc actual de la cadena, és a dir a l'últim bloc de la cadena amb més proof of work.
 ```
 2025-02-18T14:58:36Z UpdateTip: new best=00000000000000000001caffc952e7de3b1c8b2f2d044e8e69955000ca6fb9e4 height=840436 version=0x20e00000 log2_work=94.879663 tx=993054314 date='2024-04-23T01:53:38Z' progress=0.849873 cache=458.5MiB(2943813txo)
 2025-02-18T14:58:36Z UpdateTip: new best=000000000000000000014797e1aa0867732005d6cb11fad392e35fbc81f552bd height=840437 version=0x20000000 log2_work=94.879678 tx=993060398 date='2024-04-23T02:05:34Z' progress=0.849878 cache=459.1MiB(2947040txo)
@@ -189,7 +181,6 @@ Tornem a mirar els logs de `bitcoind` i veiem que ara està sincronitzant els bl
 2025-02-18T14:58:36Z UpdateTip: new best=000000000000000000033c2f66f551e44aea785f91a902b321c38703a158ed3a height=840441 version=0x20a00000 log2_work=94.879737 tx=993083167 date='2024-04-23T02:20:03Z' progress=0.849898 cache=461.9MiB(2965605txo)
 2025-02-18T14
 ```
-> :bulb: S'anomena tip al bloc actual de la cadena, és a dir a l'últim bloc de la cadena amb més proof of work.
 
 Un cop el node acaba de sincronitzar des del bloc 840.000 fins al tip actual, en aquest cas el bloc 884365, podem veure com comença a sincronitzar el node des de 0. Es pot identificar fàcilment, ja que en els logs es marca com a *background validation*.
 
@@ -200,7 +191,7 @@ Un cop el node acaba de sincronitzar des del bloc 840.000 fins al tip actual, en
 2025-02-18T20:19:41Z Saw new header hash=000000000000000000019940b918fed6453c7afa80e03f1d837d1fdd8b31a8b9 height=884366
 2025-02-18T20:19:45Z UpdateTip: new best=000000000000000000019940b918fed6453c7afa80e03f1d837d1fdd8b31a8b9 height=884366 version=0x2002a000 log2_work=95.452620 tx=1156361979 date='2025-02-18T20:19:40Z' progress=1.000000 cache=2.7MiB(19061txo)
 ```
-Fixant-nos en els logs anteriors podem veure que, tot i que està verificant blocs molt antics com el `210000`, quan apareix un bloc nou, el `884366` en aquest cas, de seguida actualitza el tip de la seva cadena i posteriorment continua amb la verificació de blocs antics.
+Fixant-nos en els logs anteriors podem veure que, tot i que està verificant blocs molt antics com el 210000, quan apareix un bloc nou, el 884366 en aquest cas, de seguida actualitza el tip de la seva cadena i posteriorment continua amb la verificació de blocs antics.
 
 
 ## Conclusions i precaucions
@@ -210,36 +201,13 @@ Amb aquest procés el node arriba a un estat on és usable per consultar el bala
 > :warning: **Alerta**\
 > *És molt important no descarregar l'__UTXO set__ d'una font desconeguda i amb la que no confiem. El perill és molt elevat, ja que una representació falsa de l'__UTXO set__ pot fer-te creure que t'han pagat quan no és cert. __Et poden enganyar i robar__.*
 
-Bitcoin Core intenta prevenir això limitant la importació de l'**UTXO set** al un bloc definit en l'última release (el bloc `880.000` a data d'aquest post) i comprovant que l'**UTXO set** és el correcte i no ha estat manipulat. Saltar-se aquesta comprovació no és difícil i permet a usuaris més experimentats accelerar encara més aquest procés. En aquest post no s'explicarà com fer-ho per tal de no exposar als lectors a un possible atac.
+Bitcoin Core intenta prevenir això limitant la importació de l'**UTXO set** al bloc 840.000 i comprovant que l'**UTXO set** és el correcte i no ha estat manipulat. Saltar-se aquesta comprovació no és difícil i permet a usuaris més experimentats accelerar encara més aquest procés. En aquest post no s'explicarà com fer-ho per tal de no exposar als lectors a un possible atac.
 
 **RECORDA ---> DON'T TRUST, VERIFY. IF YOU DON'T RUN YOUR OWN NODE YOU ARE NOT USING BITCOIN WITHOUT A "TRUSTED" MIDLEMAN**
 
 
-## Com crear o aconseguir un backup de l'UTXO set?
+### POL PERÒ NO M'HAS ENSENYAT A CREAR EL BACKUP!!
 
-La manera més fàcil d'aconseguir un backup de l'**UTXO set** és amb el [magnet link](magnet:?xt=urn:btih:559bd78170502971e15e97d7572e4c824f033492&dn=utxo-880000.dat&tr=udp%3A%2F%2Ftracker.bitcoin.sprovoost.nl%3A6969).
+Cert, no ho he explicat. Ho explicaré en un futur. La funcionalitat per fer-ho encara no està a cap *release* oficial de Bitcoin Core, està en el codi per la següent *release*. Com que no vull incentivar a la gent a córrer software que no s'ha publicat "oficialment" no publicaré les instruccions de com fer-ho servir fins que surti en una versió oficial.
 
-Com he dit prèviament s'ha d'evitar descarregar l'**UTXO set** de fons desconegudes, però bé, hi ha diferents mecanismes de verificar que la còpia que proporciona aquest magnet link és correcte:
-- Per començar és el link proporcionat en el [PR Bitcoin Core](https://github.com/bitcoin/bitcoin/pull/31969) que introdueix els paràmetres al codi.
-- Pots validar el hash de la còpia amb: `shasum -a 256 utxo-880000.dat` el resultat hauria de donar `43b3b1ad6e1005ffc0ff49514d0ffcc3e3ce671cc8d02da7fa7bac5405f89de4`.
-
-### Com generem el nostre propi backup?
-
-Per fer-ho necessitem un node ja sincronitzat a una altura de bloc superior a la del backup. En aquest cas superior al `880.000`.
-> :warning: **Alerta**\
-> *El node no pot estar prunat a una altura inferior a la del bloc sobre el qual es fa el backup!*
-
-
-Amb la instrucció bitcoin-cli -rpcclienttimeout=0 dumptxoutset utxo.dat rollback. Per defecte aquesta comanda farà un backup de l'**UTXO set** al directori ~\.bitcoin. Aquest procés pot tardar una miqueta, ja que el node es "desincronitza" fins a arribar al block de l'últim checkpoint vàlid.
-
-[Aquí](https://x.com/sliv3r__/status/1891095297440280721) es pot veure un vídeo de com es dessincronitza un node en fer aquest procés.
-
-Altre cop es pot validar que el backup és el correcte amb el hash del fitxer:
-```bash
-shasum -a 256 utxo-880000.dat
-43b3b1ad6e1005ffc0ff49514d0ffcc3e3ce671cc8d02da7fa7bac5405f89de4
-```
-
-Apa! Gaudeix sincronitzant nodes a la velocitat de la llum!!
-
-![](/assumetxoutset/lightspeed.gif#center)
+![](/assumetxoutset/engañado.png#center)
