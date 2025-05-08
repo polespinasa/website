@@ -9,6 +9,12 @@ googleAnalytics: "G-KXYVPZQE88"
 
 DefaultContentLanguage: English
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+
 languages:
   English:
     contentDir: content/english
