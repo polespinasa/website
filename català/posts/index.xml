@@ -22,7 +22,7 @@
       <guid>https://pesvi.xyz/catal%C3%A0/posts/grouphug/</guid>
       <description>&lt;p&gt;Amb la intenció d&amp;rsquo;intentar ajudar a fer transaccions de Bitcoin més econòmiques i inspirat en la implementació de &lt;a href=&#34;https://peachbitcoin.com/&#34;&gt;Peach&lt;/a&gt; feta per en &lt;a href=&#34;https://x.com/capoczino&#34;&gt;Czino&lt;/a&gt; neix el GroupHug. Un sistema de &lt;em&gt;transaction batching&lt;/em&gt; que permet compartir entre usuaris les tarifes d&amp;rsquo;una transacció sense necesitat de coordinació entre usuaris.&lt;/p&gt;
 &lt;p&gt;En aquest post s&amp;rsquo;explica què és el GroupHug, com funciona tècnicament i quins avantatges i inconvenients té.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;!-- high five \._./ --&gt;
 &lt;h3 id=&#34;the-bitcoin-grouphug&#34;&gt;The Bitcoin Grouphug&lt;/h3&gt;
 &lt;p&gt;El GroupHug és una solució de &lt;em&gt;transaction batching&lt;/em&gt; que permet crear transaccions conjuntes entre usuaris similars a un coinjoin sense interacció ni coordinació entre els usuaris a canvi d&amp;rsquo;algunes limitacions.&lt;/p&gt;</description>
     </item>
