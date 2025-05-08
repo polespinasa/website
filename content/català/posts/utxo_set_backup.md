@@ -55,7 +55,7 @@ Si!! Els blocs previs es podran anar descarregant en segon pla sense influir en 
 
 ### Pas 1. Carregar còpia de l'UTXO set
 
-Suposem que tenim un backup de l'**UTXO set** en un fitxer: `utxo.dat`. Aquest backup de l'**UTXO set** està fet en el bloc `840.000`, per tant, quan l'importem, el nostre node s'haurà d'actualitzar a l'altura `840.000` a l'instant.
+Suposem que tenim un backup de l'**UTXO set** en un fitxer: `utxo.dat`. Aquest backup de l'**UTXO set** està fet en el bloc `840.000`, per tant, quan l'importem, el nostre node s'haurà d'actualitzar a l'altura `840.000` casi a l'instant.
 Per fer-ho podem utilitzar la [comanda que introdueix Bitcoin Core a la versió 26.0 "loadtxoutset"](https://bitcoincore.org/en/doc/28.0.0/rpc/blockchain/loadtxoutset/).
 
 Comencem des del principi. Iniciem el node de Bitcoin executant, com és habitual, el binari `bitcoind`. Veurem que al principi realitza una presincronització dels *headers* i després els sincronitza. Hem d'esperar que la sincronització dels *headers* finalitzi.
@@ -220,7 +220,7 @@ Bitcoin Core intenta prevenir això limitant la importació de l'**UTXO set** al
 
 La manera més fàcil d'aconseguir un backup de l'**UTXO set** és amb el [magnet link](magnet:?xt=urn:btih:559bd78170502971e15e97d7572e4c824f033492&dn=utxo-880000.dat&tr=udp%3A%2F%2Ftracker.bitcoin.sprovoost.nl%3A6969).
 
-Com he dit prèviament s'ha d'evitar descarregar l'**UTXO set** de fons desconegudes, però bé, hi ha diferents mecanismes de verificar que la còpia que proporciona aquest magnet link és correcte:
+Com he dit prèviament s'ha d'evitar descarregar l'**UTXO set** de fons desconegudes (**no et pots fiar de mi!**), però bé, hi ha diferents mecanismes de verificar que la còpia que proporciona aquest magnet link és correcte:
 - Per començar és el link proporcionat en el [PR Bitcoin Core](https://github.com/bitcoin/bitcoin/pull/31969) que introdueix els paràmetres al codi.
 - Pots validar el hash de la còpia amb: `shasum -a 256 utxo-880000.dat` el resultat hauria de donar `43b3b1ad6e1005ffc0ff49514d0ffcc3e3ce671cc8d02da7fa7bac5405f89de4`.
 
@@ -231,7 +231,7 @@ Per fer-ho necessitem un node ja sincronitzat a una altura de bloc superior a la
 > *El node no pot estar prunat a una altura inferior a la del bloc sobre el qual es fa el backup!*
 
 
-Amb la instrucció bitcoin-cli -rpcclienttimeout=0 dumptxoutset utxo.dat rollback. Per defecte aquesta comanda farà un backup de l'**UTXO set** al directori ~\.bitcoin. Aquest procés pot tardar una miqueta, ja que el node es "desincronitza" fins a arribar al block de l'últim checkpoint vàlid.
+Utilitzant la instrucció `bitcoin-cli -rpcclienttimeout=0 dumptxoutset utxo.dat rollback`. Per defecte aquesta comanda farà un backup de l'**UTXO set** al directori `~\.bitcoin`. Aquest procés pot tardar una miqueta, ja que el node es "desincronitza" fins a arribar al block de l'últim checkpoint vàlid.
 
 [Aquí](https://x.com/sliv3r__/status/1891095297440280721) es pot veure un vídeo de com es dessincronitza un node en fer aquest procés.
 
