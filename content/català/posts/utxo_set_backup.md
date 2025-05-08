@@ -55,7 +55,7 @@ Si!! Els blocs previs es podran anar descarregant en segon pla sense influir en 
 
 ### Pas 1. Carregar còpia de l'UTXO set
 
-Suposem que tenim un backup de l'**UTXO set** en un fitxer: `utxo.dat`. Aquest backup de l'**UTXO set** està fet en el bloc 840.000, per tant, quan l'importem, el nostre node s'haurà d'actualitzar a l'altura 840.000 a l'instant.
+Suposem que tenim un backup de l'**UTXO set** en un fitxer: `utxo.dat`. Aquest backup de l'**UTXO set** està fet en el bloc `840.000`, per tant, quan l'importem, el nostre node s'haurà d'actualitzar a l'altura `840.000` a l'instant.
 Per fer-ho podem utilitzar la [comanda que introdueix Bitcoin Core a la versió 26.0 "loadtxoutset"](https://bitcoincore.org/en/doc/28.0.0/rpc/blockchain/loadtxoutset/).
 
 Comencem des del principi. Iniciem el node de Bitcoin executant, com és habitual, el binari `bitcoind`. Veurem que al principi realitza una presincronització dels *headers* i després els sincronitza. Hem d'esperar que la sincronització dels *headers* finalitzi.
@@ -133,7 +133,7 @@ bitcoin-cli -rpcclienttimeout=0 loadtxoutset utxo.dat
 }
 ```
 
-Si observem els logs de `bitcoind`, podrem veure com ha actualitzat el `chainstate` (l'estat de la cadena) al bloc 840.000:
+Si observem els logs de `bitcoind`, podrem veure com ha actualitzat el `chainstate` (l'estat de la cadena) al bloc `840.000`:
 ```
 2025-02-18T14:55:18Z UpdateTip: new best=000000000000085b8326215f4334716986036cd7f22b474b4bb1d30e44abc7c6 height=190942 version=0x00000001 log2_work=68.448132 tx=5332360 date='2012-07-27T01:22:01Z' progress=0.004564 cache=264.9MiB(2106915txo)
 2025-02-18T14:55:18Z [snapshot] validated snapshot (0 MB)
@@ -152,7 +152,7 @@ Si observem els logs de `bitcoind`, podrem veure com ha actualitzat el `chainsta
 2025-02-18T14:55:22Z [Chainstate [snapshot] @ height 840000 (0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5)] resized coinstip cache to 418.0 MiB
 ```
 
-I si executem la comanda `bitcoin-cli getblockchaininfo` podrem veure com efectivament tenim el node sincronitzat al bloc 840.000:
+I si executem la comanda `bitcoin-cli getblockchaininfo` podrem veure com efectivament tenim el node sincronitzat al bloc `840.000`:
 
 ```bash
 bitcoin-cli getblockchaininfo
@@ -179,7 +179,7 @@ bitcoin-cli getblockchaininfo
 ```
 
 En cas d'haver desactivat la xarxa p2p torna a habilitar-la amb `bitcoin-cli setnetworkactive true`.
-Tornem a mirar els logs de `bitcoind` i veiem que ara està sincronitzant els blocs que hi ha entre el 840.000 i el tip de la cadena:
+Tornem a mirar els logs de `bitcoind` i veiem que ara està sincronitzant els blocs que hi ha entre el `840.000` i el tip de la cadena:
 ```
 2025-02-18T14:58:36Z UpdateTip: new best=00000000000000000001caffc952e7de3b1c8b2f2d044e8e69955000ca6fb9e4 height=840436 version=0x20e00000 log2_work=94.879663 tx=993054314 date='2024-04-23T01:53:38Z' progress=0.849873 cache=458.5MiB(2943813txo)
 2025-02-18T14:58:36Z UpdateTip: new best=000000000000000000014797e1aa0867732005d6cb11fad392e35fbc81f552bd height=840437 version=0x20000000 log2_work=94.879678 tx=993060398 date='2024-04-23T02:05:34Z' progress=0.849878 cache=459.1MiB(2947040txo)
@@ -191,7 +191,7 @@ Tornem a mirar els logs de `bitcoind` i veiem que ara està sincronitzant els bl
 ```
 > :bulb: S'anomena tip al bloc actual de la cadena, és a dir a l'últim bloc de la cadena amb més proof of work.
 
-Un cop el node acaba de sincronitzar des del bloc 840.000 fins al tip actual, en aquest cas el bloc 884365, podem veure com comença a sincronitzar el node des de 0. Es pot identificar fàcilment, ja que en els logs es marca com a *background validation*.
+Un cop el node acaba de sincronitzar des del bloc `840.000` fins al tip actual, en aquest cas el bloc `884.365`, podem veure com comença a sincronitzar el node des de 0. Es pot identificar fàcilment, ja que en els logs es marca com a *background validation*.
 
 ```
 2025-02-18T20:18:41Z [background validation] UpdateTip: new best=000000000000001db5a1515a5f8534c941b1628f60466e6b709b3b320254afff height=208000 version=0x00000001 log2_work=69.023342 tx=8883319 date='2012-11-15T05:17:32Z' progress=0.007602 cache=58.2MiB(460376txo)
@@ -200,7 +200,7 @@ Un cop el node acaba de sincronitzar des del bloc 840.000 fins al tip actual, en
 2025-02-18T20:19:41Z Saw new header hash=000000000000000000019940b918fed6453c7afa80e03f1d837d1fdd8b31a8b9 height=884366
 2025-02-18T20:19:45Z UpdateTip: new best=000000000000000000019940b918fed6453c7afa80e03f1d837d1fdd8b31a8b9 height=884366 version=0x2002a000 log2_work=95.452620 tx=1156361979 date='2025-02-18T20:19:40Z' progress=1.000000 cache=2.7MiB(19061txo)
 ```
-Fixant-nos en els logs anteriors podem veure que, tot i que està verificant blocs molt antics com el `210000`, quan apareix un bloc nou, el `884366` en aquest cas, de seguida actualitza el tip de la seva cadena i posteriorment continua amb la verificació de blocs antics.
+Fixant-nos en els logs anteriors podem veure que, tot i que està verificant blocs molt antics com el `210.000`, quan apareix un bloc nou, el `884.366` en aquest cas, de seguida actualitza el tip de la seva cadena i posteriorment continua amb la verificació de blocs antics.
 
 
 ## Conclusions i precaucions
@@ -211,6 +211,9 @@ Amb aquest procés el node arriba a un estat on és usable per consultar el bala
 > *És molt important no descarregar l'__UTXO set__ d'una font desconeguda i amb la que no confiem. El perill és molt elevat, ja que una representació falsa de l'__UTXO set__ pot fer-te creure que t'han pagat quan no és cert. __Et poden enganyar i robar__.*
 
 Bitcoin Core intenta prevenir això limitant la importació de l'**UTXO set** al un bloc definit en l'última release (el bloc `880.000` a data d'aquest post) i comprovant que l'**UTXO set** és el correcte i no ha estat manipulat. Saltar-se aquesta comprovació no és difícil i permet a usuaris més experimentats accelerar encara més aquest procés. En aquest post no s'explicarà com fer-ho per tal de no exposar als lectors a un possible atac.
+
+> :warning: **Alerta**\
+> *Quan es va escriure la 1a part del post el block de l'última release era el `840.000` i no el `880.000`, per això la guia es fa sobre el `840.000`*
 
 **RECORDA ---> DON'T TRUST, VERIFY. IF YOU DON'T RUN YOUR OWN NODE YOU ARE NOT USING BITCOIN WITHOUT A "TRUSTED" MIDLEMAN**
 
