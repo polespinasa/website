@@ -5,7 +5,7 @@ Troba aquí una llista dels meus PRs i contribucions a diferents projectes de co
 [My Bitcoin Core Workspace](https://github.com/polespinasa/bitcoin)
 
 - [#31278 - wallet, rpc: deprecate settxfee and paytxfee](https://github.com/bitcoin/bitcoin/pull/31278)
-a
+
 	Status &rarr; <span style="color: red;">Merged</span>
 
 - [#32139 - test: remove strict restrictions on rpc_deprecated test](https://github.com/bitcoin/bitcoin/pull/32139)
