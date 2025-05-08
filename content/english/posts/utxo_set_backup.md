@@ -49,7 +49,7 @@ If we only need the **UTXO set** to make and verify transactions, can we simply 
 
 Yes, the previous blocks can be downloaded in the background without affecting the wallets' ability to show the balance and spend funds.
 
-> :bulb: **Information!
+> :bulb: **Information!**
 > _This is the reason why the “pruned” nodes can also verify all the information, they only need the **UTXO set**!_
 
 ### Step 1. Load a copy of the UTXO set
@@ -202,7 +202,7 @@ Once the node finishes synchronizing from block `840.000` to the current tip, in
 
 Looking at the previous logs we can see that, although it is verifying very old blocks such as `210.000`, when a new block appears, `884.366` in this case, it immediately updates the tip of its chain and then continues with the verification of old blocks.
 
-## Conclusiones i precauciones
+## Conclusions and cautions
 
 With this process the node reaches a state where it is usable to consult the balance and create transactions much faster than synchronizing the whole chain. In a normal laptop, this whole process has taken me no more than 2 hours which is already a big improvement compared to the days that a normal synchronization can take.
 
@@ -216,7 +216,7 @@ Bitcoin Core tries to prevent this by restricting the import of the **UTXO set**
 
 ## How to create or obtain a backup of the UTXO set?
 
-The easiest way to get a backup of the **UTXO set** is with the [magnet link](magnet:?xt=urn:btih:559bd78170502971e15e97d7572e4c824f033492&dn=utxo-880000.dat&tr=udp%3A%2F%2Ftracker.bitcoin.sprovoost.nl%3A6969).
+The easiest way to get a backup of the **UTXO set** is with the magnet link: `magnet:?xt=urn:btih:559bd78170502971e15e97d7572e4c824f033492&dn=utxo-880000.dat&tr=udp%3A%2F%2Ftracker.bitcoin.sprovoost.nl%3A6969`.
 
 As I said before, you should avoid downloading the **UTXO set** from unknown sources (**don't trust me!**), but well, there are different mechanisms to verify that the copy provided by this magnet link is correct:
 - The link provided in the [PR Bitcoin Core](https://github.com/bitcoin/bitcoin/pull/31969) which introduces the parameters to the code.
@@ -232,3 +232,13 @@ Using the instruction `bitcoin-cli -rpcclienttimeout=0 dumptxoutset utxo.dat rol
 
 [Here](https://x.com/sliv3r__/status/1891095297440280721) you can see a video of how a node is being desynchronized in this process.
 
+Again you can validate that the backup is correct with the hash of the file:
+```bash
+shasum -a 256 utxo-880000.dat
+43b3b1ad6e1005ffc0ff49514d0ffcc3e3ce671cc8d02da7fa7bac5405f89de4
+```
+
+Hey! Enjoy synchronizing nodes at the speed of light!!!
+![](/assumetxoutset/lightspeed.gif#center)
+
+**AND REMEMBER ---> DON'T TRUST, VERIFY. IF YOU DON'T RUN YOUR OWN NODE YOU ARE NOT USING BITCOIN WITHOUT A "TRUSTED" MIDLEMAN**

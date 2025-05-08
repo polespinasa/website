@@ -218,7 +218,7 @@ Bitcoin Core intenta prevenir això limitant la importació de l'**UTXO set** al
 
 ## Com crear o aconseguir un backup de l'UTXO set?
 
-La manera més fàcil d'aconseguir un backup de l'**UTXO set** és amb el [magnet link](magnet:?xt=urn:btih:559bd78170502971e15e97d7572e4c824f033492&dn=utxo-880000.dat&tr=udp%3A%2F%2Ftracker.bitcoin.sprovoost.nl%3A6969).
+La manera més fàcil d'aconseguir un backup de l'**UTXO set** és amb el magnet link:`magnet:?xt=urn:btih:559bd78170502971e15e97d7572e4c824f033492&dn=utxo-880000.dat&tr=udp%3A%2F%2Ftracker.bitcoin.sprovoost.nl%3A6969`.
 
 Com he dit prèviament s'ha d'evitar descarregar l'**UTXO set** de fons desconegudes (**no et pots fiar de mi!**), però bé, hi ha diferents mecanismes de verificar que la còpia que proporciona aquest magnet link és correcte:
 - Per començar és el link proporcionat en el [PR Bitcoin Core](https://github.com/bitcoin/bitcoin/pull/31969) que introdueix els paràmetres al codi.
