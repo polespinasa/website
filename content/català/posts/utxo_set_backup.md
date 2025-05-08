@@ -215,8 +215,6 @@ Bitcoin Core intenta prevenir això limitant la importació de l'**UTXO set** al
 > :warning: **Alerta**\
 > *Quan es va escriure la 1a part del post el block de l'última release era el `840.000` i no el `880.000`, per això la guia es fa sobre el `840.000`*
 
-**RECORDA ---> DON'T TRUST, VERIFY. IF YOU DON'T RUN YOUR OWN NODE YOU ARE NOT USING BITCOIN WITHOUT A "TRUSTED" MIDLEMAN**
-
 
 ## Com crear o aconseguir un backup de l'UTXO set?
 
@@ -246,3 +244,5 @@ shasum -a 256 utxo-880000.dat
 Apa! Gaudeix sincronitzant nodes a la velocitat de la llum!!
 
 ![](/assumetxoutset/lightspeed.gif#center)
+
+**I RECORDA ---> DON'T TRUST, VERIFY. IF YOU DON'T RUN YOUR OWN NODE YOU ARE NOT USING BITCOIN WITHOUT A "TRUSTED" MIDLEMAN**
