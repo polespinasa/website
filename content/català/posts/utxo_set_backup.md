@@ -202,20 +202,6 @@ Un cop el node acaba de sincronitzar des del bloc `840.000` fins al tip actual, 
 ```
 Fixant-nos en els logs anteriors podem veure que, tot i que està verificant blocs molt antics com el `210.000`, quan apareix un bloc nou, el `884.366` en aquest cas, de seguida actualitza el tip de la seva cadena i posteriorment continua amb la verificació de blocs antics.
 
-
-## Conclusions i precaucions
-
-Amb aquest procés el node arriba a un estat on és usable per consultar el balanç i crear transaccions de manera molt més ràpida que no pas sincronitzant tota la cadena. En un portàtil normal, tot aquest procés no m'ha pres més de 2 hores que ja és un avanç mot gran respecte als dies que pot arribar a trigar una sincronització normal.
-
-> :warning: **Alerta**\
-> *És molt important no descarregar l'__UTXO set__ d'una font desconeguda i amb la que no confiem. El perill és molt elevat, ja que una representació falsa de l'__UTXO set__ pot fer-te creure que t'han pagat quan no és cert. __Et poden enganyar i robar__.*
-
-Bitcoin Core intenta prevenir això limitant la importació de l'**UTXO set** al un bloc definit en l'última release (el bloc `880.000` a data d'aquest post) i comprovant que l'**UTXO set** és el correcte i no ha estat manipulat. Saltar-se aquesta comprovació no és difícil i permet a usuaris més experimentats accelerar encara més aquest procés. En aquest post no s'explicarà com fer-ho per tal de no exposar als lectors a un possible atac.
-
-> :warning: **Alerta**\
-> *Quan es va escriure la 1a part del post el block de l'última release era el `840.000` i no el `880.000`, per això la guia es fa sobre el `840.000`*
-
-
 ## Com crear o aconseguir un backup de l'UTXO set?
 
 La manera més fàcil d'aconseguir un backup de l'**UTXO set** és amb el magnet link:`magnet:?xt=urn:btih:559bd78170502971e15e97d7572e4c824f033492&dn=utxo-880000.dat&tr=udp%3A%2F%2Ftracker.bitcoin.sprovoost.nl%3A6969`.
@@ -240,6 +226,18 @@ Altre cop es pot validar que el backup és el correcte amb el hash del fitxer:
 shasum -a 256 utxo-880000.dat
 43b3b1ad6e1005ffc0ff49514d0ffcc3e3ce671cc8d02da7fa7bac5405f89de4
 ```
+
+## Conclusions i precaucions
+
+Amb aquest procés el node arriba a un estat on és usable per consultar el balanç i crear transaccions de manera molt més ràpida que no pas sincronitzant tota la cadena. En un portàtil normal, tot aquest procés no m'ha pres més de 2 hores que ja és un avanç mot gran respecte als dies que pot arribar a trigar una sincronització normal.
+
+> :warning: **Alerta**\
+> *És molt important no descarregar l'__UTXO set__ d'una font desconeguda i amb la que no confiem. El perill és molt elevat, ja que una representació falsa de l'__UTXO set__ pot fer-te creure que t'han pagat quan no és cert. __Et poden enganyar i robar__.*
+
+Bitcoin Core intenta prevenir això limitant la importació de l'**UTXO set** al un bloc definit en l'última release (el bloc `880.000` a data d'aquest post) i comprovant que l'**UTXO set** és el correcte i no ha estat manipulat. Saltar-se aquesta comprovació no és difícil i permet a usuaris més experimentats accelerar encara més aquest procés. En aquest post no s'explicarà com fer-ho per tal de no exposar als lectors a un possible atac.
+
+> :warning: **Alerta**\
+> *Quan es va escriure la 1a part del post el block de l'última release era el `840.000` i no el `880.000`, per això la guia es fa sobre el `840.000`*
 
 Apa! Gaudeix sincronitzant nodes a la velocitat de la llum!!
 

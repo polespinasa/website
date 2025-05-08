@@ -202,18 +202,6 @@ Once the node finishes synchronizing from block `840.000` to the current tip, in
 
 Looking at the previous logs we can see that, although it is verifying very old blocks such as `210.000`, when a new block appears, `884.366` in this case, it immediately updates the tip of its chain and then continues with the verification of old blocks.
 
-## Conclusions and cautions
-
-With this process the node reaches a state where it is usable to consult the balance and create transactions much faster than synchronizing the whole chain. In a normal laptop, this whole process has taken me no more than 2 hours which is already a big improvement compared to the days that a normal synchronization can take.
-
-> :warning: **Warning**.
-> *It is very important not to download the __UTXO set__ from an unknown and untrusted source. The risk is very high, since a false representation of the __UTXO set__ can make you believe that you have been paid when it is not true. __You can be tricked and robbed__.*
-
-Bitcoin Core tries to prevent this by restricting the import of the **UTXO set** to a block defined in the latest release (the `880,000` block as of this post) and verifying that the **UTXO set** is correct and has not been tampered. Skipping this check is not difficult and allows more experienced users to speed up this process even more. This post will not explain how to do it so as not to expose the readers to a possible attack.
-
-> :warning: **Warning**.
-> *When the 1st part of the post was written the block of the last release was the `840.000` and not the `880.000`, that's why the guide is about the `840.000`*.
-
 ## How to create or obtain a backup of the UTXO set?
 
 The easiest way to get a backup of the **UTXO set** is with the magnet link: `magnet:?xt=urn:btih:559bd78170502971e15e97d7572e4c824f033492&dn=utxo-880000.dat&tr=udp%3A%2F%2Ftracker.bitcoin.sprovoost.nl%3A6969`.
@@ -237,6 +225,18 @@ Again you can validate that the backup is correct with the hash of the file:
 shasum -a 256 utxo-880000.dat
 43b3b1ad6e1005ffc0ff49514d0ffcc3e3ce671cc8d02da7fa7bac5405f89de4
 ```
+
+## Conclusions and cautions
+
+With this process the node reaches a state where it is usable to consult the balance and create transactions much faster than synchronizing the whole chain. In a normal laptop, this whole process has taken me no more than 2 hours which is already a big improvement compared to the days that a normal synchronization can take.
+
+> :warning: **Warning**.
+> *It is very important not to download the __UTXO set__ from an unknown and untrusted source. The risk is very high, since a false representation of the __UTXO set__ can make you believe that you have been paid when it is not true. __You can be tricked and robbed__.*
+
+Bitcoin Core tries to prevent this by restricting the import of the **UTXO set** to a block defined in the latest release (the `880,000` block as of this post) and verifying that the **UTXO set** is correct and has not been tampered. Skipping this check is not difficult and allows more experienced users to speed up this process even more. This post will not explain how to do it so as not to expose the readers to a possible attack.
+
+> :warning: **Warning**.
+> *When the 1st part of the post was written the block of the last release was the `840.000` and not the `880.000`, that's why the guide is about the `840.000`*.
 
 Hey! Enjoy synchronizing nodes at the speed of light!!!
 ![](/assumetxoutset/lightspeed.gif#center)
