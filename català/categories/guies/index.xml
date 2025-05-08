@@ -10,13 +10,6 @@
     <atom:link href="https://pesvi.xyz/catal%C3%A0/categories/guies/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Com l&#39;UTXO set ens pot ajudar a sincronitzar un node de Bitcoin</title>
-      <link>https://pesvi.xyz/catal%C3%A0/posts/utxo_set_backup/</link>
-      <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://pesvi.xyz/catal%C3%A0/posts/utxo_set_backup/</guid>
-      <description>&lt;p&gt;Tots ens hem trobat algun cop que el nostre node de Bitcoin deixa de funcionar, la raspberry falla, el disc mor, o simplement necessitem el disc per altres propòsits i acabem quedant-nos sense node de Bitcoin. En el futur quan volem tornar a muntar un node ens trobem que hem de tornar a passar pel procés de IBD (&lt;em&gt;initial block download&lt;/em&gt;) per sincronitzar la cadena de blocs. Un procés pesat, que pot durar en molts casos dies i que ens impedeix utilitzar el node i connectar-hi les bitlleteres fins que el node estigui sincronitzat del tot.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Com l&#39;UTXO set ens pot ajudar a sincronitzar un node de Bitcoin</title>
       <link>https://pesvi.xyz/catal%C3%A0/posts/utxo_set_backup_new/</link>
       <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://pesvi.xyz/catal%C3%A0/posts/utxo_set_backup_new/</guid>
