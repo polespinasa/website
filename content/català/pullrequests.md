@@ -6,7 +6,7 @@ Troba aquí una llista dels meus PRs i contribucions a diferents projectes de co
 
 - [#31278 - wallet, rpc: deprecate settxfee and paytxfee](https://github.com/bitcoin/bitcoin/pull/31278)
 
-	Status &rarr; <span style="color: purple;">Merged</span>
+	Status &rarr; <span style="color: red;">Merged</span>
 
 - [#32139 - test: remove strict restrictions on rpc_deprecated test](https://github.com/bitcoin/bitcoin/pull/32139)
 
