@@ -52,7 +52,7 @@ Yes, the previous blocks can be downloaded in the background without affecting t
 > :bulb: **Information!**
 > _This is the reason why the “pruned” nodes can also verify all the information, they only need the **UTXO set**!_
 
-### Step 1. Load a copy of the UTXO set
+### Load a copy of the UTXO set
 
 Let's suppose that we have a backup of the **UTXO set** in a file: `utxo.dat`. This backup of the **UTXO set** is made at block `840.000`, therefore, when we import it, our node will be set to `840.000` almost instantly.
 To do this we can use the [command that introduces Bitcoin Core to version 26.0 “loadtxoutset”](https://bitcoincore.org/en/doc/28.0.0/rpc/blockchain/loadtxoutset/).

@@ -53,7 +53,7 @@ Si!! Els blocs previs es podran anar descarregant en segon pla sense influir en 
 > _Aquest és el motiu pel qual els nodes "pruned" també poden verificar tota la informació, només necesiten l'**UTXO set**!_
 
 
-### Pas 1. Carregar còpia de l'UTXO set
+### Carregar còpia de l'UTXO set
 
 Suposem que tenim un backup de l'**UTXO set** en un fitxer: `utxo.dat`. Aquest backup de l'**UTXO set** està fet en el bloc `840.000`, per tant, quan l'importem, el nostre node s'haurà d'actualitzar a l'altura `840.000` casi a l'instant.
 Per fer-ho podem utilitzar la [comanda que introdueix Bitcoin Core a la versió 26.0 "loadtxoutset"](https://bitcoincore.org/en/doc/28.0.0/rpc/blockchain/loadtxoutset/).
