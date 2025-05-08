@@ -1,6 +1,6 @@
 +++
 title = "How the UTXO Set Can Help Us Synchronize a Bitcoin Node"
-draft = false
+draft = true
 date = 2025-02-13
 tags = ["Nodes", "BitcoinCore", "Layer 1", "Bitcoin-cli"]
 categories = ["Guides"]
