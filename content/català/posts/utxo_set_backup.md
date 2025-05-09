@@ -206,6 +206,9 @@ Fixant-nos en els logs anteriors podem veure que, tot i que està verificant blo
 
 La manera més fàcil d'aconseguir un backup de l'**UTXO set** és amb el magnet link:`magnet:?xt=urn:btih:559bd78170502971e15e97d7572e4c824f033492&dn=utxo-880000.dat&tr=udp%3A%2F%2Ftracker.bitcoin.sprovoost.nl%3A6969`.
 
+> :warning: **Alerta**.
+> *Aquest magnet link és pel bloc 800.000*
+
 Com he dit prèviament s'ha d'evitar descarregar l'**UTXO set** de fons desconegudes (**no et pots fiar de mi!**), però bé, hi ha diferents mecanismes de verificar que la còpia que proporciona aquest magnet link és correcte:
 - Per començar és el link proporcionat en el [PR Bitcoin Core](https://github.com/bitcoin/bitcoin/pull/31969) que introdueix els paràmetres al codi.
 - Pots validar el hash de la còpia amb: `shasum -a 256 utxo-880000.dat` el resultat hauria de donar `43b3b1ad6e1005ffc0ff49514d0ffcc3e3ce671cc8d02da7fa7bac5405f89de4`.

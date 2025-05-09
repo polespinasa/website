@@ -206,6 +206,9 @@ Looking at the previous logs we can see that, although it is verifying very old 
 
 The easiest way to get a backup of the **UTXO set** is with the magnet link: `magnet:?xt=urn:btih:559bd78170502971e15e97d7572e4c824f033492&dn=utxo-880000.dat&tr=udp%3A%2F%2Ftracker.bitcoin.sprovoost.nl%3A6969`.
 
+> :warning: **Warning**.
+> *This magnet link is for block 800.000*
+
 As I said before, you should avoid downloading the **UTXO set** from unknown sources (**don't trust me!**), but well, there are different mechanisms to verify that the copy provided by this magnet link is correct:
 - The link provided in the [PR Bitcoin Core](https://github.com/bitcoin/bitcoin/pull/31969) which introduces the parameters to the code.
 - You can validate the hash of the copy with: `shasum -a 256 utxo-880000.dat` the result should give `43b3b1ad6e1005ffc0ff49514d0ffcc3e3e3ce671cc8d02da7fa7bac5405f89de4`.
