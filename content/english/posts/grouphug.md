@@ -77,7 +77,7 @@ These UX problems could be solved if the wallet detects that the transaction con
 
 ### Community
 
-You can check the code of my GroupHug implementation on the [GitHub](https://github.com/polespinasa/bitcoin-grouphug) repository.
+You can check the code of my GroupHug implementation on the [GitHub](https://github.com/Bitcoin-GroupHug/bitcoin-grouphug) repository.
 You can also find it running on the [Barcelona Bitcoin Only](https://x.com/bcnbitcoinonly) community server:
 - Mainnet: https://grouphug.bitcoinbarcelona.xyz/
 - Testnet3: https://grouphug.testnet.bitcoinbarcelona.xyz/

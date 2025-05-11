@@ -80,7 +80,7 @@ Aquests problemes d'UX es podrien solucionar si el wallet en detectar que la tra
 
 ### Comunitat
 
-Podeu consultar el codi sobre la meva implementació de GroupHug al repositori de [GitHub](https://github.com/polespinasa/bitcoin-grouphug).
+Podeu consultar el codi sobre la meva implementació de GroupHug al repositori de [GitHub](https://github.com/Bitcoin-GroupHug/bitcoin-grouphug).
 També podeu trobar-lo en funcionament en el servidor de la comunitat de [Barcelona Bitcoin Only](https://x.com/bcnbitcoinonly):
 - Mainnet: https://grouphug.bitcoinbarcelona.xyz/
 - Testnet3: https://grouphug.testnet.bitcoinbarcelona.xyz/
