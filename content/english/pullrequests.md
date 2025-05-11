@@ -8,6 +8,10 @@ Find here a list of my PRs and contributions to different Bitcoin related open s
 
 	Status &rarr; <span style="color: green;">Open</span>
 
+- [#32468 - rpc:generatetomany](https://github.com/bitcoin/bitcoin/pull/32468)
+
+	Status &rarr; <span style="color: green;">Open</span>
+
 - [#31278 - wallet, rpc: deprecate settxfee and paytxfee](https://github.com/bitcoin/bitcoin/pull/31278)
 
 	Status &rarr; <span style="color: purple;">Merged</span>

@@ -8,6 +8,10 @@ Troba aquí una llista dels meus PRs i contribucions a diferents projectes de co
 
 	Status &rarr; <span style="color: green;">Open</span>
 
+- [#32468 - rpc:generatetomany](https://github.com/bitcoin/bitcoin/pull/32468)
+
+	Status &rarr; <span style="color: green;">Open</span>
+
 - [#31278 - wallet, rpc: deprecate settxfee and paytxfee](https://github.com/bitcoin/bitcoin/pull/31278)
 
 	Status &rarr; <span style="color: purple;">Merged</span>
