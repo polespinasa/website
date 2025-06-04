@@ -1,7 +1,7 @@
 +++
 title = "How the UTXO Set Can Help Us Synchronize a Bitcoin Node"
-draft = true
-date = 2025-02-13
+draft = false
+date = 2025-04-06
 tags = ["Nodes", "BitcoinCore", "Layer 1", "Bitcoin-cli"]
 categories = ["Guides"]
 about = "How to speed up the initial synchronization of the Bitcoin blockchain if you've previously run a node"

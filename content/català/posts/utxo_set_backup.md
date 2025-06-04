@@ -1,7 +1,7 @@
 +++
 title = "Com l'UTXO set ens pot ajudar a sincronitzar un node de Bitcoin"
 draft = false
-date = 2025-02-13
+date = 2025-04-06
 tags = ["Nodes", "BitcoinCore", "Layer 1", "Bitcoin-cli"]
 categories = ["Guies"]
 about = "Com accelerar la sincronització inicial de la blockchain de Bitcoin en el cas d'haver tingut un node prèviament"
