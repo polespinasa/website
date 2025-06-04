@@ -6,20 +6,41 @@
     <description>Recent content in Tags on Pol Espinasa</description>
     <generator>Hugo -- 0.139.4</generator>
     <language>english</language>
-    <lastBuildDate>Mon, 20 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 06 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://pesvi.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Coinjoin</title>
-      <link>https://pesvi.xyz/tags/coinjoin/</link>
-      <pubDate>Mon, 20 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://pesvi.xyz/tags/coinjoin/</guid>
+      <title>Bitcoin-Cli</title>
+      <link>https://pesvi.xyz/tags/bitcoin-cli/</link>
+      <pubDate>Sun, 06 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://pesvi.xyz/tags/bitcoin-cli/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>BitcoinCore</title>
+      <link>https://pesvi.xyz/tags/bitcoincore/</link>
+      <pubDate>Sun, 06 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://pesvi.xyz/tags/bitcoincore/</guid>
       <description></description>
     </item>
     <item>
       <title>Layer 1</title>
       <link>https://pesvi.xyz/tags/layer-1/</link>
-      <pubDate>Mon, 20 May 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 06 Apr 2025 00:00:00 +0000</pubDate>
       <guid>https://pesvi.xyz/tags/layer-1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nodes</title>
+      <link>https://pesvi.xyz/tags/nodes/</link>
+      <pubDate>Sun, 06 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://pesvi.xyz/tags/nodes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Coinjoin</title>
+      <link>https://pesvi.xyz/tags/coinjoin/</link>
+      <pubDate>Mon, 20 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://pesvi.xyz/tags/coinjoin/</guid>
       <description></description>
     </item>
     <item>
@@ -41,13 +62,6 @@
       <link>https://pesvi.xyz/tags/utxo-management/</link>
       <pubDate>Mon, 20 May 2024 00:00:00 +0000</pubDate>
       <guid>https://pesvi.xyz/tags/utxo-management/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Bitcoin-Cli</title>
-      <link>https://pesvi.xyz/tags/bitcoin-cli/</link>
-      <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://pesvi.xyz/tags/bitcoin-cli/</guid>
       <description></description>
     </item>
     <item>
