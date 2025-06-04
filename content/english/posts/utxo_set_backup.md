@@ -217,7 +217,7 @@ As I said before, you should avoid downloading the **UTXO set** from unknown sou
 
 To do this we need a node already synchronized to a block height higher than the backup. In this case higher than `880.000`.
 > :warning: **Warning**.
-> *The node cannot be pruned at a lower height than the height of the block on which the backup is made.*
+> *The node cannot be pruned at a higher height than the height of the block on which the backup is made.*
 
 Using the instruction `bitcoin-cli -rpcclienttimeout=0 dumptxoutset utxo.dat rollback`. By default this command will backup the **UTXO set** to the `~\.bitcoin` directory. This process may take a little while, because the node is getting desynchronized until it reaches the block of the last valid checkpoint.
 

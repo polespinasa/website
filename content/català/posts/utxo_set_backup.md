@@ -217,7 +217,7 @@ Com he dit prèviament s'ha d'evitar descarregar l'**UTXO set** de fons desconeg
 
 Per fer-ho necessitem un node ja sincronitzat a una altura de bloc superior a la del backup. En aquest cas superior al `880.000`.
 > :warning: **Alerta**\
-> *El node no pot estar prunat a una altura inferior a la del bloc sobre el qual es fa el backup!*
+> *El node no pot estar prunat a una altura superior a la del bloc sobre el qual es fa el backup!*
 
 
 Utilitzant la instrucció `bitcoin-cli -rpcclienttimeout=0 dumptxoutset utxo.dat rollback`. Per defecte aquesta comanda farà un backup de l'**UTXO set** al directori `~\.bitcoin`. Aquest procés pot tardar una miqueta, ja que el node es "desincronitza" fins a arribar al block de l'últim checkpoint vàlid.
