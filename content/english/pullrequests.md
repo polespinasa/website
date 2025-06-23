@@ -8,7 +8,11 @@ Find here a list of my PRs and contributions to different Bitcoin related open s
 
 	Status &rarr; <span style="color: green;">Open</span>
 
-- [#32468 - rpc:generatetomany](https://github.com/bitcoin/bitcoin/pull/32468)
+- [#32468 - rpc: generateblock to allow multiple outputs](https://github.com/bitcoin/bitcoin/pull/32468)
+
+	Status &rarr; <span style="color: green;">Open</span>
+
+- [#32750 - refactor: CFeeRate encapsulates FeeFrac internally](https://github.com/bitcoin/bitcoin/pull/32750)
 
 	Status &rarr; <span style="color: green;">Open</span>
 
@@ -27,3 +31,8 @@ Find here a list of my PRs and contributions to different Bitcoin related open s
 - [#31177 - rpc, logging: return "verificationprogress" of 1 when up to date](https://github.com/bitcoin/bitcoin/pull/31177)
 
 	Status &rarr; <span style="color: red;">Closed</span>
+
+
+## SeedSigner
+
+- [#35 - [Ca] Catalan Files Translated](https://github.com/SeedSigner/seedsigner-translations/pull/35)
