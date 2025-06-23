@@ -31,4 +31,8 @@ Troba aquí una llista dels meus PRs i contribucions a diferents projectes de co
 - [#31177 - rpc, logging: return "verificationprogress" of 1 when up to date](https://github.com/bitcoin/bitcoin/pull/31177)
 
 	Status &rarr; <span style="color: red;">Closed</span>
-	
+
+
+## SeedSigner
+
+- [#35 - [Ca] Catalan Files Translated](https://github.com/SeedSigner/seedsigner-translations/pull/35)
