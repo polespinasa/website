@@ -26,7 +26,7 @@ Find here a list of my PRs and contributions to different Bitcoin related open s
 
 - [#32138 - wallet, rpc: remove settxfee and paytxfee](https://github.com/bitcoin/bitcoin/pull/32138)
 
-	Status &rarr; <span style="color: grey;">Draft</span>
+	Status &rarr; <span style="color: red;">Closed</span>
 
 - [#31177 - rpc, logging: return "verificationprogress" of 1 when up to date](https://github.com/bitcoin/bitcoin/pull/31177)
 
