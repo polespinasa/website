@@ -14,7 +14,7 @@ Troba aquí una llista dels meus PRs i contribucions a diferents projectes de co
 
 - [#32750 - refactor: CFeeRate encapsulates FeeFrac internally](https://github.com/bitcoin/bitcoin/pull/32750)
 
-	Status &rarr; <span style="color: green;">Open</span>
+	Status &rarr; <span style="color: purple;">Merged</span>
 
 - [#31278 - wallet, rpc: deprecate settxfee and paytxfee](https://github.com/bitcoin/bitcoin/pull/31278)
 
