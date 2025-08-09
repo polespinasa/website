@@ -83,7 +83,7 @@ Si t&amp;rsquo;agrada la meva feina i vols donar-me suport pots fer-ho:&lt;/p&gt
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/bitcoin/bitcoin/pull/32750&#34;&gt;#32750 - refactor: CFeeRate encapsulates FeeFrac internally&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Status → &lt;span style=&#34;color: green;&#34;&gt;Open&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Status → &lt;span style=&#34;color: purple;&#34;&gt;Merged&lt;/span&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/bitcoin/bitcoin/pull/31278&#34;&gt;#31278 - wallet, rpc: deprecate settxfee and paytxfee&lt;/a&gt;&lt;/p&gt;
