@@ -4,10 +4,6 @@ Troba aquí una llista dels meus PRs i contribucions a diferents projectes de co
 
 [My Bitcoin Core Workspace](https://github.com/polespinasa/bitcoin)
 
-- [#33220 - doc: truc packages allow sub min feerate transactions](https://github.com/bitcoin/bitcoin/pull/33220)
-
-	Status &rarr; <span style="color: green;">Open</span>
-
 - [#33259 - rpc, logging: add backgroundvalidation to getblockchaininfo](https://github.com/bitcoin/bitcoin/pull/33259)
 
 	Status &rarr; <span style="color: green;">Open</span>
@@ -35,6 +31,10 @@ Troba aquí una llista dels meus PRs i contribucions a diferents projectes de co
 - [#32139 - test: remove strict restrictions on rpc_deprecated test](https://github.com/bitcoin/bitcoin/pull/32139)
 
 	Status &rarr; <span style="color: purple;">Merged</span>
+
+- [#33220 - doc: truc packages allow sub min feerate transactions](https://github.com/bitcoin/bitcoin/pull/33220)
+
+	Status &rarr; <span style="color: purple;">Meged</span>
 
 - [#31177 - rpc, logging: return "verificationprogress" of 1 when up to date](https://github.com/bitcoin/bitcoin/pull/31177)
 
