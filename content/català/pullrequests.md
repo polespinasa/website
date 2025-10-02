@@ -40,6 +40,10 @@ Troba aquí una llista dels meus PRs i contribucions a diferents projectes de co
 
 	Status &rarr; <span style="color: red;">Closed</span>
 
+- [#33507 - rpc: add sendrawtransactiontopeer](https://github.com/bitcoin/bitcoin/pull/33507)
+
+	Status &rarr; <span style="color: red;">Closed</span>
+
 
 ## SeedSigner
 
