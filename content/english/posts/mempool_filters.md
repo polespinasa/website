@@ -6,11 +6,11 @@ tags = ["Nodes", "Mempool", "P2P", "Mining", "Policy"]
 categories = ["Opinion"]
 +++
 
-### What is the Mempool?
+## What is the Mempool?
 
 The simplest definition for the mempool is: ***the mempool*** *is a cache that stores unconfirmed consensus valid transactions.*
 
-#### **But why do we need a mempool?**
+### **But why do we need a mempool?**
 
 The mempool is an important resource for each node and it mainly allows the peer-to-peer transaction relay network.
 
@@ -22,7 +22,7 @@ The mempool is also useful to estimate the fees you need to pay in order to get 
 
 For more information about why do we have a mempool read [Waiting for confirmation #1: why do we have a mempool?](https://bitcoinops.org/en/newsletters/2023/05/17/#waiting-for-confirmation-1-why-do-we-have-a-mempool)
 
-### Consensus Rules vs Policy Rules
+## Consensus Rules vs Policy Rules
 
 When we talk about filters, we mean the rules that decide which transactions are **standard**. If a transaction is standard, it makes it into our mempool and gets relayed across the network. We don't add transactions to our mempool neither we relay transactions that we consider non-standard. 
 
@@ -32,7 +32,7 @@ Note that in the previous definition we don't talk about blocks or the blockchai
 
 **The rules that are applied to transactions in blocks are called consensus rules** and this rules must be enforced in a compatible way by all nodes. If that is not the case then the blockchain is likely to get [forked](https://bitcoin.stackexchange.com/questions/30817/what-is-a-soft-fork-what-is-a-hard-fork-what-are-their-differences). Some example of this rules could be that a transaction cannot have outputs that spend more money than what it has in the inputs, transactions cannot double spend coins, among others.
 
-#### **So what is the role of the policy rules (filters)?**
+## **So what is the role of the policy rules (filters)?**
 
 Your node is computer connected to a peer-to-peer network with a lot of other unknown entities that may launch a denial of service (DoS) attack crafting messages that cause the node to run out of memory and crash, or spend its computational resources and bandwidth on meaningless data instead of accepting new blocks. Because of these entities being unknown by design, your node cannot know whether he is connecting to a honest or malicious peer and cannot effectively ban them to avoid being attacked. Because of this, it is imperative to implement policies against DoS to limit the cost of running a full node.
 
@@ -100,13 +100,13 @@ An example of filters not working can be seen with the recent (second half 2025)
 
 In summary not only filters cannot avoid "spam" getting into the blockchain but also they are harmful for the decentralization of mining. They are not a solution for this problem, they are shooting ourselves in the foot.
 
-### Did Segwit and Taproot cause this?
+## Did Segwit and Taproot cause this?
 
 No, for sure no. OP\_RETURN was there before SegWit and Taproot and it could be used to embed data in the blockchain. And the other methods that are being used could use P2SH.
 
 Although SegWit and Taproot aren't cause, I would not discard them contributing indirectly to the growth of "spam". SegWit came with a discount that made it cheaper to embed data and Taproot raised the amount of data that could be attached to one input, as it does not have the 10,000 bytes limit that P2WSH have.
 
-### Are Datum and Sv2 the solution?
+## Are Datum and Sv2 the solution?
 
 Datum and Sv2 are both good improvements towards decentralizing mining by letting users create their own block templates and still split the reward of the blocks found. The problem is that they only resolve the **"how do we decentralize block template creation?"** question. The "how we do it" doesn't matter if we have strong centralizing forces towards centralized mining pools.
 
