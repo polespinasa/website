@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://pesvi.xyz/posts/mempool_filters/</loc>
+    <lastmod>2025-09-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://pesvi.xyz/categories/</loc>
     <lastmod>2025-09-02T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -16,9 +19,6 @@
                 />
   </url><url>
     <loc>https://pesvi.xyz/tags/mempool/</loc>
-    <lastmod>2025-09-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://pesvi.xyz/posts/mempool_filters/</loc>
     <lastmod>2025-09-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://pesvi.xyz/tags/mining/</loc>

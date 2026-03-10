@@ -9,12 +9,11 @@
     <lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://pesvi.xyz/categories/opinion/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Mempool Filters Technical Opinion</title>
+      <title>A technical overview and opinion about mempool filters</title>
       <link>https://pesvi.xyz/posts/mempool_filters/</link>
       <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
       <guid>https://pesvi.xyz/posts/mempool_filters/</guid>
-      <description>&lt;h2 id=&#34;a-technical-overview-and-opinion-about-mempool-filters&#34;&gt;A technical overview and opinion about mempool filters&lt;/h2&gt;
-&lt;h3 id=&#34;what-is-the-mempool&#34;&gt;What is the Mempool?&lt;/h3&gt;
+      <description>&lt;h3 id=&#34;what-is-the-mempool&#34;&gt;What is the Mempool?&lt;/h3&gt;
 &lt;p&gt;The simplest definition for the mempool is: &lt;em&gt;&lt;strong&gt;the mempool&lt;/strong&gt;&lt;/em&gt; &lt;em&gt;is a cache that stores unconfirmed consensus valid transactions.&lt;/em&gt;&lt;/p&gt;
 &lt;h4 id=&#34;but-why-do-we-need-a-mempool&#34;&gt;&lt;strong&gt;But why do we need a mempool?&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;The mempool is an important resource for each node and it mainly allows the peer-to-peer transaction relay network.&lt;/p&gt;
