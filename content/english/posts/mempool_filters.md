@@ -1,12 +1,10 @@
 +++
-title = 'Mempool Filters Technical Opinion'
+title = 'A technical overview and opinion about mempool filters'
 date = 2025-09-02
 draft = false
 tags = ["Nodes", "Mempool", "P2P", "Mining", "Policy"]
 categories = ["Opinion"]
 +++
-
-## A technical overview and opinion about mempool filters
 
 ### What is the Mempool?
 
@@ -30,7 +28,7 @@ When we talk about filters, we mean the rules that decide which transactions are
 
 Note that in the previous definition we don't talk about blocks or the blockchain, this is because **those policies are not applied to transactions in blocks**. If these policies were to be applied to transactions in blocks we would have multiple chain splits due to discrepancies between nodes.
 
-***A simple example:&#32;***Suppose that mempool policy rules are also applied to blocks. Alice and Bob having a different mempool policy, Alice only accept transactions that move at least 1 BTC and Bob does not have any minimum amount. At some point, when a miner finds a block with some transaction with less than 1 BTC Alice would discard that block while Bob would accept it. At the end they would be in two different versions of the blockchain!
+> ***A simple example:*** Suppose that mempool policy rules are also applied to blocks. Alice and Bob having a different mempool policy, Alice only accept transactions that move at least 1 BTC and Bob does not have any minimum amount. At some point, when a miner finds a block with some transaction with less than 1 BTC Alice would discard that block while Bob would accept it. At the end they would be in two different versions of the blockchain!
 
 **The rules that are applied to transactions in blocks are called consensus rules** and this rules must be enforced in a compatible way by all nodes. If that is not the case then the blockchain is likely to get [forked](https://bitcoin.stackexchange.com/questions/30817/what-is-a-soft-fork-what-is-a-hard-fork-what-are-their-differences). Some example of this rules could be that a transaction cannot have outputs that spend more money than what it has in the inputs, transactions cannot double spend coins, among others.
 
