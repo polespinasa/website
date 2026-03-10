@@ -36,7 +36,7 @@ Note that in the previous definition we don't talk about blocks or the blockchai
 
 Your node is computer connected to a peer-to-peer network with a lot of other unknown entities that may launch a denial of service (DoS) attack crafting messages that cause the node to run out of memory and crash, or spend its computational resources and bandwidth on meaningless data instead of accepting new blocks. Because of these entities being unknown by design, your node cannot know whether he is connecting to a honest or malicious peer and cannot effectively ban them to avoid being attacked. Because of this, it is imperative to implement policies against DoS to limit the cost of running a full node.
 
-***A real simple example:&#32;***An attacker could create a transaction with a lot of signatures of which all but the last signature are valid. This would make your node spend many resources and time validating the transaction until it fails just at the end. This is prevented with a policy rule that enforces a limit on the number of signature operations that can be in a transaction. Note that because this rule only applies to transactions you receive outside blocks, if it ends in a valid block your node will validate and store that transaction.
+> ***A real simple example:*** An attacker could create a transaction with a lot of signatures of which all but the last signature are valid. This would make your node spend many resources and time validating the transaction until it fails just at the end. This is prevented with a policy rule that enforces a limit on the number of signature operations that can be in a transaction. Note that because this rule only applies to transactions you receive outside blocks, if it ends in a valid block your node will validate and store that transaction.
 
 For a further explanation about what are the policy rules and why are they used see [Waiting for confirmation #5: Policy for Protection of Node Resources](https://bitcoinops.org/en/newsletters/2023/06/14/#waiting-for-confirmation-5-policy-for-protection-of-node-resources).
 
@@ -108,7 +108,7 @@ Although SegWit and Taproot aren't cause, I would not discard them contributing 
 
 ### Are Datum and Sv2 the solution?
 
-Datum and Sv2 are both good improvements towards decentralizing mining by letting users create their own block templates and still split the reward of the blocks found. The problem is that they only resolve the "**how do we decentralize block template creation?"&#32;**question. The "how we do it" doesn't matter if we have strong centralizing forces towards centralized mining pools.
+Datum and Sv2 are both good improvements towards decentralizing mining by letting users create their own block templates and still split the reward of the blocks found. The problem is that they only resolve the **"how do we decentralize block template creation?"** question. The "how we do it" doesn't matter if we have strong centralizing forces towards centralized mining pools.
 
 Hashers (people with mining devices such as ASICs, BitAxes, etc.) are usually incentivized by economics, at the end of the day mining is a business and the objective is to extract the maximum value with as little cost as possible while maximizing the profits. If there is a big pool mining blocks with extra reward because of out of band transactions(MEVil), hashers have a strong incentive to point their mining power to that pool. This makes Datum and Sv2 useless and irrelevant.
 
