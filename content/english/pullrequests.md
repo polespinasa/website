@@ -4,11 +4,15 @@ Find here a list of my PRs and contributions to different Bitcoin related open s
 
 [My Bitcoin Core Workspace](https://github.com/polespinasa/bitcoin)
 
-- [#33259 - rpc, logging: add backgroundvalidation to getblockchaininfo](https://github.com/bitcoin/bitcoin/pull/33259)
+- [#34580 - build: Add a compiler minimum version check](https://github.com/bitcoin/bitcoin/pull/34580)
 
 	Status &rarr; <span style="color: green;">Open</span>
 
-- [#32138 - wallet, rpc: remove settxfee and paytxfee](https://github.com/bitcoin/bitcoin/pull/32138)
+- [#33741 - rpc: Optionally print feerates in sat/vb](https://github.com/bitcoin/bitcoin/pull/33741)
+
+	Status &rarr; <span style="color: green;">Open</span>
+
+- [#33259 - rpc, logging: add backgroundvalidation to getblockchaininfo](https://github.com/bitcoin/bitcoin/pull/33259)
 
 	Status &rarr; <span style="color: green;">Open</span>
 
@@ -19,6 +23,10 @@ Find here a list of my PRs and contributions to different Bitcoin related open s
 - [#32468 - rpc: generateblock to allow multiple outputs](https://github.com/bitcoin/bitcoin/pull/32468)
 
 	Status &rarr; <span style="color: green;">Open</span>
+
+- [#32138 - wallet, rpc: remove settxfee and paytxfee](https://github.com/bitcoin/bitcoin/pull/32138)
+
+	Status &rarr; <span style="color: purple;">Merged</span>
 
 - [#32750 - refactor: CFeeRate encapsulates FeeFrac internally](https://github.com/bitcoin/bitcoin/pull/32750)
 
@@ -43,8 +51,3 @@ Find here a list of my PRs and contributions to different Bitcoin related open s
 - [#33507 - rpc: add sendrawtransactiontopeer](https://github.com/bitcoin/bitcoin/pull/33507)
 
 	Status &rarr; <span style="color: red;">Closed</span>
-
-
-## SeedSigner
-
-- [#35 - [Ca] Catalan Files Translated](https://github.com/SeedSigner/seedsigner-translations/pull/35)
