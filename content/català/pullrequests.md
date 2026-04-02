@@ -6,6 +6,10 @@ Troba aquí una llista dels meus PRs i contribucions a diferents projectes de co
 
 Pots veure els meus PRs a Core [aquí](https://github.com/bitcoin/bitcoin/pulls/polespinasa)
 
+- [#34991 - test: fix feature_index_prune.py bug when using --usecli](https://github.com/bitcoin/bitcoin/pull/34991)
+
+	Status &rarr; <span style="color: green;">Open</span>
+
 - [#34861 - wallet: Add importdescriptors interface](https://github.com/bitcoin/bitcoin/pull/34861)
 
 	Status &rarr; <span style="color: green;">Open</span>
