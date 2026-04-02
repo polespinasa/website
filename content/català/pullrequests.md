@@ -2,17 +2,19 @@ Troba aquí una llista dels meus PRs i contribucions a diferents projectes de co
 
 ## Bitcoin Core
 
-[My Bitcoin Core Workspace](https://github.com/polespinasa/bitcoin)
+[El meu repositori de Core](https://github.com/polespinasa/bitcoin)
+
+Pots veure els meus PRs a Core [aquí](https://github.com/bitcoin/bitcoin/pulls/polespinasa)
+
+- [#34861 - wallet: Add importdescriptors interface](https://github.com/bitcoin/bitcoin/pull/34861)
+
+	Status &rarr; <span style="color: green;">Open</span>
 
 - [#34580 - build: Add a compiler minimum version check](https://github.com/bitcoin/bitcoin/pull/34580)
 
 	Status &rarr; <span style="color: green;">Open</span>
 
 - [#33741 - rpc: Optionally print feerates in sat/vb](https://github.com/bitcoin/bitcoin/pull/33741)
-
-	Status &rarr; <span style="color: green;">Open</span>
-
-- [#33259 - rpc, logging: add backgroundvalidation to getblockchaininfo](https://github.com/bitcoin/bitcoin/pull/33259)
 
 	Status &rarr; <span style="color: green;">Open</span>
 
@@ -23,6 +25,10 @@ Troba aquí una llista dels meus PRs i contribucions a diferents projectes de co
 - [#32468 - rpc: generateblock to allow multiple outputs](https://github.com/bitcoin/bitcoin/pull/32468)
 
 	Status &rarr; <span style="color: green;">Open</span>
+
+- [#33259 - rpc, logging: add backgroundvalidation to getblockchaininfo](https://github.com/bitcoin/bitcoin/pull/33259)
+
+	Status &rarr; <span style="color: purple;">Merged</span>
 
 - [#32138 - wallet, rpc: remove settxfee and paytxfee](https://github.com/bitcoin/bitcoin/pull/32138)
 
