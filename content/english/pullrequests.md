@@ -6,6 +6,10 @@ Find here a list of my PRs and contributions to different Bitcoin related open s
 
 You can see all my PRs to Core [here](https://github.com/bitcoin/bitcoin/pulls/polespinasa)
 
+- [#34998 - ci: add --extended when using --usecli](https://github.com/bitcoin/bitcoin/pull/34998)
+
+	Status &rarr; <span style="color: green;">Open</span>
+
 - [#34991 - test: fix feature_index_prune.py bug when using --usecli](https://github.com/bitcoin/bitcoin/pull/34991)
 
 	Status &rarr; <span style="color: green;">Open</span>
