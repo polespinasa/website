@@ -17,8 +17,8 @@
 &lt;h1 id=&#34;què-és-la-mempool&#34;&gt;Què és la mempool?&lt;/h1&gt;
 &lt;p&gt;La definició més senzilla de la mempool és: &lt;em&gt;&lt;strong&gt;la mempool&lt;/strong&gt;&lt;/em&gt; &lt;em&gt;és una cache que emmagatzema transaccions vàlides per consens, però encara no confirmades&lt;/em&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;però-per-què-necessitem-una-mempool&#34;&gt;&lt;strong&gt;Però per què necessitem una mempool?&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;La mempool és un recurs important per a cada node i permet principalment que la xarxa P2P (peer-to-peer) funcioni.&lt;/p&gt;
-&lt;p&gt;Cada ~10 minuts, quan es troba un bloc nou, els nodes sense mempool experimenten un pic en el consum d&amp;rsquo;amplada de banda, és a dir el nodes reben de cop moltes dades alhora, a més de entrar en un període computacionalment intens validant cada transacció del bloc. En canvi, els nodes amb mempool ja han vist totes o la majoria de les transaccions dins d&amp;rsquo;un bloc nou i les tenen emmagatzemades a la seva mempool.&lt;/p&gt;</description>
+&lt;p&gt;La mempool és un recurs important per a cada node i permet principalment que la xarxa peer-to-peer (P2P) funcioni.&lt;/p&gt;
+&lt;p&gt;Cada ~10 minuts, quan es troba un bloc nou, els nodes sense mempool experimenten un pic en el consum d&amp;rsquo;amplada de banda, és a dir, els nodes reben de cop moltes dades, a més d&amp;rsquo;entrar en un període computacionalment intens validant cada transacció del bloc. En canvi, els nodes amb mempool ja han vist totes o la majoria de les transaccions dins d&amp;rsquo;un bloc nou i les tenen emmagatzemades a la seva mempool.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
