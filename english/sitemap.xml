@@ -4,6 +4,16 @@
   <url>
     <loc>https://pesvi.xyz/posts/mempool_filters/</loc>
     <lastmod>2025-09-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/posts/mempool_filters/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/posts/mempool_filters/"
+                />
   </url><url>
     <loc>https://pesvi.xyz/categories/</loc>
     <lastmod>2025-09-02T00:00:00+00:00</lastmod>
@@ -20,9 +30,29 @@
   </url><url>
     <loc>https://pesvi.xyz/tags/mempool/</loc>
     <lastmod>2025-09-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/tags/mempool/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/tags/mempool/"
+                />
   </url><url>
     <loc>https://pesvi.xyz/tags/mining/</loc>
     <lastmod>2025-09-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/tags/mining/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/tags/mining/"
+                />
   </url><url>
     <loc>https://pesvi.xyz/tags/nodes/</loc>
     <lastmod>2025-09-02T00:00:00+00:00</lastmod>
@@ -39,9 +69,29 @@
   </url><url>
     <loc>https://pesvi.xyz/categories/opinion/</loc>
     <lastmod>2025-09-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/categories/opinion/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/categories/opinion/"
+                />
   </url><url>
     <loc>https://pesvi.xyz/tags/p2p/</loc>
     <lastmod>2025-09-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/tags/p2p/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/tags/p2p/"
+                />
   </url><url>
     <loc>https://pesvi.xyz/</loc>
     <lastmod>2025-09-02T00:00:00+00:00</lastmod>
@@ -58,6 +108,16 @@
   </url><url>
     <loc>https://pesvi.xyz/tags/policy/</loc>
     <lastmod>2025-09-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/tags/policy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/tags/policy/"
+                />
   </url><url>
     <loc>https://pesvi.xyz/posts/</loc>
     <lastmod>2025-09-02T00:00:00+00:00</lastmod>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="català" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Una visió tècnica general i opinió sobre els filtres de la mempool | Pol Espinasa</title>
+<meta name="keywords" content="Nodes, Mempool, P2P, Mining, Policy">
+<meta name="description" content="Traducció feta per Trid^^!!
+Què és la mempool?
+La definició més senzilla de la mempool és: la mempool és una cache que emmagatzema transaccions vàlides per consens, però encara no confirmades.
+Però per què necessitem una mempool?
+La mempool és un recurs important per a cada node i permet principalment que la xarxa P2P (peer-to-peer) funcioni.
+Cada ~10 minuts, quan es troba un bloc nou, els nodes sense mempool experimenten un pic en el consum d&rsquo;amplada de banda, és a dir el nodes reben de cop moltes dades alhora, a més de entrar en un període computacionalment intens validant cada transacció del bloc. En canvi, els nodes amb mempool ja han vist totes o la majoria de les transaccions dins d&rsquo;un bloc nou i les tenen emmagatzemades a la seva mempool.">
+<meta name="author" content="Pol Espinasa">
+<link rel="canonical" href="https://pesvi.xyz/catal%C3%A0/posts/mempool_filters/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://pesvi.xyz/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://pesvi.xyz/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://pesvi.xyz/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://pesvi.xyz/apple-touch-icon.png">
+<link rel="mask-icon" href="https://pesvi.xyz/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="english" href="https://pesvi.xyz/posts/mempool_filters/">
+<link rel="alternate" hreflang="català" href="https://pesvi.xyz/catal%C3%A0/posts/mempool_filters/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXYVPZQE88"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-KXYVPZQE88');
+        }
+      </script><meta property="og:url" content="https://pesvi.xyz/catal%C3%A0/posts/mempool_filters/">
+  <meta property="og:site_name" content="Pol Espinasa">
+  <meta property="og:title" content="Una visió tècnica general i opinió sobre els filtres de la mempool">
+  <meta property="og:description" content="Traducció feta per Trid^^!!
+Què és la mempool? La definició més senzilla de la mempool és: la mempool és una cache que emmagatzema transaccions vàlides per consens, però encara no confirmades.
+Però per què necessitem una mempool? La mempool és un recurs important per a cada node i permet principalment que la xarxa P2P (peer-to-peer) funcioni.
+Cada ~10 minuts, quan es troba un bloc nou, els nodes sense mempool experimenten un pic en el consum d’amplada de banda, és a dir el nodes reben de cop moltes dades alhora, a més de entrar en un període computacionalment intens validant cada transacció del bloc. En canvi, els nodes amb mempool ja han vist totes o la majoria de les transaccions dins d’un bloc nou i les tenen emmagatzemades a la seva mempool.">
+  <meta property="og:locale" content="català">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-27T00:00:00+00:00">
+    <meta property="article:tag" content="Nodes">
+    <meta property="article:tag" content="Mempool">
+    <meta property="article:tag" content="P2P">
+    <meta property="article:tag" content="Mining">
+    <meta property="article:tag" content="Policy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Una visió tècnica general i opinió sobre els filtres de la mempool">
+<meta name="twitter:description" content="Traducció feta per Trid^^!!
+Què és la mempool?
+La definició més senzilla de la mempool és: la mempool és una cache que emmagatzema transaccions vàlides per consens, però encara no confirmades.
+Però per què necessitem una mempool?
+La mempool és un recurs important per a cada node i permet principalment que la xarxa P2P (peer-to-peer) funcioni.
+Cada ~10 minuts, quan es troba un bloc nou, els nodes sense mempool experimenten un pic en el consum d&rsquo;amplada de banda, és a dir el nodes reben de cop moltes dades alhora, a més de entrar en un període computacionalment intens validant cada transacció del bloc. En canvi, els nodes amb mempool ja han vist totes o la majoria de les transaccions dins d&rsquo;un bloc nou i les tenen emmagatzemades a la seva mempool.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://pesvi.xyz/catal%C3%A0/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Una visió tècnica general i opinió sobre els filtres de la mempool",
+      "item": "https://pesvi.xyz/catal%C3%A0/posts/mempool_filters/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Una visió tècnica general i opinió sobre els filtres de la mempool",
+  "name": "Una visió tècnica general i opinió sobre els filtres de la mempool",
+  "description": "Traducció feta per Trid^^!!\nQuè és la mempool? La definició més senzilla de la mempool és: la mempool és una cache que emmagatzema transaccions vàlides per consens, però encara no confirmades.\nPerò per què necessitem una mempool? La mempool és un recurs important per a cada node i permet principalment que la xarxa P2P (peer-to-peer) funcioni.\nCada ~10 minuts, quan es troba un bloc nou, els nodes sense mempool experimenten un pic en el consum d\u0026rsquo;amplada de banda, és a dir el nodes reben de cop moltes dades alhora, a més de entrar en un període computacionalment intens validant cada transacció del bloc. En canvi, els nodes amb mempool ja han vist totes o la majoria de les transaccions dins d\u0026rsquo;un bloc nou i les tenen emmagatzemades a la seva mempool.\n",
+  "keywords": [
+    "Nodes", "Mempool", "P2P", "Mining", "Policy"
+  ],
+  "articleBody": "Traducció feta per Trid^^!!\nQuè és la mempool? La definició més senzilla de la mempool és: la mempool és una cache que emmagatzema transaccions vàlides per consens, però encara no confirmades.\nPerò per què necessitem una mempool? La mempool és un recurs important per a cada node i permet principalment que la xarxa P2P (peer-to-peer) funcioni.\nCada ~10 minuts, quan es troba un bloc nou, els nodes sense mempool experimenten un pic en el consum d’amplada de banda, és a dir el nodes reben de cop moltes dades alhora, a més de entrar en un període computacionalment intens validant cada transacció del bloc. En canvi, els nodes amb mempool ja han vist totes o la majoria de les transaccions dins d’un bloc nou i les tenen emmagatzemades a la seva mempool.\nAmb Compact block relay (BIP-152), els nodes només descarreguen la capçalera del bloc anterior més algunes pistes sobre quines transaccions hi ha dins del bloc. Després, el node reconstrueix el bloc recuperant les transaccions de la mempool i demana únicament les que falten al node que ha enviat la capçalera del bloc anterior. Això és molt més eficient i ràpid que sol·licitar el bloc sencer, perquè s’ha d’enviar menys dades, i la validació de les transaccions ja s’ha fet prèviament. Utilitzar una mempool i compact blocks augmenta dràsticament la velocitat de propagació de blocs a tota la xarxa i, per tant, redueix el risc de “stale blocks” (blocs abandonats).\nLa mempool també és útil per estimar les comissions (fees) que has de pagar perquè una transacció sigui minada en el rang de temps que vulguis. L’espai de bloc es ven en un mercat de subhastes basat en comissions. Observant les transaccions pendents a la mempool, pots estimar quina és la comissió mínima que els altres estan disposats a pagar per l’espai de bloc i quines ofertes han tingut èxit en el passat.\nPer a més informació sobre per què tenim una mempool, llegeix: Waiting for confirmation #1: why do we have a mempool?\nRegles de consens (Consensus Rules) vs Filtres (Policy Rules) Quan parlem de filtres, ens referim a les regles que decideixen quines transaccions són standard. Si una transacció és standard, entra a la nostra mempool i es retransmet per tota la xarxa. No afegim transaccions a la nostra mempool ni retransmetem transaccions que considerem no standard.\nFixeu-vos que en la definició anterior no parlem de blocs ni de la blockchain. Això és perquè aquests filtres no s’apliquen a les transaccions que ja són dins d’un bloc. Si aquests filtres s’apliquessin a les transaccions dels blocs, tindríem múltiples bifurcacions de la cadena a causa de discrepàncies entre nodes.\nUn exemple senzill: Suposem que els filtres de la mempool també s’apliquen als blocs. L’Alice i en Bob tenen filtres diferents: l’Alice només accepta transaccions que moguin com a mínim 1 BTC, mentre que en Bob no té cap quantitat mínima. En algun moment, quan un miner troba un bloc amb una transacció de menys d'1 BTC, l’Alice descartaria aquest bloc, però en Bob l’acceptaria. Al final, estarien en dues versions diferents de la blockchain!\nLes regles que s’apliquen a les transaccions dins dels blocs s’anomenen regles de consens (consensus rules) i aquestes regles han de ser aplicades de manera compatible per tots els nodes. Si no és així, és probable que la blockchain es bifurqui (es divideixi). Alguns exemples d’aquestes regles són: una transacció no pot tenir sortides que gastin més diners del que té a les entrades, les transaccions no poden gastar dues vegades les mateixes monedes (double spend), entre d’altres.\nLlavors, quin és el paper dels filtres (policy rules)? El teu node és un ordinador connectat a una xarxa peer-to-peer amb moltes altres entitats desconegudes que poden llançar un atac de denegació de servei (DoS - denial of service) creant missatges que provoquen que el node es quedi sense memòria i es bloquegi, o que gasti els seus recursos computacionals i ample de banda en dades sense sentit en lloc d’acceptar nous blocs.\nCom que aquestes entitats són desconegudes per disseny, el teu node no pot saber si s’està connectant a un company honest o maliciós, i no pot bloquejar-los efectivament per evitar ser atacat. Per això, és imprescindible implementar filtres (polítiques) contra el DoS per limitar el cost de mantenir un node complet (full node).\nUn exemple real molt senzill: Un atacant podria crear una transacció amb moltes signatures, de les quals totes menys l’última són vàlides. Això faria que el teu node gastés molts recursos i temps validant la transacció fins que fallés just al final. Això es preven amb un filtre que imposa un límit en el nombre d’operacions de signature que pot tenir una transacció. Fixeu-vos que, com que aquesta regla només s’aplica a les transaccions que reps fora dels blocs, si una transacció amb moltes signatures acaba dins d’un bloc vàlid, el teu node la validarà i l’emmagatzemarà.\nPer a una explicació més detallada sobre què són els filtres (policy rules) i per què s’utilitzen, consulteu Waiting for confirmation #5: Policy for Protection of Node Resources.\nOP_RETURN L’OP_RETURN és un codi d’operació (opcode) del llenguatge de scripting que Bitcoin utilitza per incloure dades arbitràries en una transacció. Aquest opcode marca immediatament la sortida de la transacció com a “no gastable”, assegurant que aquesta sortida no es pugui utilitzar com a entrada en una transacció posterior.\nEl pes màxim de les dades que es poden incrustar utilitzant OP_RETURN està limitat principalment per la mida del bloc (una regla de consens). Històricament, hi ha hagut un filtre (policy rule) que limitava la quantitat de dades que es podien afegir. El darrer filtre limitava les sortides OP_RETURN a 83 bytes. Aquest límit està augmentat a Bitcoin Core, per defecte, a 100.000 bytes, ja que hi ha un filtre per al pes màxim de la transacció. Recordeu que un filtre només afecta les transaccions que retransmetreu; no fa que una transacció sigui invàlida si es veu dins d’un bloc.\n¿Permetre un OP_RETURN més gran incentiva el correu brossa (spam)? No veig per què ho faria. És cert que és probable que ara veiem més OP_RETURN amb quantitats més grans de dades. També és dubtós que eliminar el límit de l’OP_RETURN augmenti la quantitat total de dades a la blockchain, ja que és més car utilitzar un OP_RETURN que utilitzar altres protocols com els ordinals. Com assenyala Vojtěch al Bitcoin stack exchange, l’OP_RETURN deixa de ser econòmicament interesant si les dades a inscriure superen els 143 bytes.\n¿Un límit d’OP_RETURN més gran provocarà un creixement del conjunt UTXO? Per contextualitzar, el conjunt de les UTXOs (UTXO set) és una base de dades on els nodes emmagatzemen les sortides de transacció no gastades (unspent transaction outputs), és a dir, totes les monedes disponibles per ser gastades. La mida del conjunt UTXO és important per raons de rendiment i descentralització: com més gran sigui el conjunt UTXO, més grans són els recursos necessaris per executar un node.\nCom que l’OP_RETURN fa que una sortida no es pugui gastar, no cal que s’emmagatzemi al UTXO set, per tant no el fa més gran. En altres paraules, és la manera més neta i saludable d’incrustar dades a la blockchain.\n¿Per què és millor que altres mètodes anti-brossa (spam)? Fixeu-vos que quan diem “millor” volem dir “la manera més saludable”. La primera raó ja s’ha esmentat al paràgraf anterior: crear sortides OP_RETURN no infla el conjunt UTXO, però hi ha altres punts positius.\nUn altre punt important és que mostra les dades directament a la sortida. Altres mètodes incrusten les dades utilitzant SegWit o scripts de Taproot. Aquests scripts són “secrets” fins que la sortida es gasta; un cop es gasta, les dades es revelen a les entrades de la següent transacció. Això significa que per incrustar dades necessiten crear dues transaccions en lloc d’una sola. Aquesta manera de funcionar pot proporcionar un motiu per crear sortides falses (dummy outputs).\nUn punt addicional a considerar és que els scripts OP_RETURN no disposen del descompte de segwit (witness discount).\nFiltres Com he esmentat anteriorment, el paper principal dels filtres (policy rules) és evitar que els nodes pateixin atacs de denegació de servei (DoS), però no evitar que les transaccions arribin als blocs.\n¿Com ens podem saltar els filtres? Mentre hi hagi un incentiu econòmic per fer-ho, saltar-se aquests filtres és fàcil i es pot fer de diverses maneres:\nEnviar directament a l’API d’un pool de mineria: Els pools de mineria de vegades tenen l’opció de rebre transaccions directament sense que passin per la xarxa peer-to-peer. Això permet al remitent evitar tots els filtres i entrar en un bloc amb certa seguretat.\nUtilitzar un node permissiu amb connexions preferents: Nodes amb filtres menys estrictes (com Libre Relay) reenviaran aquestes transaccions filtrades i, després de ser reenviades diverses vegades, acaben arribant a la mempool d’algun miner. De vegades fins i tot implementen algún tipus de connexió preferent per assegurar que hi hagi una ruta entre aquests nodes i els miners. D’aquesta manera, les transaccions arriben als miners encara que un gran percentatge de nodes de la xarxa les filtri.\n¿Els filtres funcionen? Un dels problemes principals en aquest debat és el desacord sobre la definició de “funcionar”. D’una banda, hi ha arguments que diuen que els filtres funcionen perquè dificulten la propagació de les transaccions, forçant-les a passar per camins menys còmodes, com els que s’han esmentat a la secció anterior. De l’altra banda, hi ha arguments que diuen que els filtres no funcionen perquè no poden evitar que les transaccions acabin dins d’un bloc.\nAl meu parer, els filtres funcionen, però funcionen per a la finalitat per a la qual van ser creats: evitar que els nodes pateixin atacs de denegació de servei (DoS). La seva funció no és evitar que les transaccions arribin als blocs. Per tant, si el que volem és que no s’incrustin dades a la blockchain, hauríem de buscar una solució que abordi aquest problema específic.\n¿Per què els filtres no són una solució i poden ser fins i tot perjudicials? Fem una mica de resum del que ja hem parlat per poder respondre a aquesta pregunta amb tot el context necessari. Tenim una mempool als nostres nodes, que és una memòria (cache) de transaccions no confirmades que pensem que poden acabar en els propers blocs. Com que necessitem que els blocs es propaguin ràpidament per evitar blocs obsolets, tenim un protocol anomenat Compact Blocks. Aquest protocol ens permet reconstruir i difondre els nous blocs més ràpidament perquè ja tenim les transaccions del bloc a la nostra mempool.\nCom que Bitcoin és una xarxa sense permisos (permissionless), no podem saber si els nostres companys (peers) són maliciosos fins que ja s’han connectat a nosaltres. Això significa que necessitem tenir mesures de protecció per evitar patir atacs de denegació de servei (DoS). Ens protegim a nosaltres mateixos filtrant el que acceptem i transmetem a la resta de la xarxa. Aquests filtres no eviten que les transaccions arribin als blocs, només fan que la propagació de les transaccions sigui més difícil, però no impossible.\nLlavors, ¿per què els filtres són una solució perjudicial? Perquè empenyen cap a la centralització de la mineria! Hi ha dues raons per les quals els filtres empenyen cap a la centralització de la mineria, però abans d’entrar-hi, definim què és la centralització de la mineria.\nEn aquest cas, quan parlem que la mineria estaría centralitzada, ens referim a qui crea les plantilles de bloc (block templates) i no a qui les mina (hashers). Aquí podem identificar dos actors diferents: el creador de la plantilla de bloc, és a dir, qui decideix quines transaccions entren als blocs, i els hashers, tots aquells usuaris amb ASICs, bitaxes, etc. que fan mineria a sobre d’algun pool que fa la feina de creació de la plantilla.\nHi ha dues raons diferents per les quals els filtres empenyen cap a la centralització de la mineria.\nSi el teu node filtra transaccions, el protocol compact block no podrà reconstruir el bloc ràpidament perquè hi faltarà informació. Això comportarà una propagació més lenta dels blocs i augmentarà la possibilitat de blocs obsolets (stale blocks). En aquest escenari, els miners més petits són els més perjudicats, perquè els miners grans probablement estan millor connectats entre ells. Això fa que probablement la major part del hashrate de la xarxa mini a sobre del bloc del miner més gran, descartant així tota la feina feta pel miner petit.\nSi un usuari tria enviar una transacció fora de banda (no utilitzar la xarxa P2P normal i saltant-se els nodes intermedis), en lloc de fer-la circular per la xarxa peer-to-peer utilitzant, per exemple, una API pública d’un pool de mineria, probablement triarà un pool gran. Això és perquè enviar-la a un pool gran augmenta les possibilitats que la transacció sigui minada més ràpidament. Aquestes transaccions fora de banda normalment van acompanyades d’una comissió addicional. Aqueste comissió addicional la podriem considerar MEVil. Resumint, MEVil causa centralització de la mineria perquè els blocs d’aquests pools grans, on els usuaris envien transaccions fora de banda, guanyen més diners en comissions que els altres. Això empeny als hashers a apuntar el seu hashrate cap a aquests pools per maximitzar beneficis.\nEs pot veure un exemple de filtres que no funcionen amb el cas (segona meitat del 2025) de les transaccions per sota d'1 sat/vB. TLDR: Un gran grup de miners va començar a acceptar transaccions que pagaven menys d'1 sat/vB mentre que els filtres dels nodes rebutjaven aquestes transaccions. Quin va ser el resultat? Aquestes transaccions van ser minades igualment (els filtres no van funcionar) i el compact block es va trencar, la propagació de blocs es va endarrerir significativament.\nEn resum, no només els filtres no poden evitar que l’spam arribi a la blockchain, sinó que a més són perjudicials per a la descentralització de la mineria. No són una solució per a aquest problema; és com disparar-nos al nostre propi peu.\n¿Segwit i Taproot van causar això? No, segur que no. OP_RETURN ja existia abans de SegWit i Taproot i es podia utilitzar per incrustar dades a la blockchain. I els altres mètodes que s’estan utilitzant podien fer servir P2SH.\nTot i que SegWit i Taproot no en són la causa, no descartaria que contribueixin indirectament al creixement de l’spam. SegWit va venir amb un descompte (witness discount) que va fer més barat incrustar dades, i Taproot va augmentar la quantitat de dades que es poden adjuntar a una entrada, ja que no té el límit de 10.000 bytes que té P2WSH.\n¿Són Datum i Sv2 la solució? Datum i Sv2 són dues millores importants per descentralitzar la mineria, ja que permeten als usuaris crear les seves pròpies plantilles de bloc i continuar compartint la recompensa dels blocs minats. El problema és que només resolen la pregunta “Com descentralitzem la creació de plantilles de bloc?”. La resposta a “com ho fem” no importa si tenim forces de centralització que empenyen cap als pools de mineria centralitzats.\nEls miners (hashers, és a dir, persones amb dispositius de mineria com ASICs, BitAxes, etc.) normalment estan incentivats economicament. Al cap i a la fi, la mineria és un negoci i l’objectiu és extreure el màxim valor possible amb el mínim cost, alhora que es maximitzen els beneficis. Si hi ha un pool gran que mina blocs amb una recompensa addicional gràcies a les transaccions fora de banda (MEVil), els miners tenen un fort incentiu per apuntar la seva potència de mineria cap a aquest pool. Això fa que Datum i Sv2 siguin inútils i irrellevants.\nUn altre problema amb Datum, Sv2 i els filtres és la teoria de jocs darrere de col·laborar amb desconeguts. Idealment, un miner voldrà unir-se a altres miners que també treballin per maximitzar beneficis. ¿Per què un miner que maximitza beneficis col·laboraria amb algú que exclou algunes transaccions i, per tant, no obté totes les recompenses possibles? Per col·laborar, les persones han d’estar impulsades pels mateixos objectius i incentius. Confiar que els miners faran la mateixa feina per menys diners mentre altres recullen aquests diners només per ideals no és realista i deixa el resultat del problema de la centralització de la mineria en mans de desconeguts.\nEn conclusió, crec realment que Datum i Sv2 són excel·lents solucions i millores importants, però el seu objectiu final és descentralitzar la mineria per evitar que els grans pools censurin transaccions. No són una solució contra la centralització de la mineria impulsada per incentius econòmics.\n",
+  "wordCount" : "2742",
+  "inLanguage": "català",
+  "datePublished": "2026-04-27T00:00:00Z",
+  "dateModified": "2026-04-27T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Pol Espinasa"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://pesvi.xyz/catal%C3%A0/posts/mempool_filters/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Pol Espinasa",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://pesvi.xyz/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://pesvi.xyz/catal%C3%A0/" accesskey="h" title="Pol Espinasa (Alt + H)">Pol Espinasa</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://pesvi.xyz/" title="English"
+                            aria-label="English">English</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://pesvi.xyz/catal%C3%A0/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://pesvi.xyz/catal%C3%A0/pullrequests/" title="PRs">
+                    <span>PRs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://pesvi.xyz/catal%C3%A0/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://pesvi.xyz/catal%C3%A0/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Una visió tècnica general i opinió sobre els filtres de la mempool
+    </h1>
+    <div class="post-meta"><span title='2026-04-27 00:00:00 +0000 UTC'>April 27, 2026</span>&nbsp;·&nbsp;13 min&nbsp;·&nbsp;Pol Espinasa&nbsp;|&nbsp;Translations:
+<ul class="i18n_list">
+    <li>
+        <a href="https://pesvi.xyz/posts/mempool_filters/">English</a>
+    </li>
+</ul>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Traducció feta per Trid^^!!</p>
+<h1 id="què-és-la-mempool">Què és la mempool?<a hidden class="anchor" aria-hidden="true" href="#què-és-la-mempool">#</a></h1>
+<p>La definició més senzilla de la mempool és: <em><strong>la mempool</strong></em> <em>és una cache que emmagatzema transaccions vàlides per consens, però encara no confirmades</em>.</p>
+<h2 id="però-per-què-necessitem-una-mempool"><strong>Però per què necessitem una mempool?</strong><a hidden class="anchor" aria-hidden="true" href="#però-per-què-necessitem-una-mempool">#</a></h2>
+<p>La mempool és un recurs important per a cada node i permet principalment que la xarxa P2P (peer-to-peer) funcioni.</p>
+<p>Cada ~10 minuts, quan es troba un bloc nou, els nodes sense mempool experimenten un pic en el consum d&rsquo;amplada de banda, és a dir el nodes reben de cop moltes dades alhora, a més de entrar en un període computacionalment intens validant cada transacció del bloc. En canvi, els nodes amb mempool ja han vist totes o la majoria de les transaccions dins d&rsquo;un bloc nou i les tenen emmagatzemades a la seva mempool.</p>
+<p>Amb <a href="https://bitcoinops.org/en/topics/compact-block-relay/">Compact block relay</a> (<a href="https://github.com/bitcoin/bips/blob/master/bip-0152.mediawiki">BIP-152</a>), els nodes només descarreguen la capçalera del bloc anterior més algunes pistes sobre quines transaccions hi ha dins del bloc. Després, el node reconstrueix el bloc recuperant les transaccions de la mempool i demana únicament les que falten al node que ha enviat la capçalera del bloc anterior. Això és molt més eficient i ràpid que sol·licitar el bloc sencer, perquè s&rsquo;ha d&rsquo;enviar menys dades, i la validació de les transaccions ja s&rsquo;ha fet prèviament. Utilitzar una mempool i compact blocks augmenta dràsticament la velocitat de propagació de blocs a tota la xarxa i, per tant, redueix el risc de &ldquo;stale blocks&rdquo; (blocs abandonats).</p>
+<p>La mempool també és útil per estimar les comissions (fees) que has de pagar perquè una transacció sigui minada en el rang de temps que vulguis. L&rsquo;espai de bloc es ven en un mercat de subhastes basat en comissions. Observant les transaccions pendents a la mempool, pots estimar quina és la comissió mínima que els altres estan disposats a pagar per l&rsquo;espai de bloc i quines ofertes han tingut èxit en el passat.</p>
+<p>Per a més informació sobre per què tenim una mempool, llegeix: <a href="https://bitcoinops.org/en/newsletters/2023/05/17/#waiting-for-confirmation-1-why-do-we-have-a-mempool">Waiting for confirmation #1: why do we have a mempool?</a></p>
+<h2 id="regles-de-consens-consensus-rules-vs-filtres-policy-rules">Regles de consens (Consensus Rules) vs Filtres (Policy Rules)<a hidden class="anchor" aria-hidden="true" href="#regles-de-consens-consensus-rules-vs-filtres-policy-rules">#</a></h2>
+<p>Quan parlem de filtres, ens referim a les regles que decideixen quines transaccions són standard. Si una transacció és standard, entra a la nostra mempool i es retransmet per tota la xarxa. No afegim transaccions a la nostra mempool ni retransmetem transaccions que considerem no standard.</p>
+<p>Fixeu-vos que en la definició anterior no parlem de blocs ni de la blockchain. Això és perquè aquests filtres no s&rsquo;apliquen a les transaccions que ja són dins d&rsquo;un bloc. Si aquests filtres s&rsquo;apliquessin a les transaccions dels blocs, tindríem múltiples bifurcacions de la cadena a causa de discrepàncies entre nodes.</p>
+<p>Un exemple senzill: Suposem que els filtres de la mempool també s&rsquo;apliquen als blocs. L&rsquo;Alice i en Bob tenen filtres diferents: l&rsquo;Alice només accepta transaccions que moguin com a mínim 1 BTC, mentre que en Bob no té cap quantitat mínima. En algun moment, quan un miner troba un bloc amb una transacció de menys d'1 BTC, l&rsquo;Alice descartaria aquest bloc, però en Bob l&rsquo;acceptaria. Al final, estarien en dues versions diferents de la blockchain!</p>
+<p>Les regles que s&rsquo;apliquen a les transaccions dins dels blocs s&rsquo;anomenen regles de consens (consensus rules) i aquestes regles han de ser aplicades de manera compatible per tots els nodes. Si no és així, és probable que la blockchain es bifurqui (es divideixi). Alguns exemples d&rsquo;aquestes regles són: una transacció no pot tenir sortides que gastin més diners del que té a les entrades, les transaccions no poden gastar dues vegades les mateixes monedes (double spend), entre d&rsquo;altres.</p>
+<h2 id="llavors-quin-és-el-paper-dels-filtres-policy-rules"><strong>Llavors, quin és el paper dels filtres (policy rules)?</strong><a hidden class="anchor" aria-hidden="true" href="#llavors-quin-és-el-paper-dels-filtres-policy-rules">#</a></h2>
+<p>El teu node és un ordinador connectat a una xarxa peer-to-peer amb moltes altres entitats desconegudes que poden llançar un atac de denegació de servei (DoS - denial of service) creant missatges que provoquen que el node es quedi sense memòria i es bloquegi, o que gasti els seus recursos computacionals i ample de banda en dades sense sentit en lloc d&rsquo;acceptar nous blocs.</p>
+<p>Com que aquestes entitats són desconegudes per disseny, el teu node no pot saber si s&rsquo;està connectant a un company honest o maliciós, i no pot bloquejar-los efectivament per evitar ser atacat. Per això, és imprescindible implementar filtres (polítiques) contra el DoS per limitar el cost de mantenir un node complet (full node).</p>
+<blockquote>
+<p><em><strong>Un exemple real molt senzill:</strong></em> Un atacant podria crear una transacció amb moltes signatures, de les quals totes menys l&rsquo;última són vàlides. Això faria que el teu node gastés molts recursos i temps validant la transacció fins que fallés just al final. Això es preven amb un filtre que imposa un límit en el nombre d&rsquo;operacions de signature que pot tenir una transacció. Fixeu-vos que, com que aquesta regla només s&rsquo;aplica a les transaccions que reps fora dels blocs, si una transacció amb moltes signatures acaba dins d&rsquo;un bloc vàlid, el teu node la validarà i l&rsquo;emmagatzemarà.</p>
+</blockquote>
+<p>Per a una explicació més detallada sobre què són els filtres (policy rules) i per què s&rsquo;utilitzen, consulteu <a href="https://bitcoinops.org/en/newsletters/2023/06/14/#waiting-for-confirmation-5-policy-for-protection-of-node-resources">Waiting for confirmation #5: Policy for Protection of Node Resources</a>.</p>
+<h3 id="op_return">OP_RETURN<a hidden class="anchor" aria-hidden="true" href="#op_return">#</a></h3>
+<p>L&rsquo;OP_RETURN és un codi d&rsquo;operació (opcode) del llenguatge de scripting que Bitcoin utilitza per incloure dades arbitràries en una transacció. Aquest opcode marca immediatament la sortida de la transacció com a &ldquo;no gastable&rdquo;, assegurant que aquesta sortida no es pugui utilitzar com a entrada en una transacció posterior.</p>
+<p>El pes màxim de les dades que es poden incrustar utilitzant OP_RETURN està limitat principalment per la mida del bloc (una regla de consens). Històricament, hi ha hagut un filtre (policy rule) que limitava la quantitat de dades que es podien afegir. El darrer filtre limitava les sortides OP_RETURN a 83 bytes. Aquest límit està augmentat a Bitcoin Core, per defecte, a 100.000 bytes, ja que hi ha un filtre per al pes màxim de la transacció. Recordeu que un filtre només afecta les transaccions que retransmetreu; no fa que una transacció sigui invàlida si es veu dins d&rsquo;un bloc.</p>
+<h4 id="permetre-un-op_return-més-gran-incentiva-el-correu-brossa-spam"><strong>¿Permetre un OP_RETURN més gran incentiva el correu brossa (spam)?</strong><a hidden class="anchor" aria-hidden="true" href="#permetre-un-op_return-més-gran-incentiva-el-correu-brossa-spam">#</a></h4>
+<p>No veig per què ho faria. És cert que és probable que ara veiem més OP_RETURN amb quantitats més grans de dades. També és dubtós que eliminar el límit de l&rsquo;OP_RETURN augmenti la quantitat total de dades a la blockchain, ja que és més car utilitzar un OP_RETURN que utilitzar altres protocols com els <a href="https://docs.ordinals.com/inscriptions.html">ordinals</a>. Com assenyala Vojtěch al <a href="https://bitcoin.stackexchange.com/a/122322/145161">Bitcoin stack exchange</a>, l&rsquo;OP_RETURN deixa de ser econòmicament interesant si les dades a inscriure superen els 143 bytes.</p>
+<h4 id="un-límit-dop_return-més-gran-provocarà-un-creixement-del-conjunt-utxo"><strong>¿Un límit d&rsquo;OP_RETURN més gran provocarà un creixement del conjunt UTXO?</strong><a hidden class="anchor" aria-hidden="true" href="#un-límit-dop_return-més-gran-provocarà-un-creixement-del-conjunt-utxo">#</a></h4>
+<p>Per contextualitzar, el conjunt de les UTXOs (UTXO set) és una base de dades on els nodes emmagatzemen les sortides de transacció no gastades (unspent transaction outputs), és a dir, totes les monedes disponibles per ser gastades. La mida del conjunt UTXO és important per raons de rendiment i descentralització: com més gran sigui el conjunt UTXO, més grans són els recursos necessaris per executar un node.</p>
+<p>Com que l&rsquo;OP_RETURN fa que una sortida no es pugui gastar, no cal que s&rsquo;emmagatzemi al UTXO set, per tant no el fa més gran. En altres paraules, és la manera més neta i saludable d&rsquo;incrustar dades a la blockchain.</p>
+<h4 id="per-què-és-millor-que-altres-mètodes-anti-brossa-spam"><strong>¿Per què és millor que altres mètodes anti-brossa (spam)?</strong><a hidden class="anchor" aria-hidden="true" href="#per-què-és-millor-que-altres-mètodes-anti-brossa-spam">#</a></h4>
+<p>Fixeu-vos que quan diem &ldquo;millor&rdquo; volem dir &ldquo;la manera més saludable&rdquo;. La primera raó ja s&rsquo;ha esmentat al paràgraf anterior: crear sortides OP_RETURN no infla el conjunt UTXO, però hi ha altres punts positius.</p>
+<p>Un altre punt important és que mostra les dades directament a la sortida. Altres mètodes incrusten les dades utilitzant SegWit o scripts de Taproot. Aquests scripts són &ldquo;secrets&rdquo; fins que la sortida es gasta; un cop es gasta, les dades es revelen a les entrades de la següent transacció. Això significa que per incrustar dades necessiten crear dues transaccions en lloc d&rsquo;una sola. Aquesta manera de funcionar pot proporcionar un motiu per crear sortides falses (dummy outputs).</p>
+<p>Un punt addicional a considerar és que els scripts OP_RETURN no disposen del descompte de segwit (witness discount).</p>
+<h3 id="filtres">Filtres<a hidden class="anchor" aria-hidden="true" href="#filtres">#</a></h3>
+<p>Com he esmentat anteriorment, el paper principal dels filtres (policy rules) és evitar que els nodes pateixin atacs de denegació de servei (DoS), però no evitar que les transaccions arribin als blocs.</p>
+<h4 id="com-ens-podem-saltar-els-filtres"><strong>¿Com ens podem saltar els filtres?</strong><a hidden class="anchor" aria-hidden="true" href="#com-ens-podem-saltar-els-filtres">#</a></h4>
+<p>Mentre hi hagi un incentiu econòmic per fer-ho, saltar-se aquests filtres és fàcil i es pot fer de diverses maneres:</p>
+<ul>
+<li>
+<p>Enviar directament a l&rsquo;API d&rsquo;un pool de mineria: Els pools de mineria de vegades tenen l&rsquo;opció de rebre transaccions directament sense que passin per la xarxa peer-to-peer. Això permet al remitent evitar tots els filtres i entrar en un bloc amb certa seguretat.</p>
+</li>
+<li>
+<p>Utilitzar un node permissiu amb connexions preferents: Nodes amb filtres menys estrictes (com <a href="https://geyser.fund/project/librerelay">Libre Relay</a>) reenviaran aquestes transaccions filtrades i, després de ser reenviades diverses vegades, acaben arribant a la mempool d&rsquo;algun miner. De vegades fins i tot implementen algún tipus de connexió preferent per assegurar que hi hagi una ruta entre aquests nodes i els miners. D&rsquo;aquesta manera, les transaccions arriben als miners encara que un gran percentatge de nodes de la xarxa les filtri.</p>
+</li>
+</ul>
+<h4 id="els-filtres-funcionen"><strong>¿Els filtres funcionen?</strong><a hidden class="anchor" aria-hidden="true" href="#els-filtres-funcionen">#</a></h4>
+<p>Un dels problemes principals en aquest debat és el desacord sobre la definició de &ldquo;funcionar&rdquo;. D&rsquo;una banda, hi ha arguments que diuen que els filtres funcionen perquè dificulten la propagació de les transaccions, forçant-les a passar per camins menys còmodes, com els que s&rsquo;han esmentat a la secció anterior. De l&rsquo;altra banda, hi ha arguments que diuen que els filtres no funcionen perquè no poden evitar que les transaccions acabin dins d&rsquo;un bloc.</p>
+<p>Al meu parer, els filtres funcionen, però funcionen per a la finalitat per a la qual van ser creats: evitar que els nodes pateixin atacs de denegació de servei (DoS). La seva funció no és evitar que les transaccions arribin als blocs. Per tant, si el que volem és que no s&rsquo;incrustin dades a la blockchain, hauríem de buscar una solució que abordi aquest problema específic.</p>
+<h4 id="per-què-els-filtres-no-són-una-solució-i-poden-ser-fins-i-tot-perjudicials"><strong>¿Per què els filtres no són una solució i poden ser fins i tot perjudicials?</strong><a hidden class="anchor" aria-hidden="true" href="#per-què-els-filtres-no-són-una-solució-i-poden-ser-fins-i-tot-perjudicials">#</a></h4>
+<p>Fem una mica de resum del que ja hem parlat per poder respondre a aquesta pregunta amb tot el context necessari. Tenim una mempool als nostres nodes, que és una memòria (cache) de transaccions no confirmades que pensem que poden acabar en els propers blocs. Com que necessitem que els blocs es propaguin ràpidament per evitar blocs obsolets, tenim un protocol anomenat Compact Blocks. Aquest protocol ens permet reconstruir i difondre els nous blocs més ràpidament perquè ja tenim les transaccions del bloc a la nostra mempool.</p>
+<p>Com que Bitcoin és una xarxa sense permisos (permissionless), no podem saber si els nostres companys (peers) són maliciosos fins que ja s&rsquo;han connectat a nosaltres. Això significa que necessitem tenir mesures de protecció per evitar patir atacs de denegació de servei (DoS). Ens protegim a nosaltres mateixos filtrant el que acceptem i transmetem a la resta de la xarxa. Aquests filtres no eviten que les transaccions arribin als blocs, només fan que la propagació de les transaccions sigui més difícil, però no impossible.</p>
+<p><strong>Llavors, ¿per què els filtres són una solució perjudicial?</strong> <strong>Perquè</strong> <strong>empenyen cap a la centralització de la mineria!</strong>
+Hi ha dues raons per les quals els filtres empenyen cap a la centralització de la mineria, però abans d&rsquo;entrar-hi, definim què és la centralització de la mineria.</p>
+<p>En aquest cas, quan parlem que la mineria estaría centralitzada, ens referim a qui crea les plantilles de bloc (block templates) i no a qui les mina (hashers). Aquí podem identificar dos actors diferents: el creador de la plantilla de bloc, és a dir, qui decideix quines transaccions entren als blocs, i els hashers, tots aquells usuaris amb ASICs, bitaxes, etc. que fan mineria a sobre d&rsquo;algun pool que fa la feina de creació de la plantilla.</p>
+<p>Hi ha dues raons diferents per les quals els filtres empenyen cap a la centralització de la mineria.</p>
+<ul>
+<li>
+<p>Si el teu node filtra transaccions, el protocol compact block no podrà reconstruir el bloc ràpidament perquè hi faltarà informació. Això comportarà una propagació més lenta dels blocs i augmentarà la possibilitat de blocs obsolets (stale blocks). En aquest escenari, els miners més petits són els més perjudicats, perquè els miners grans probablement estan millor connectats entre ells. Això fa que probablement la major part del hashrate de la xarxa mini a sobre del bloc del miner més gran, descartant així tota la feina feta pel miner petit.</p>
+</li>
+<li>
+<p>Si un usuari tria enviar una transacció fora de banda (no utilitzar la xarxa P2P normal i saltant-se els nodes intermedis), en lloc de fer-la circular per la xarxa peer-to-peer utilitzant, per exemple, una API pública d&rsquo;un pool de mineria, probablement triarà un pool gran. Això és perquè enviar-la a un pool gran augmenta les possibilitats que la transacció sigui minada més ràpidament. Aquestes transaccions fora de banda normalment van acompanyades d&rsquo;una comissió addicional. Aqueste comissió addicional la podriem considerar <a href="https://bluematt.bitcoin.ninja/2024/04/16/stop-calling-it-mev/">MEVil</a>. Resumint, MEVil causa centralització de la mineria perquè els blocs d&rsquo;aquests pools grans, on els usuaris envien transaccions fora de banda, guanyen més diners en comissions que els altres. Això empeny als hashers a apuntar el seu hashrate cap a aquests pools per maximitzar beneficis.</p>
+</li>
+</ul>
+<p>Es pot veure un exemple de filtres que no funcionen amb el cas (segona meitat del 2025) de les transaccions per sota d'1 sat/vB. TLDR: Un gran grup de miners va començar a <a href="https://x.com/mononautical/status/1947530080475091159">acceptar transaccions que pagaven menys d'1 sat/vB</a> mentre que els filtres dels nodes rebutjaven aquestes transaccions. Quin va ser el resultat? Aquestes transaccions van ser minades igualment (els filtres no van funcionar) i el compact block es va trencar, <a href="https://github.com/bitcoin/bitcoin/pull/33106#issuecomment-3155627414">la propagació de blocs es va endarrerir significativament</a>.</p>
+<p>En resum, no només els filtres no poden evitar que l&rsquo;spam arribi a la blockchain, sinó que a més són perjudicials per a la descentralització de la mineria. No són una solució per a aquest problema; és com disparar-nos al nostre propi peu.</p>
+<h2 id="segwit-i-taproot-van-causar-això">¿Segwit i Taproot van causar això?<a hidden class="anchor" aria-hidden="true" href="#segwit-i-taproot-van-causar-això">#</a></h2>
+<p>No, segur que no. OP_RETURN ja existia abans de SegWit i Taproot i es podia utilitzar per incrustar dades a la blockchain. I els altres mètodes que s&rsquo;estan utilitzant podien fer servir P2SH.</p>
+<p>Tot i que SegWit i Taproot no en són la causa, no descartaria que contribueixin indirectament al creixement de l&rsquo;spam. SegWit va venir amb un descompte (witness discount) que va fer més barat incrustar dades, i Taproot va augmentar la quantitat de dades que es poden adjuntar a una entrada, ja que no té el límit de 10.000 bytes que té P2WSH.</p>
+<h2 id="són-datum-i-sv2-la-solució">¿Són Datum i Sv2 la solució?<a hidden class="anchor" aria-hidden="true" href="#són-datum-i-sv2-la-solució">#</a></h2>
+<p>Datum i Sv2 són dues millores importants per descentralitzar la mineria, ja que permeten als usuaris crear les seves pròpies plantilles de bloc i continuar compartint la recompensa dels blocs minats. El problema és que només resolen la pregunta &ldquo;Com descentralitzem la creació de plantilles de bloc?&rdquo;. La resposta a &ldquo;com ho fem&rdquo; no importa si tenim forces de centralització que empenyen cap als pools de mineria centralitzats.</p>
+<p>Els miners (hashers, és a dir, persones amb dispositius de mineria com ASICs, BitAxes, etc.) normalment estan incentivats economicament. Al cap i a la fi, la mineria és un negoci i l&rsquo;objectiu és extreure el màxim valor possible amb el mínim cost, alhora que es maximitzen els beneficis. Si hi ha un pool gran que mina blocs amb una recompensa addicional gràcies a les transaccions fora de banda (MEVil), els miners tenen un fort incentiu per apuntar la seva potència de mineria cap a aquest pool. Això fa que Datum i Sv2 siguin inútils i irrellevants.</p>
+<p>Un altre problema amb Datum, Sv2 i els filtres és la teoria de jocs darrere de col·laborar amb desconeguts. Idealment, un miner voldrà unir-se a altres miners que també treballin per maximitzar beneficis. ¿Per què un miner que maximitza beneficis col·laboraria amb algú que exclou algunes transaccions i, per tant, no obté totes les recompenses possibles? Per col·laborar, les persones han d&rsquo;estar impulsades pels mateixos objectius i incentius. Confiar que els miners faran la mateixa feina per menys diners mentre altres recullen aquests diners només per ideals no és realista i deixa el resultat del problema de la centralització de la mineria en mans de desconeguts.</p>
+<p>En conclusió, crec realment que Datum i Sv2 són excel·lents solucions i millores importants, però el seu objectiu final és descentralitzar la mineria per evitar que els grans pools censurin transaccions. No són una solució contra la centralització de la mineria impulsada per incentius econòmics.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://pesvi.xyz/catal%C3%A0/tags/nodes/">Nodes</a></li>
+      <li><a href="https://pesvi.xyz/catal%C3%A0/tags/mempool/">Mempool</a></li>
+      <li><a href="https://pesvi.xyz/catal%C3%A0/tags/p2p/">P2P</a></li>
+      <li><a href="https://pesvi.xyz/catal%C3%A0/tags/mining/">Mining</a></li>
+      <li><a href="https://pesvi.xyz/catal%C3%A0/tags/policy/">Policy</a></li>
+    </ul>
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Una visió tècnica general i opinió sobre els filtres de la mempool on x"
+            href="https://x.com/intent/tweet/?text=Una%20visi%c3%b3%20t%c3%a8cnica%20general%20i%20opini%c3%b3%20sobre%20els%20filtres%20de%20la%20mempool&amp;url=https%3a%2f%2fpesvi.xyz%2fcatal%25C3%25A0%2fposts%2fmempool_filters%2f&amp;hashtags=Nodes%2cMempool%2cP2P%2cMining%2cPolicy">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Una visió tècnica general i opinió sobre els filtres de la mempool on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fpesvi.xyz%2fcatal%25C3%25A0%2fposts%2fmempool_filters%2f&amp;title=Una%20visi%c3%b3%20t%c3%a8cnica%20general%20i%20opini%c3%b3%20sobre%20els%20filtres%20de%20la%20mempool&amp;summary=Una%20visi%c3%b3%20t%c3%a8cnica%20general%20i%20opini%c3%b3%20sobre%20els%20filtres%20de%20la%20mempool&amp;source=https%3a%2f%2fpesvi.xyz%2fcatal%25C3%25A0%2fposts%2fmempool_filters%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Una visió tècnica general i opinió sobre els filtres de la mempool on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fpesvi.xyz%2fcatal%25C3%25A0%2fposts%2fmempool_filters%2f&title=Una%20visi%c3%b3%20t%c3%a8cnica%20general%20i%20opini%c3%b3%20sobre%20els%20filtres%20de%20la%20mempool">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Una visió tècnica general i opinió sobre els filtres de la mempool on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fpesvi.xyz%2fcatal%25C3%25A0%2fposts%2fmempool_filters%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Una visió tècnica general i opinió sobre els filtres de la mempool on whatsapp"
+            href="https://api.whatsapp.com/send?text=Una%20visi%c3%b3%20t%c3%a8cnica%20general%20i%20opini%c3%b3%20sobre%20els%20filtres%20de%20la%20mempool%20-%20https%3a%2f%2fpesvi.xyz%2fcatal%25C3%25A0%2fposts%2fmempool_filters%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Una visió tècnica general i opinió sobre els filtres de la mempool on telegram"
+            href="https://telegram.me/share/url?text=Una%20visi%c3%b3%20t%c3%a8cnica%20general%20i%20opini%c3%b3%20sobre%20els%20filtres%20de%20la%20mempool&amp;url=https%3a%2f%2fpesvi.xyz%2fcatal%25C3%25A0%2fposts%2fmempool_filters%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Una visió tècnica general i opinió sobre els filtres de la mempool on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=Una%20visi%c3%b3%20t%c3%a8cnica%20general%20i%20opini%c3%b3%20sobre%20els%20filtres%20de%20la%20mempool&u=https%3a%2f%2fpesvi.xyz%2fcatal%25C3%25A0%2fposts%2fmempool_filters%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://pesvi.xyz/catal%C3%A0/">Pol Espinasa</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -6,8 +6,20 @@
     <description>Recent content in Posts on Pol Espinasa</description>
     <generator>Hugo -- 0.139.4</generator>
     <language>català</language>
-    <lastBuildDate>Sun, 06 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://pesvi.xyz/catal%C3%A0/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Una visió tècnica general i opinió sobre els filtres de la mempool</title>
+      <link>https://pesvi.xyz/catal%C3%A0/posts/mempool_filters/</link>
+      <pubDate>Mon, 27 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://pesvi.xyz/catal%C3%A0/posts/mempool_filters/</guid>
+      <description>&lt;p&gt;Traducció feta per Trid^^!!&lt;/p&gt;
+&lt;h1 id=&#34;què-és-la-mempool&#34;&gt;Què és la mempool?&lt;/h1&gt;
+&lt;p&gt;La definició més senzilla de la mempool és: &lt;em&gt;&lt;strong&gt;la mempool&lt;/strong&gt;&lt;/em&gt; &lt;em&gt;és una cache que emmagatzema transaccions vàlides per consens, però encara no confirmades&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;però-per-què-necessitem-una-mempool&#34;&gt;&lt;strong&gt;Però per què necessitem una mempool?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;La mempool és un recurs important per a cada node i permet principalment que la xarxa P2P (peer-to-peer) funcioni.&lt;/p&gt;
+&lt;p&gt;Cada ~10 minuts, quan es troba un bloc nou, els nodes sense mempool experimenten un pic en el consum d&amp;rsquo;amplada de banda, és a dir el nodes reben de cop moltes dades alhora, a més de entrar en un període computacionalment intens validant cada transacció del bloc. En canvi, els nodes amb mempool ja han vist totes o la majoria de les transaccions dins d&amp;rsquo;un bloc nou i les tenen emmagatzemades a la seva mempool.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Com l&#39;UTXO set ens pot ajudar a sincronitzar un node de Bitcoin</title>
       <link>https://pesvi.xyz/catal%C3%A0/posts/utxo_set_backup/</link>

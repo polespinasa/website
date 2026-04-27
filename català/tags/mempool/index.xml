@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Nodes on Pol Espinasa</title>
-    <link>https://pesvi.xyz/catal%C3%A0/tags/nodes/</link>
-    <description>Recent content in Nodes on Pol Espinasa</description>
+    <title>Mempool on Pol Espinasa</title>
+    <link>https://pesvi.xyz/catal%C3%A0/tags/mempool/</link>
+    <description>Recent content in Mempool on Pol Espinasa</description>
     <generator>Hugo -- 0.139.4</generator>
     <language>català</language>
     <lastBuildDate>Mon, 27 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://pesvi.xyz/catal%C3%A0/tags/nodes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://pesvi.xyz/catal%C3%A0/tags/mempool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Una visió tècnica general i opinió sobre els filtres de la mempool</title>
       <link>https://pesvi.xyz/catal%C3%A0/posts/mempool_filters/</link>
@@ -19,13 +19,6 @@
 &lt;h2 id=&#34;però-per-què-necessitem-una-mempool&#34;&gt;&lt;strong&gt;Però per què necessitem una mempool?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;La mempool és un recurs important per a cada node i permet principalment que la xarxa P2P (peer-to-peer) funcioni.&lt;/p&gt;
 &lt;p&gt;Cada ~10 minuts, quan es troba un bloc nou, els nodes sense mempool experimenten un pic en el consum d&amp;rsquo;amplada de banda, és a dir el nodes reben de cop moltes dades alhora, a més de entrar en un període computacionalment intens validant cada transacció del bloc. En canvi, els nodes amb mempool ja han vist totes o la majoria de les transaccions dins d&amp;rsquo;un bloc nou i les tenen emmagatzemades a la seva mempool.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Com l&#39;UTXO set ens pot ajudar a sincronitzar un node de Bitcoin</title>
-      <link>https://pesvi.xyz/catal%C3%A0/posts/utxo_set_backup/</link>
-      <pubDate>Sun, 06 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://pesvi.xyz/catal%C3%A0/posts/utxo_set_backup/</guid>
-      <description>&lt;p&gt;Tots ens hem trobat algun cop que el nostre node de Bitcoin deixa de funcionar, la raspberry falla, el disc mor, o simplement necessitem el disc per altres propòsits i acabem quedant-nos sense node de Bitcoin. En el futur quan volem tornar a muntar un node ens trobem que hem de tornar a passar pel procés de IBD (&lt;em&gt;initial block download&lt;/em&gt;) per sincronitzar la cadena de blocs. Un procés pesat, que pot durar en molts casos dies i que ens impedeix utilitzar el node i connectar-hi les bitlleteres fins que el node estigui sincronitzat del tot.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
