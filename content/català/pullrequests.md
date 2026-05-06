@@ -6,7 +6,11 @@ Troba aquí una llista dels meus PRs i contribucions a diferents projectes de co
 
 Pots veure els meus PRs a Core [aquí](https://github.com/bitcoin/bitcoin/pulls/polespinasa)
 
-- [#34998 - ci: add --extended when using --usecli](https://github.com/bitcoin/bitcoin/pull/34998)
+- [#34998 - GUI - Remove opt-in RBF](https://github.com/bitcoin-core/gui/pull/936)
+
+	Status &rarr; <span style="color: green;">Open</span>
+
+- [#35179 - test: Add importdescriptors rpc error coverage](github.com/bitcoin/bitcoin/pull/35179)
 
 	Status &rarr; <span style="color: green;">Open</span>
 
@@ -63,5 +67,9 @@ Pots veure els meus PRs a Core [aquí](https://github.com/bitcoin/bitcoin/pulls/
 	Status &rarr; <span style="color: red;">Closed</span>
 
 - [#33507 - rpc: add sendrawtransactiontopeer](https://github.com/bitcoin/bitcoin/pull/33507)
+
+	Status &rarr; <span style="color: red;">Closed</span>
+
+- [#34998 - ci: add --extended when using --usecli](https://github.com/bitcoin/bitcoin/pull/34998)
 
 	Status &rarr; <span style="color: red;">Closed</span>
