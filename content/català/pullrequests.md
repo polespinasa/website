@@ -62,6 +62,14 @@ Pots veure els meus PRs a Core [aquí](https://github.com/bitcoin/bitcoin/pulls/
 
 	Status &rarr; <span style="color: purple;">Meged</span>
 
+- [#35579 - wallet: reserve walletrescan before checking wallet is at the tip](https://github.com/bitcoin/bitcoin/pull/35579)
+
+	Status &rarr; <span style="color: purple;">Meged</span>
+
+- [#35633 - wallet: avoid call bumpfeediscount with negative values](https://github.com/bitcoin/bitcoin/pull/35633)
+
+	Status &rarr; <span style="color: purple;">Meged</span>
+
 - [#31177 - rpc, logging: return "verificationprogress" of 1 when up to date](https://github.com/bitcoin/bitcoin/pull/31177)
 
 	Status &rarr; <span style="color: red;">Closed</span>
