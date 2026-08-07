@@ -4,9 +4,29 @@
   <url>
     <loc>https://pesvi.xyz/catal%C3%A0/tags/airgapped/</loc>
     <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/tags/airgapped/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/tags/airgapped/"
+                />
   </url><url>
     <loc>https://pesvi.xyz/catal%C3%A0/tags/bitcoin-core/</loc>
     <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/tags/bitcoin-core/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/tags/bitcoin-core/"
+                />
   </url><url>
     <loc>https://pesvi.xyz/catal%C3%A0/categories/</loc>
     <lastmod>2026-08-05T00:00:00+00:00</lastmod>
@@ -23,12 +43,42 @@
   </url><url>
     <loc>https://pesvi.xyz/catal%C3%A0/tags/descriptors/</loc>
     <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/tags/descriptors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/tags/descriptors/"
+                />
   </url><url>
     <loc>https://pesvi.xyz/catal%C3%A0/categories/guies/</loc>
     <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/categories/guies/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/categories/guies/"
+                />
   </url><url>
     <loc>https://pesvi.xyz/catal%C3%A0/tags/hardwarewallet/</loc>
     <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/tags/hardwarewallet/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/tags/hardwarewallet/"
+                />
   </url><url>
     <loc>https://pesvi.xyz/catal%C3%A0/</loc>
     <lastmod>2026-08-05T00:00:00+00:00</lastmod>
@@ -71,6 +121,16 @@
   </url><url>
     <loc>https://pesvi.xyz/catal%C3%A0/tags/wallet/</loc>
     <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="english"
+                href="https://pesvi.xyz/tags/wallet/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/tags/wallet/"
+                />
   </url><url>
     <loc>https://pesvi.xyz/catal%C3%A0/tags/mempool/</loc>
     <lastmod>2026-04-27T00:00:00+00:00</lastmod>
