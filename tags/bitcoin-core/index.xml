@@ -6,7 +6,17 @@
     <description>Recent content in Bitcoin Core on Pol Espinasa</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://pesvi.xyz/tags/bitcoin-core/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bitcoin Core as an air-gapped device</title>
+      <link>https://pesvi.xyz/posts/bitcoincore_airgapped_device/</link>
+      <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://pesvi.xyz/posts/bitcoincore_airgapped_device/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;#x1f4a1; &lt;em&gt;This guide is inspired in the &lt;a href=&#34;https://www.youtube.com/watch?v=B5X2LkrVuBM&amp;amp;t=783s&#34;&gt;tutorial de youtube&lt;/a&gt; made by &lt;a href=&#34;https://x.com/402PaymentReq&#34;&gt;402 Payment Required&lt;/a&gt;. I recommend taking a look to his guide and the other videos he has.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;When we talk about self-custody, we often talk about risk minimization. There are many different types of risks, ranging from the risk of funds being stolen to the risk of funds being lost by the user themselves, as well as risks associated with creating backups, among others.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

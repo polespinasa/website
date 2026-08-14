@@ -6,7 +6,17 @@
     <description>Recent content in Descriptors on Pol Espinasa</description>
     <generator>Hugo</generator>
     <language>català</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://pesvi.xyz/catal%C3%A0/tags/descriptors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bitcoin Core com a dispositiu de firma air-gapped</title>
+      <link>https://pesvi.xyz/catal%C3%A0/posts/bitcoincore_airgapped_device/</link>
+      <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://pesvi.xyz/catal%C3%A0/posts/bitcoincore_airgapped_device/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;#x1f4a1; &lt;em&gt;La creació d&amp;rsquo;aquesta guía esta inspirada en el &lt;a href=&#34;https://www.youtube.com/watch?v=B5X2LkrVuBM&amp;amp;t=783s&#34;&gt;tutorial de youtube&lt;/a&gt; fet per &lt;a href=&#34;https://x.com/402PaymentReq&#34;&gt;402 Payment Required&lt;/a&gt;. Recomano donar-li un cop d&amp;rsquo;ull a la guía i a la resta de vídeos que té.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Quan parlem d&amp;rsquo;autocostòdia sovint parlem de minimització de riscos. Riscos n&amp;rsquo;hi ha molts i diversos, des de riscos on els fons son robats fins a riscos on els fons son perduts per el propi usuari, riscos a l&amp;rsquo;hora de fer copies de seguretat, etc.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

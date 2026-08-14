@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://pesvi.xyz/tags/airgapped/</loc>
-    <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <loc>https://pesvi.xyz/tags/air-gapped/</loc>
+    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://pesvi.xyz/tags/airgapped/"
+                href="https://pesvi.xyz/tags/air-gapped/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="català"
-                href="https://pesvi.xyz/catal%C3%A0/tags/airgapped/"
+                href="https://pesvi.xyz/catal%C3%A0/tags/air-gapped/"
                 />
   </url><url>
     <loc>https://pesvi.xyz/tags/bitcoin-core/</loc>
-    <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -28,8 +28,21 @@
                 href="https://pesvi.xyz/catal%C3%A0/tags/bitcoin-core/"
                 />
   </url><url>
+    <loc>https://pesvi.xyz/posts/bitcoincore_airgapped_device/</loc>
+    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://pesvi.xyz/posts/bitcoincore_airgapped_device/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="català"
+                href="https://pesvi.xyz/catal%C3%A0/posts/bitcoincore_airgapped_device/"
+                />
+  </url><url>
     <loc>https://pesvi.xyz/categories/</loc>
-    <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -42,7 +55,7 @@
                 />
   </url><url>
     <loc>https://pesvi.xyz/tags/descriptors/</loc>
-    <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -55,7 +68,7 @@
                 />
   </url><url>
     <loc>https://pesvi.xyz/categories/guies/</loc>
-    <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -67,21 +80,21 @@
                 href="https://pesvi.xyz/catal%C3%A0/categories/guies/"
                 />
   </url><url>
-    <loc>https://pesvi.xyz/tags/hardwarewallet/</loc>
-    <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <loc>https://pesvi.xyz/tags/hardware-wallet/</loc>
+    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://pesvi.xyz/tags/hardwarewallet/"
+                href="https://pesvi.xyz/tags/hardware-wallet/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="català"
-                href="https://pesvi.xyz/catal%C3%A0/tags/hardwarewallet/"
+                href="https://pesvi.xyz/catal%C3%A0/tags/hardware-wallet/"
                 />
   </url><url>
     <loc>https://pesvi.xyz/</loc>
-    <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -94,7 +107,7 @@
                 />
   </url><url>
     <loc>https://pesvi.xyz/posts/</loc>
-    <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -107,7 +120,7 @@
                 />
   </url><url>
     <loc>https://pesvi.xyz/tags/</loc>
-    <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -120,7 +133,7 @@
                 />
   </url><url>
     <loc>https://pesvi.xyz/tags/wallet/</loc>
-    <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2026-08-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
