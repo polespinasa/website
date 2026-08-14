@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="english" dir="auto">
+<html lang="english" dir="auto" data-theme="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 <meta name="description" content="How to make a Coinjoin or a grouping of transactions without interaction between users using Sparrow Wallet and Bitcoin Core">
 <meta name="author" content="Pol Espinasa">
 <link rel="canonical" href="https://pesvi.xyz/posts/psbt_sparrow/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://pesvi.xyz/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://pesvi.xyz/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://pesvi.xyz/favicon-32x32.png">
@@ -40,27 +40,36 @@
                 --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
+                color-scheme: dark;
             }
 
             .list {
                 background: var(--theme);
             }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
+            .toc {
+                background: var(--entry);
             }
         }
 
     </style>
 </noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXYVPZQE88"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -74,7 +83,7 @@
   <meta property="og:site_name" content="Pol Espinasa">
   <meta property="og:title" content="How to make a transaction with UTXOs of different wallets with Sparrow">
   <meta property="og:description" content="How to make a Coinjoin or a grouping of transactions without interaction between users using Sparrow Wallet and Bitcoin Core">
-  <meta property="og:locale" content="english">
+  <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-04-07T00:00:00+00:00">
@@ -85,9 +94,10 @@
     <meta property="article:tag" content="Sparrow">
     <meta property="article:tag" content="Layer 1">
     <meta property="article:tag" content="Bitcoin-Cli">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="How to make a transaction with UTXOs of different wallets with Sparrow">
-<meta name="twitter:description" content="How to make a Coinjoin or a grouping of transactions without interaction between users using Sparrow Wallet and Bitcoin Core">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to make a transaction with UTXOs of different wallets with Sparrow">
+  <meta name="twitter:description" content="How to make a Coinjoin or a grouping of transactions without interaction between users using Sparrow Wallet and Bitcoin Core">
 
 
 <script type="application/ld+json">
@@ -144,31 +154,19 @@
 }
 </script>
 </head>
-
-<body class="" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
-
-<header class="header">
-    <nav class="nav">
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
         <div class="logo">
             <a href="https://pesvi.xyz/" accesskey="h" title="Pol Espinasa (Alt + H)">Pol Espinasa</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -181,16 +179,16 @@
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
-                </button>
-                <ul class="lang-switch"><li>|</li>
-                    <li>
-                        <a href="https://pesvi.xyz/catal%C3%A0/" title="Català"
-                            aria-label="Català">Català</a>
-                    </li>
-                </ul>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://pesvi.xyz/catal%C3%A0/" title="Català"
+                                aria-label="Català">Català</a>
+                        </li>
+                    </ul>
             </div>
         </div>
-        <ul id="menu">
+        <ul id="menu" class="menu">
             <li>
                 <a href="https://pesvi.xyz/tags/" title="Tags">
                     <span>Tags</span>
@@ -220,16 +218,18 @@
     <div class="post-description">
       How to make a Coinjoin or a grouping of transactions without interaction between users using Sparrow Wallet and Bitcoin Core
     </div>
-    <div class="post-meta"><span title='2024-04-07 00:00:00 +0000 UTC'>April 7, 2024</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Pol Espinasa&nbsp;|&nbsp;Translations:
-<ul class="i18n_list">
-    <li>
-        <a href="https://pesvi.xyz/catal%C3%A0/posts/psbt_sparrow/">Català</a>
-    </li>
-</ul>
+    <div class="post-meta">
+
+<span title='2024-04-07 00:00:00 +0000 UTC'>April 7, 2024</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Pol Espinasa</span>&nbsp;|&nbsp;<span>Translations:</span>
+    <ul class="i18n_list">
+        <li>
+            <a href="https://pesvi.xyz/catal%C3%A0/posts/psbt_sparrow/">Català</a>
+        </li>
+    </ul>
 
 </div>
   </header> 
-  <div class="post-content"><p>Let&rsquo;s suppose that Bob and Alice share a flat and want to buy a television worth 2 bitcoins, paying half each.
+  <div class="post-content md-content"><p>Let&rsquo;s suppose that Bob and Alice share a flat and want to buy a television worth 2 bitcoins, paying half each.
 To do so, Bob could send 1 bitcoin to Alice so that she pays for the TV, but since the network fees are quite high, they decide to create a joint transaction with two inputs, one from Alice and one from Bob.</p>
 <blockquote>
 <p>&#x1f4a1; <em>The practical examples in the post are made in testnet. Therefore, if you want to execute the Bob and Alice commands with the same values or look up the transactions in a explorer, you have to do it from the corresponding testnet versions.</em></p>
@@ -245,30 +245,30 @@ Amount of bitcoins: <code>2 btc</code></p>
 <p>Since they use <a href="https://sparrowwallet.com/">Sparrow</a> as a wallet and it does not allow the creation of PSBTs of this type, they have to use another tool. To do this they use their own Bitcoin node and their command interface (<a href="https://developer.bitcoin.org/reference/rpc/index.html">bitcoin-cli</a>).</p>
 <p>To create the PSBT they use bitcoin-cli and the command <a href="https://developer.bitcoin.org/reference/rpc/createpsbt.html">&quot;<em>createpsbt</em>&quot;</a>.<br>
 This command takes two mandatory arguments, the inputs and the outputs. For the input, specify the transaction id and the output number. For the output, the destination address and the amount of bitcoins to be sent must be stated.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli createpsbt <span style="color:#e6db74">&#39;[{&#34;txid&#34;: &#34;txId&#34;, &#34;vout&#34;: nOut}]&#39;</span> <span style="color:#e6db74">&#39;[{&#34;destination address&#34;: &#34;num btc&#34;}]&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli createpsbt <span style="color:#e6db74">&#39;[{&#34;txid&#34;: &#34;txId&#34;, &#34;vout&#34;: nOut}]&#39;</span> <span style="color:#e6db74">&#39;[{&#34;destination address&#34;: &#34;num btc&#34;}]&#39;</span>
 </span></span></code></pre></div><blockquote>
 <p>&#x26a0;&#xfe0f; <strong>WARNING!</strong><br>
 <em>The difference between the input value and the output value is paid as mining commission. If you want to be refunded with the remaining money, you have to add an output with a refund address and give it a value!</em></p>
 </blockquote>
 <p>The command executed by Alice and Bob is as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli createpsbt <span style="color:#e6db74">&#39;[{&#34;txid&#34;: &#34;73c13b277a1b176fd2b20324027fff9244949fc5dc913aa98c68bddf246260e5&#34;, &#34;vout&#34;: 0}, {&#34;txid&#34;: &#34;7797817c9b879c3333e1c7d5eedc70e6aa0ba1a2c6d098c94ce5e2671f4c9d5e&#34;, &#34;vout&#34;: 1}]&#39;</span> <span style="color:#e6db74">&#39;[{&#34;tb1qjdntspzahv748vasmnfl62etfz9y9hjgmvg6gw&#34;: 2}]&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli createpsbt <span style="color:#e6db74">&#39;[{&#34;txid&#34;: &#34;73c13b277a1b176fd2b20324027fff9244949fc5dc913aa98c68bddf246260e5&#34;, &#34;vout&#34;: 0}, {&#34;txid&#34;: &#34;7797817c9b879c3333e1c7d5eedc70e6aa0ba1a2c6d098c94ce5e2671f4c9d5e&#34;, &#34;vout&#34;: 1}]&#39;</span> <span style="color:#e6db74">&#39;[{&#34;tb1qjdntspzahv748vasmnfl62etfz9y9hjgmvg6gw&#34;: 2}]&#39;</span>
 </span></span></code></pre></div><p>Output:</p>
 <pre tabindex="0"><code>cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAAAA
 </code></pre><p>The output obtained is the raw transaction encoded in base64. This transaction is not yet ready to be signed, it needs to be updated with the information about the segwit inputs and outputs. In order to finish assembling the transaction correctly Bob and Alice use the command <a href="https://developer.bitcoin.org/reference/rpc/utxoupdatepsbt.html">&quot;<em>utxoupdatepsbt</em>&quot;</a>.
 This command takes as the only argument a raw transaction encoded in base64, exactly like the one generated by the command &ldquo;<em>createpsbt</em>&rdquo;.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli utxoupdatepsbt <span style="color:#e6db74">&#34;raw transaction encoded in base64&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli utxoupdatepsbt <span style="color:#e6db74">&#34;raw transaction encoded in base64&#34;</span>
 </span></span></code></pre></div><p>The command executed by Alice and Bob is as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli utxoupdatepsbt <span style="color:#e6db74">&#34;cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAAAA&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli utxoupdatepsbt <span style="color:#e6db74">&#34;cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAAAA&#34;</span>
 </span></span></code></pre></div><p>Output:</p>
 <pre tabindex="0"><code>cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocwABAR/04vUFAAAAABYAFKnH89dqqyObFvPlDONKPDSRm78cAAA=
 </code></pre><p>The output is the same raw transaction encoded in base64 but this time it is ready to be signed.
 The status of the PSBT can be checked with the command <a href="https://developer.bitcoin.org/reference/rpc/analyzepsbt.html">&quot;<em>analyzepsbt</em>&quot;</a>. This command analyzes the PSBT and gives information about its status.
 It takes as argument a raw PSBT encoded in base64:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli analyzepsbt <span style="color:#e6db74">&#34;raw transaction encoded in base64&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli analyzepsbt <span style="color:#e6db74">&#34;raw transaction encoded in base64&#34;</span>
 </span></span></code></pre></div><p>Bob and Alice check the status of their PSBT with the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli analyzepsbt <span style="color:#e6db74">&#34;cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocwABAR/04vUFAAAAABYAFKnH89dqqyObFvPlDONKPDSRm78cAAA=&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli analyzepsbt <span style="color:#e6db74">&#34;cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocwABAR/04vUFAAAAABYAFKnH89dqqyObFvPlDONKPDSRm78cAAA=&#34;</span>
 </span></span></code></pre></div><p>Output:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;inputs&#34;</span>: [
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;has_utxo&#34;</span>: <span style="color:#66d9ef">true</span>,
@@ -308,13 +308,13 @@ It takes as argument a raw PSBT encoded in base64:</p>
 <p>In order to sign it Alice presses &ldquo;<em>Finalize Transaction for Signing</em>&rdquo; and then &ldquo;<em>Sign</em>&rdquo;.
 Once signed Alice saves the transaction by pressing the &ldquo;Save Transaction&rdquo; option. This generates a &ldquo;<em>.psbt</em>&rdquo; file.</p>
 <p>As she is curious to know if it has been done correctly she executes the command &ldquo;<em>analyzepsbt</em>&rdquo;. This takes as argument a raw transaction encoded in base64. In order to show the transaction of the &ldquo;<em>.psbt</em>&rdquo; file in the required format Alice uses the command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat alice.psbt | base64 -w <span style="color:#ae81ff">0</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat alice.psbt | base64 -w <span style="color:#ae81ff">0</span>
 </span></span></code></pre></div><p>Output:</p>
 <pre tabindex="0"><code>cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocyICAqMy+J7K6eLwFZ82KfZ8NEOYP/fT2XJBP7fZKzgTHebMRzBEAiAfOG5ztzUxczR0VOE/RyEHFzE+7WzxURU2M3uaMneq2wIgdNMkWI40nt+IB+LFq8vJ+/s3JqDCk/0IB51Bj/vdtFcBAAEBH/Ti9QUAAAAAFgAUqcfz12qrI5sW8+UM40o8NJGbvxwAAA==
 </code></pre><p>She can now execute the command &ldquo;<em>analyzepsbt</em>&rdquo; with the transaction coded correctly:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli analyzepsbt <span style="color:#e6db74">&#34;cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocyICAqMy+J7K6eLwFZ82KfZ8NEOYP/fT2XJBP7fZKzgTHebMRzBEAiAfOG5ztzUxczR0VOE/RyEHFzE+7WzxURU2M3uaMneq2wIgdNMkWI40nt+IB+LFq8vJ+/s3JqDCk/0IB51Bj/vdtFcBAAEBH/Ti9QUAAAAAFgAUqcfz12qrI5sW8+UM40o8NJGbvxwAAA==&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli analyzepsbt <span style="color:#e6db74">&#34;cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocyICAqMy+J7K6eLwFZ82KfZ8NEOYP/fT2XJBP7fZKzgTHebMRzBEAiAfOG5ztzUxczR0VOE/RyEHFzE+7WzxURU2M3uaMneq2wIgdNMkWI40nt+IB+LFq8vJ+/s3JqDCk/0IB51Bj/vdtFcBAAEBH/Ti9QUAAAAAFgAUqcfz12qrI5sW8+UM40o8NJGbvxwAAA==&#34;</span>
 </span></span></code></pre></div><p>Output:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;inputs&#34;</span>: [
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;has_utxo&#34;</span>: <span style="color:#66d9ef">true</span>,
@@ -342,9 +342,9 @@ Once signed Alice saves the transaction by pressing the &ldquo;Save Transaction&
 <em>Bob repeats the steps with the transaction obtained in the command &ldquo;utxoupdatepsbt&rdquo; not with the signed transaction from Alice!</em></p>
 </blockquote>
 <p>At the end he executes the command &ldquo;<em>analyzepsbt</em>&rdquo; also to make sure that he has signed correctly:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli analyzepsbt <span style="color:#e6db74">&#34;cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocwABAR/04vUFAAAAABYAFKnH89dqqyObFvPlDONKPDSRm78cIgIDDHkSKRVSKLVTwBM8zclLbfzoU0ax431MOeTO7jhNgQJHMEQCIHu7QJ227MnOCoWIgkfKkFpiBlUEfm/Tzs66+wSti5LnAiB767C0BufcXueZR/muH+DeFVSGTE+Hbjt8sgvlyUDGZAEAAA==&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli analyzepsbt <span style="color:#e6db74">&#34;cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocwABAR/04vUFAAAAABYAFKnH89dqqyObFvPlDONKPDSRm78cIgIDDHkSKRVSKLVTwBM8zclLbfzoU0ax431MOeTO7jhNgQJHMEQCIHu7QJ227MnOCoWIgkfKkFpiBlUEfm/Tzs66+wSti5LnAiB767C0BufcXueZR/muH+DeFVSGTE+Hbjt8sgvlyUDGZAEAAA==&#34;</span>
 </span></span></code></pre></div><p>Output:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;inputs&#34;</span>: [
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;has_utxo&#34;</span>: <span style="color:#66d9ef">true</span>,
@@ -370,14 +370,14 @@ Once signed Alice saves the transaction by pressing the &ldquo;Save Transaction&
 <p>At this point Bob and Alice each have the PSBT signed separately. They only need to combine them in order to have the final transaction and be able to broadcast it to the network.</p>
 <p>To merge them they use the command <a href="https://developer.bitcoin.org/reference/rpc/combinepsbt.html">&quot;<em>combinepsbt</em>&quot;</a>.
 This takes for arguments the PSBTs in a list as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli combinepsbt <span style="color:#e6db74">&#39;[&#34;psbt_alice&#34;, &#34;psbt_bob&#34;]&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli combinepsbt <span style="color:#e6db74">&#39;[&#34;psbt_alice&#34;, &#34;psbt_bob&#34;]&#39;</span>
 </span></span></code></pre></div><p>The command they execute is as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli combinepsbt <span style="color:#e6db74">&#39;[&#34;cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocyICAqMy+J7K6eLwFZ82KfZ8NEOYP/fT2XJBP7fZKzgTHebMRzBEAiAfOG5ztzUxczR0VOE/RyEHFzE+7WzxURU2M3uaMneq2wIgdNMkWI40nt+IB+LFq8vJ+/s3JqDCk/0IB51Bj/vdtFcBAAEBH/Ti9QUAAAAAFgAUqcfz12qrI5sW8+UM40o8NJGbvxwAAA==&#34;, &#34;cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocwABAR/04vUFAAAAABYAFKnH89dqqyObFvPlDONKPDSRm78cIgIDDHkSKRVSKLVTwBM8zclLbfzoU0ax431MOeTO7jhNgQJHMEQCIHu7QJ227MnOCoWIgkfKkFpiBlUEfm/Tzs66+wSti5LnAiB767C0BufcXueZR/muH+DeFVSGTE+Hbjt8sgvlyUDGZAEAAA==&#34;]&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli combinepsbt <span style="color:#e6db74">&#39;[&#34;cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocyICAqMy+J7K6eLwFZ82KfZ8NEOYP/fT2XJBP7fZKzgTHebMRzBEAiAfOG5ztzUxczR0VOE/RyEHFzE+7WzxURU2M3uaMneq2wIgdNMkWI40nt+IB+LFq8vJ+/s3JqDCk/0IB51Bj/vdtFcBAAEBH/Ti9QUAAAAAFgAUqcfz12qrI5sW8+UM40o8NJGbvxwAAA==&#34;, &#34;cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocwABAR/04vUFAAAAABYAFKnH89dqqyObFvPlDONKPDSRm78cIgIDDHkSKRVSKLVTwBM8zclLbfzoU0ax431MOeTO7jhNgQJHMEQCIHu7QJ227MnOCoWIgkfKkFpiBlUEfm/Tzs66+wSti5LnAiB767C0BufcXueZR/muH+DeFVSGTE+Hbjt8sgvlyUDGZAEAAA==&#34;]&#39;</span>
 </span></span></code></pre></div><p>Output:</p>
 <pre tabindex="0"><code>cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocyICAqMy+J7K6eLwFZ82KfZ8NEOYP/fT2XJBP7fZKzgTHebMRzBEAiAfOG5ztzUxczR0VOE/RyEHFzE+7WzxURU2M3uaMneq2wIgdNMkWI40nt+IB+LFq8vJ+/s3JqDCk/0IB51Bj/vdtFcBAAEBH/Ti9QUAAAAAFgAUqcfz12qrI5sW8+UM40o8NJGbvxwiAgMMeRIpFVIotVPAEzzNyUtt/OhTRrHjfUw55M7uOE2BAkcwRAIge7tAnbbsyc4KhYiCR8qQWmIGVQR+b9POzrr7BK2LkucCIHvrsLQG59xe55lH+a4f4N4VVIZMT4duO3yyC+XJQMZkAQAA
 </code></pre><p>The output of the command is the aggregated PSBT from both of them. They can run a last check with the command &ldquo;<em>analyzepsbt</em>&rdquo;:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli analyzepsbt <span style="color:#e6db74">&#34;cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocyICAqMy+J7K6eLwFZ82KfZ8NEOYP/fT2XJBP7fZKzgTHebMRzBEAiAfOG5ztzUxczR0VOE/RyEHFzE+7WzxURU2M3uaMneq2wIgdNMkWI40nt+IB+LFq8vJ+/s3JqDCk/0IB51Bj/vdtFcBAAEBH/Ti9QUAAAAAFgAUqcfz12qrI5sW8+UM40o8NJGbvxwiAgMMeRIpFVIotVPAEzzNyUtt/OhTRrHjfUw55M7uOE2BAkcwRAIge7tAnbbsyc4KhYiCR8qQWmIGVQR+b9POzrr7BK2LkucCIHvrsLQG59xe55lH+a4f4N4VVIZMT4duO3yyC+XJQMZkAQAA&#34;</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bitcoin-cli analyzepsbt <span style="color:#e6db74">&#34;cHNidP8BAHsCAAAAAuVgYiTfvWiMqTqR3MWflESS/38CJAOy0m8XG3onO8FzAAAAAAD9////Xp1MH2fi5UzJmNDGoqELquZw3O7Vx+EzM5yHm3yBl3cBAAAAAP3///8BAMLrCwAAAAAWABSTZrgEXbs9U7Ow3NP9KytIikLeSAAAAAAAAQEf9OL1BQAAAAAWABSwcT0MvrjbtH8Tu7UWrYU7nU5ocyICAqMy+J7K6eLwFZ82KfZ8NEOYP/fT2XJBP7fZKzgTHebMRzBEAiAfOG5ztzUxczR0VOE/RyEHFzE+7WzxURU2M3uaMneq2wIgdNMkWI40nt+IB+LFq8vJ+/s3JqDCk/0IB51Bj/vdtFcBAAEBH/Ti9QUAAAAAFgAUqcfz12qrI5sW8+UM40o8NJGbvxwiAgMMeRIpFVIotVPAEzzNyUtt/OhTRrHjfUw55M7uOE2BAkcwRAIge7tAnbbsyc4KhYiCR8qQWmIGVQR+b9POzrr7BK2LkucCIHvrsLQG59xe55lH+a4f4N4VVIZMT4duO3yyC+XJQMZkAQAA&#34;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;inputs&#34;</span>: [
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;has_utxo&#34;</span>: <span style="color:#66d9ef">true</span>,
@@ -491,22 +491,31 @@ At this point either of the two can broadcast the transaction by loading it to t
 <footer class="footer">
         <span>&copy; 2026 <a href="https://pesvi.xyz/">Pol Espinasa</a></span> · 
 
+    
+    
     <span>
         Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
         <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
     </svg>
 </a>
 
 <script>
-    let menu = document.getElementById('menu')
+    let menu = document.getElementById('menu');
     if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
         menu.onscroll = function () {
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
@@ -533,25 +542,25 @@ At this point either of the two can broadcast the transaction by loading it to t
 
 </script>
 <script>
-    var mybutton = document.getElementById("top-link");
+    var toplink = document.getElementById("top-link");
     window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
         } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
+            toplink.classList.add("hidden");
         }
     };
 
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
         } else {
-            document.body.classList.add('dark');
+            html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
         }
     })
